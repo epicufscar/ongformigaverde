@@ -1,0 +1,1 @@
+web: gunicorn ongfv.wsgi --log-file
