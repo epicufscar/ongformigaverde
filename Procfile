@@ -1,1 +1,1 @@
-web: gunicorn ongformigaverde.wsgi --log-file
+web: gunicorn ongfv.wsgi --log-file -
