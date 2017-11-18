@@ -1,0 +1,21 @@
+{% extends 'ong/base.html' %}
+{% load staticfiles %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+    <main id="home">
+        <section class="row">
+            <div class="col-md-9 col-sm-12">
+                {% include 'ong/home/_projetos.html' %}
+                {% include 'ong/home/_em_numeros.html' %}
+                {% include 'ong/home/_visao.html' %}
+            </div>
+            <div class="col-md-3 col-sm-12">
+                {% include 'ong/home/_noticias.html' %}
+            </div>
+        </section>
+        {% include 'ong/home/_doacoes.html' %}
+        {% include 'ong/home/_fale_conosco.html' %}
+    </main>
+{% endblock body %}
