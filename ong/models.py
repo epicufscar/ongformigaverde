@@ -33,6 +33,28 @@ class Membro(models.Model):
     statement = models.TextField(blank=True, verbose_name='[INGLÊS] Depoimento em inglês')
 
 
+class Parceria(models.Model):
+    class Meta:
+        verbose_name = 'parceria'
+        verbose_name_plural = 'parcerias'
+        ordering = ['nome']
+
+    def __str__(self):
+        return self.nome
+
+    def save(self, *args, **kwargs):
+        self.nome = self.nome.upper()
+        self.responsavel = self.responsavel.upper()
+        self.endereco = self.endereco.upper()
+        super(Parceria, self).save(*args, **kwargs)
+
+    nome = models.CharField(blank=False, max_length=100, verbose_name='nome do parceiro (Exemplo: USP ou UFSCar')
+    responsavel = models.CharField(blank=True, max_length=100, verbose_name='nome do responsável ou pessoa para contato principal (Exemplo: Renan)')
+    telefone = models.CharField(blank=True, max_length=20, verbose_name='telefone principal para contato')
+    endereco = models.CharField(blank=True, max_length=300, verbose_name='endereço do parceiro')
+    link = models.URLField(blank=True, verbose_name='link para site ou página do parceiro')
+
+
 class Projeto(models.Model):
     class Meta:
         verbose_name = 'projeto'
@@ -66,7 +88,8 @@ class Projeto(models.Model):
     dataFim = models.DateField(blank=True, null=True, verbose_name='data de término do projeto, se houver')
     linkFotos = models.URLField(blank=True, verbose_name='link para álbum de fotos do projeto')
     linkVideo = models.URLField(blank=True, verbose_name='link para vídeo do projeto')
-    membros = models.ManyToManyField(Membro, blank=True, verbose_name='membros responsáveis pelo projeto')
+    membros = models.ManyToManyField(Membro, blank=True, verbose_name='membros responsáveis pelo projeto, se houver')
+    parceiros = models.ManyToManyField(Parceria, blank=True, verbose_name='parceiros envolvidos com o projeto, se houver')
     # informacoes que precisam ser traduzidas
     name = models.CharField(blank=True, max_length=100, verbose_name='[INGLÊS] Nome em inglês')
     description = models.TextField(blank=True, verbose_name='[INGLÊS] Descrição em inglês')
@@ -92,8 +115,7 @@ class CampanhaParaDoacoes(models.Model):
     link = models.URLField(blank=False, verbose_name='link para campanha (onde o dinheiro é arrecadado)')
     projeto = models.ForeignKey(Projeto, blank=False, verbose_name='projeto para o qual a campanha foi criada')
     dataInicio = models.DateField(blank=False, verbose_name='data de início da campanha')
-    dataFim = models.DateField(blank=True, null=True,
-                               verbose_name='data de término da campanha (até quando o link fica disponível no site)')
+    dataFim = models.DateField(blank=True, null=True, verbose_name='data de término da campanha (até quando o link fica disponível no site)')
     # informacoes que precisam ser traduzidas
     title = models.CharField(blank=True, max_length=100, verbose_name='[INGLÊS] Título em inglês')
     description = models.TextField(blank=True, verbose_name='[INGLÊS] Descrição em inglês')
@@ -109,6 +131,7 @@ class DepoimentoSobreProjeto(models.Model):
         return '[' + self.projeto.nome + '] ' + self.nome
 
     def save(self, *args, **kwargs):
+        self.nome = self.nome.upper()
         super(DepoimentoSobreProjeto, self).save(*args, **kwargs)
 
     nome = models.CharField(blank=False, max_length=100, verbose_name='nome de quem fez o depoimento')
@@ -118,4 +141,3 @@ class DepoimentoSobreProjeto(models.Model):
     projeto = models.ForeignKey(Projeto, blank=False, verbose_name='projeto para o qual o depoimento foi feito')
     # informacoes que precisam ser traduzidas
     statement = models.TextField(blank=True, verbose_name='[INGLÊS] Depoimento em inglês')
-
