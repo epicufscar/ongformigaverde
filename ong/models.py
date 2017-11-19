@@ -28,9 +28,9 @@ class Membro(models.Model):
     atividade = models.CharField(blank=False, max_length=100, verbose_name='atividade ou função')
     depoimento = models.TextField(blank=True, verbose_name='depoimento')
     # informacoes que precisam ser traduzidas
-    country = models.CharField(blank=True, max_length=100, verbose_name='[INGLÊS] País em inglês')
-    activity = models.CharField(blank=True, max_length=100, verbose_name='[INGLÊS] Atividade ou função em inglês')
-    statement = models.TextField(blank=True, verbose_name='[INGLÊS] Depoimento em inglês')
+    country = models.CharField(blank=True, max_length=100, verbose_name='[INGLÊS] País, em inglês')
+    activity = models.CharField(blank=True, max_length=100, verbose_name='[INGLÊS] Atividade ou função, em inglês')
+    statement = models.TextField(blank=True, verbose_name='[INGLÊS] Depoimento, em inglês')
 
 
 class Parceria(models.Model):
@@ -48,11 +48,26 @@ class Parceria(models.Model):
         self.endereco = self.endereco.upper()
         super(Parceria, self).save(*args, **kwargs)
 
+    TIPO = (
+        ('P1', 'COMUNIDADE'),
+        ('P2', 'UNIVERSIDADE'),
+        ('P3', 'EMPRESA')
+    )
+
+    TYPE = (
+        ('P1', 'COMMUNITY'),
+        ('P2', 'UNIVERSITY'),
+        ('P3', 'COMPANY')
+    )
+
     nome = models.CharField(blank=False, max_length=100, verbose_name='nome do parceiro (Exemplo: USP ou UFSCar')
     responsavel = models.CharField(blank=True, max_length=100, verbose_name='nome do responsável ou pessoa para contato principal (Exemplo: Renan)')
     telefone = models.CharField(blank=True, max_length=20, verbose_name='telefone principal para contato')
     endereco = models.CharField(blank=True, max_length=300, verbose_name='endereço do parceiro')
     link = models.URLField(blank=True, verbose_name='link para site ou página do parceiro')
+    tipo = models.CharField(blank=False, max_length=2, choices=TIPO, verbose_name='tipo')
+    # informacoes que precisam ser traduzidas
+    type = models.CharField(blank=False, max_length=2, choices=TYPE, verbose_name='[INGLÊS] Tipo, em inglês')
 
 
 class Projeto(models.Model):
@@ -91,9 +106,9 @@ class Projeto(models.Model):
     membros = models.ManyToManyField(Membro, blank=True, verbose_name='membros responsáveis pelo projeto, se houver')
     parceiros = models.ManyToManyField(Parceria, blank=True, verbose_name='parceiros envolvidos com o projeto, se houver')
     # informacoes que precisam ser traduzidas
-    name = models.CharField(blank=True, max_length=100, verbose_name='[INGLÊS] Nome em inglês')
-    description = models.TextField(blank=True, verbose_name='[INGLÊS] Descrição em inglês')
-    public = models.CharField(blank=False, max_length=2, choices=PUBLIC, verbose_name='[INGLÊS] Público alvo em inglês')
+    name = models.CharField(blank=True, max_length=100, verbose_name='[INGLÊS] Nome, em inglês')
+    description = models.TextField(blank=True, verbose_name='[INGLÊS] Descrição, em inglês')
+    public = models.CharField(blank=False, max_length=2, choices=PUBLIC, verbose_name='[INGLÊS] Público alvo, em inglês')
 
 
 class CampanhaParaDoacoes(models.Model):
@@ -117,8 +132,8 @@ class CampanhaParaDoacoes(models.Model):
     dataInicio = models.DateField(blank=False, verbose_name='data de início da campanha')
     dataFim = models.DateField(blank=True, null=True, verbose_name='data de término da campanha (até quando o link fica disponível no site)')
     # informacoes que precisam ser traduzidas
-    title = models.CharField(blank=True, max_length=100, verbose_name='[INGLÊS] Título em inglês')
-    description = models.TextField(blank=True, verbose_name='[INGLÊS] Descrição em inglês')
+    title = models.CharField(blank=True, max_length=100, verbose_name='[INGLÊS] Título, em inglês')
+    description = models.TextField(blank=True, verbose_name='[INGLÊS] Descrição, em inglês')
 
 
 class DepoimentoSobreProjeto(models.Model):
@@ -140,7 +155,7 @@ class DepoimentoSobreProjeto(models.Model):
     linkVideo = models.URLField(blank=True, verbose_name='link para depoimento em vídeo')
     projeto = models.ForeignKey(Projeto, blank=False, verbose_name='projeto para o qual o depoimento foi feito')
     # informacoes que precisam ser traduzidas
-    statement = models.TextField(blank=True, verbose_name='[INGLÊS] Depoimento em inglês')
+    statement = models.TextField(blank=True, verbose_name='[INGLÊS] Depoimento, em inglês')
 
 
 class ReceitaDeDoacoes(models.Model):
