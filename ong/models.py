@@ -202,9 +202,26 @@ class ReceitaDeDoacoes(models.Model):
     nome = models.CharField(blank=True, max_length=100, verbose_name='se não foi anônimo, nome de quem fez a doação')
     utilizacao = models.CharField(blank=False, max_length=2, choices=UTILIZACAO, verbose_name='como esse valor foi gasto/utilizado pela ONG')
     meio_pagto = models.CharField(blank=False, max_length=2, choices=MEIO_PGTO, verbose_name='meio de pagamento utilizado pelo doador')
-    comentarios = models.TextField(blank=True, verbose_name='outras informações (Exemplo: nome do projeto ou evento para o qual o valor foi utilizado)')
+    comentarios = models.CharField(blank=True, max_length=100, verbose_name='outras informações, se houver (Exemplo: nome do projeto ou evento para o qual o valor foi utilizado)')
     # informacoes que precisam ser traduzidas
     usage = models.CharField(blank=False, max_length=2, choices=USAGE, verbose_name='[INGLÊS] Como esse valor foi gasto/utilizado pela ONG, em ingles')
     pay_method = models.CharField(blank=False, max_length=2, choices=PAY_METHOD, verbose_name='[INGLÊS] Meio de pagamento utilizado pelo doador, em inglês')
-    comments = models.TextField(blank=True, verbose_name='[INGLÊS] Outras informações')
+
+
+class Noticia(models.Model):
+    class Meta:
+        verbose_name = 'notícia'
+        verbose_name_plural = 'notícias'
+
+    def __str__(self):
+        return '[' + str(self.data) + '] ' + self.titulo
+
+    def save(self, *args, **kwargs):
+        self.nome = self.nome.upper()
+        super(Noticia, self).save(*args, **kwargs)
+
+    data = models.DateField(blank=False, verbose_name='data de postagem')
+    titulo = models.CharField(blank=False, max_length=100, verbose_name='título da notícia')
+    texto = models.TextField(blank=False, verbose_name='texto da notícia')
+    link = models.URLField(blank=True, verbose_name='link para conteúdo externo (Exemplo: post no Facebook)')
 
