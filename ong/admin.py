@@ -3,3 +3,4 @@ from .models import *
 
 
 admin.site.register(Membro)
+admin.site.register(Projeto)
