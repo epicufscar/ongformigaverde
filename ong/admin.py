@@ -4,3 +4,5 @@ from .models import *
 
 admin.site.register(Membro)
 admin.site.register(Projeto)
+admin.site.register(CampanhaParaDoacoes)
+admin.site.register(DepoimentoSobreProjeto)
