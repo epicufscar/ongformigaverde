@@ -93,7 +93,7 @@ class Projeto(models.Model):
     # informacoes que precisam ser traduzidas
     name = models.CharField(blank=True, max_length=100, verbose_name='[INGLÊS] Nome em inglês')
     description = models.TextField(blank=True, verbose_name='[INGLÊS] Descrição em inglês')
-    public = models.CharField(blank=True, max_length=2, choices=PUBLIC, verbose_name='[INGLÊS] Público alvo em inglês')
+    public = models.CharField(blank=False, max_length=2, choices=PUBLIC, verbose_name='[INGLÊS] Público alvo em inglês')
 
 
 class CampanhaParaDoacoes(models.Model):
@@ -141,3 +141,70 @@ class DepoimentoSobreProjeto(models.Model):
     projeto = models.ForeignKey(Projeto, blank=False, verbose_name='projeto para o qual o depoimento foi feito')
     # informacoes que precisam ser traduzidas
     statement = models.TextField(blank=True, verbose_name='[INGLÊS] Depoimento em inglês')
+
+
+class ReceitaDeDoacoes(models.Model):
+    class Meta:
+        verbose_name = 'receita de doações'
+        verbose_name_plural = 'receitas de doações'
+        ordering = ['valor']
+
+    def __str__(self):
+        return '[' + str(self.data) + '] ' + str(self.valor)
+
+    def save(self, *args, **kwargs):
+        self.nome = self.nome.upper()
+        super(ReceitaDeDoacoes, self).save(*args, **kwargs)
+
+    UTILIZACAO = (
+        ('P1', 'Manutenção administrativa da ONG'),
+        ('P2', 'Aplicação em projetos existentes'),
+        ('P3', 'Criação de novos projetos'),
+        ('P4', 'Aquisição de recursos e materiais'),
+        ('P5', 'Treinamentos para membros da equipe'),
+        ('P6', 'Eventos e comemorações'),
+        ('P7', 'Outras finalidades'),
+    )
+
+    USAGE = (
+        ('E1', 'Administration and maintenance tasks'),
+        ('E2', 'Investments on existing projects'),
+        ('E3', 'Creation of new projects'),
+        ('E4', 'Resources and materials acquisition'),
+        ('E5', 'Training of team members'),
+        ('E6', 'Events and celebrations'),
+        ('E7', 'Other demands'),
+    )
+
+    MEIO_PGTO = (
+        ('M1', 'PayPal'),
+        ('M2', 'Vakinha'),
+        ('M3', 'Boleto'),
+        ('M4', 'Depósito Bancário'),
+        ('M5', 'Transferência Bancária'),
+        ('M5', 'Dinheiro'),
+        ('M7', 'Outro')
+    )
+
+    PAY_METHOD = (
+        ('M1', 'PayPal'),
+        ('M2', 'Vakinha'),
+        ('M3', 'Boleto'),
+        ('M4', 'Bank Deposit'),
+        ('M5', 'Bank Transfer'),
+        ('M5', 'Cash'),
+        ('M7', 'Other')
+    )
+
+    data = models.DateField(blank=False, verbose_name='data da doação')
+    valor = models.FloatField(blank=False, verbose_name='valor da doação')
+    anonimo = models.BooleanField(blank=False, verbose_name='doação anônima? (Marque este campo caso positivo, deixe em branco caso contrário)')
+    nome = models.CharField(blank=True, max_length=100, verbose_name='se não foi anônimo, nome de quem fez a doação')
+    utilizacao = models.CharField(blank=False, max_length=2, choices=UTILIZACAO, verbose_name='como esse valor foi gasto/utilizado pela ONG')
+    meio_pagto = models.CharField(blank=False, max_length=2, choices=MEIO_PGTO, verbose_name='meio de pagamento utilizado pelo doador')
+    comentarios = models.TextField(blank=True, verbose_name='outras informações (Exemplo: nome do projeto ou evento para o qual o valor foi utilizado)')
+    # informacoes que precisam ser traduzidas
+    usage = models.CharField(blank=False, max_length=2, choices=USAGE, verbose_name='[INGLÊS] Como esse valor foi gasto/utilizado pela ONG, em ingles')
+    pay_method = models.CharField(blank=False, max_length=2, choices=PAY_METHOD, verbose_name='[INGLÊS] Meio de pagamento utilizado pelo doador, em inglês')
+    comments = models.TextField(blank=True, verbose_name='[INGLÊS] Outras informações')
+
