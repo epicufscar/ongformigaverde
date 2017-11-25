@@ -1,0 +1,32 @@
+@import url('./home/doacoes.css');
+@import url('./home/em_numeros.css');
+@import url('./home/visao.css');
+@import url('./home/noticias.css');
+@import url('./home/projetos.css');
+@import url('./home/fale_conosco.css');
+@import url('./home/carrousel.css');
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0; left: 0;
+    height: 60px;
+    width: 100%;
+    background-color: #f3eaeac3;
+    padding: 10px 15px;
+}
+
+footer {
+    color: #fff;
+    background-color: #434343ff;
+    padding: 15px;
+}
+
+#home {
+    margin-top: 60px;
+}
