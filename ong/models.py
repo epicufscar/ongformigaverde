@@ -55,9 +55,9 @@ class Parceria(models.Model):
     )
 
     TYPE = (
-        ('P1', 'COMMUNITY'),
-        ('P2', 'UNIVERSITY'),
-        ('P3', 'COMPANY')
+        ('E1', 'COMMUNITY'),
+        ('E2', 'UNIVERSITY'),
+        ('E3', 'COMPANY')
     )
 
     nome = models.CharField(blank=False, max_length=100, verbose_name='nome do parceiro (Exemplo: USP ou UFSCar')
@@ -192,23 +192,23 @@ class ReceitaDeDoacoes(models.Model):
     )
 
     MEIO_PGTO = (
-        ('M1', 'PayPal'),
-        ('M2', 'Vakinha'),
-        ('M3', 'Boleto'),
-        ('M4', 'Depósito Bancário'),
-        ('M5', 'Transferência Bancária'),
-        ('M5', 'Dinheiro'),
-        ('M7', 'Outro')
+        ('PM1', 'PayPal'),
+        ('PM2', 'Vakinha'),
+        ('PM3', 'Boleto'),
+        ('PM4', 'Depósito Bancário'),
+        ('PM5', 'Transferência Bancária'),
+        ('PM5', 'Dinheiro'),
+        ('PM7', 'Outro')
     )
 
     PAY_METHOD = (
-        ('M1', 'PayPal'),
-        ('M2', 'Vakinha'),
-        ('M3', 'Boleto'),
-        ('M4', 'Bank Deposit'),
-        ('M5', 'Bank Transfer'),
-        ('M5', 'Cash'),
-        ('M7', 'Other')
+        ('EM1', 'PayPal'),
+        ('EM2', 'Vakinha'),
+        ('EM3', 'Boleto'),
+        ('EM4', 'Bank Deposit'),
+        ('EM5', 'Bank Transfer'),
+        ('EM5', 'Cash'),
+        ('EM7', 'Other')
     )
 
     data = models.DateField(blank=False, verbose_name='data da doação')
@@ -216,11 +216,11 @@ class ReceitaDeDoacoes(models.Model):
     anonimo = models.BooleanField(blank=False, verbose_name='doação anônima? (Marque este campo caso positivo, deixe em branco caso contrário)')
     nome = models.CharField(blank=True, max_length=100, verbose_name='se não foi anônimo, nome de quem fez a doação')
     utilizacao = models.CharField(blank=False, max_length=2, choices=UTILIZACAO, verbose_name='como esse valor foi gasto/utilizado pela ONG')
-    meio_pagto = models.CharField(blank=False, max_length=2, choices=MEIO_PGTO, verbose_name='meio de pagamento utilizado pelo doador')
+    meio_pagto = models.CharField(blank=False, max_length=3, choices=MEIO_PGTO, verbose_name='meio de pagamento utilizado pelo doador')
     comentarios = models.CharField(blank=True, max_length=100, verbose_name='outras informações, se houver (Exemplo: nome do projeto ou evento para o qual o valor foi utilizado)')
     # informacoes que precisam ser traduzidas
     usage = models.CharField(blank=False, max_length=2, choices=USAGE, verbose_name='[INGLÊS] Como esse valor foi gasto/utilizado pela ONG, em ingles')
-    pay_method = models.CharField(blank=False, max_length=2, choices=PAY_METHOD, verbose_name='[INGLÊS] Meio de pagamento utilizado pelo doador, em inglês')
+    pay_method = models.CharField(blank=False, max_length=3, choices=PAY_METHOD, verbose_name='[INGLÊS] Meio de pagamento utilizado pelo doador, em inglês')
 
 
 class Noticia(models.Model):
