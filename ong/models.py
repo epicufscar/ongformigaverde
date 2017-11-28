@@ -39,13 +39,13 @@ class Membro(models.Model):
     atividade = models.CharField(blank=True, max_length=100, verbose_name='atividade ou função que exerce na ONG')
     depoimento = models.TextField(blank=True, verbose_name='depoimento sobre a ONG')
     photo = models.ImageField(null=True, blank=True, upload_to='ong/static/images/', verbose_name='foto - utilize este campo para carregar uma nova foto ou substituir foto existente')
-    photo64 = models.TextField(null=True, blank=True, verbose_name='foto - se este campo estiver preenchido, foto já existe no sistema')
+    photo64 = models.TextField(null=True, editable=False)
     possuiPhoto = models.BooleanField(blank=True, default=False, verbose_name='possui foto?')
     apagarPhoto = models.BooleanField(blank=True, default=False, verbose_name='marque esta opção apenas se deseja excluir a foto ao salvar')
     # informacoes que precisam ser traduzidas
-    country = models.CharField(blank=True, max_length=100, verbose_name='País, em inglês')
-    activity = models.CharField(blank=True, max_length=100, verbose_name='Atividade ou função que exerce na ONG, em inglês')
-    statement = models.TextField(blank=True, verbose_name='Depoimento sobre a ONG, em inglês')
+    country = models.CharField(blank=True, max_length=100, verbose_name='país, em inglês')
+    activity = models.CharField(blank=True, max_length=100, verbose_name='atividade ou função que exerce na ONG, em inglês')
+    statement = models.TextField(blank=True, verbose_name='depoimento sobre a ONG, em inglês')
 
 
 class Parceria(models.Model):
@@ -76,8 +76,7 @@ class Parceria(models.Model):
     )
 
     nome = models.CharField(blank=False, max_length=100, verbose_name='nome do parceiro (Exemplo: USP ou UFSCar')
-    responsavel = models.CharField(blank=True, max_length=100,
-                                   verbose_name='nome do responsável ou pessoa para contato principal (Exemplo: Renan)')
+    responsavel = models.CharField(blank=True, max_length=100, verbose_name='nome do responsável ou pessoa para contato principal (Exemplo: Renan)')
     telefone = models.CharField(blank=True, max_length=20, verbose_name='telefone principal para contato')
     endereco = models.CharField(blank=True, max_length=300, verbose_name='endereço do parceiro')
     link = models.URLField(blank=True, verbose_name='link para site ou página do parceiro')
@@ -98,6 +97,16 @@ class Projeto(models.Model):
     def save(self, *args, **kwargs):
         self.nome = self.nome.upper()
         self.name = self.name.upper()
+
+        if self.photo64:
+            self.possuiPhoto = True
+
+        if self.apagarPhoto:
+            self.photo = None
+            self.photo64 = None
+            self.possuiPhoto = False
+
+        self.apagarPhoto = False
         super(Projeto, self).save(*args, **kwargs)
 
     PUBLICO = (
@@ -112,7 +121,7 @@ class Projeto(models.Model):
         ('E3', 'EVERYONE')
     )
 
-    nome = models.CharField(blank=False, max_length=100, verbose_name='nome')
+    nome = models.CharField(blank=False, max_length=100, verbose_name='nome do projeto')
     descricao = models.TextField(blank=False, verbose_name='descrição')
     publico = models.CharField(blank=False, max_length=2, choices=PUBLICO, verbose_name='público alvo')
     dataInicio = models.DateField(blank=False, verbose_name='data de início do projeto')
@@ -120,13 +129,15 @@ class Projeto(models.Model):
     linkFotos = models.URLField(blank=True, verbose_name='link para álbum de fotos do projeto')
     linkVideo = models.URLField(blank=True, verbose_name='link para vídeo do projeto')
     membros = models.ManyToManyField(Membro, blank=True, verbose_name='membros responsáveis pelo projeto, se houver')
-    parceiros = models.ManyToManyField(Parceria, blank=True,
-                                       verbose_name='parceiros envolvidos com o projeto, se houver')
+    parceiros = models.ManyToManyField(Parceria, blank=True, verbose_name='parceiros envolvidos com o projeto, se houver')
+    photo = models.ImageField(null=True, blank=True, upload_to='ong/static/images/', verbose_name='foto de capa do projeto')
+    photo64 = models.TextField(null=True, editable=False)
+    possuiPhoto = models.BooleanField(blank=True, default=False, verbose_name='possui foto de capa?')
+    apagarPhoto = models.BooleanField(blank=True, default=False, verbose_name='marque esta opção apenas se deseja excluir a foto de capa ao salvar')
     # informacoes que precisam ser traduzidas
-    name = models.CharField(blank=True, max_length=100, verbose_name='[INGLÊS] Nome, em inglês')
-    description = models.TextField(blank=True, verbose_name='[INGLÊS] Descrição, em inglês')
-    public = models.CharField(blank=False, max_length=2, choices=PUBLIC,
-                              verbose_name='[INGLÊS] Público alvo, em inglês')
+    name = models.CharField(blank=True, max_length=100, verbose_name='nome do projeto, em inglês')
+    description = models.TextField(blank=True, verbose_name='descrição, em inglês')
+    public = models.CharField(blank=False, max_length=2, choices=PUBLIC, verbose_name='público alvo, em inglês')
 
 
 class CampanhaParaDoacoes(models.Model):
@@ -148,8 +159,7 @@ class CampanhaParaDoacoes(models.Model):
     link = models.URLField(blank=False, verbose_name='link para campanha (onde o dinheiro é arrecadado)')
     projeto = models.ForeignKey(Projeto, blank=False, verbose_name='projeto para o qual a campanha foi criada')
     dataInicio = models.DateField(blank=False, verbose_name='data de início da campanha')
-    dataFim = models.DateField(blank=True, null=True,
-                               verbose_name='data de término da campanha (até quando o link fica disponível no site)')
+    dataFim = models.DateField(blank=True, null=True, verbose_name='data de término da campanha (até quando o link fica disponível no site)')
     # informacoes que precisam ser traduzidas
     title = models.CharField(blank=True, max_length=100, verbose_name='[INGLÊS] Título, em inglês')
     description = models.TextField(blank=True, verbose_name='[INGLÊS] Descrição, em inglês')
@@ -274,6 +284,7 @@ def image_to_b64(image_file):
 
 
 @receiver(models.signals.post_save, sender=Membro)
+@receiver(models.signals.post_save, sender=Projeto)
 def create_base64_str(sender, instance, **kwargs):
     if instance.photo:
         instance.photo64 = image_to_b64(instance.photo)
