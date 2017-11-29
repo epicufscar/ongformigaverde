@@ -1,7 +1,13 @@
 from django.contrib import admin
+import django.contrib.auth.models
+from django.contrib import auth
+from django.contrib.admin import register
 from .models import *
 
+admin.site.unregister(auth.models.User)
+admin.site.unregister(auth.models.Group)
 
+@register(Membro)
 class MembroAdmin(admin.ModelAdmin):
     readonly_fields = ('possuiPhoto',)
     list_display = ('nome', 'email', 'pais', 'possuiPhoto',)
@@ -25,6 +31,7 @@ class MembroAdmin(admin.ModelAdmin):
         return form
 
 
+@register(Projeto)
 class ProjetoAdmin(admin.ModelAdmin):
     readonly_fields = ('possuiPhoto',)
     list_display = ('nome', 'publico', 'possuiPhoto',)
@@ -45,6 +52,7 @@ class ProjetoAdmin(admin.ModelAdmin):
     )
 
 
+@register(Parceria)
 class ParceriaAdmin(admin.ModelAdmin):
     readonly_fields = ('possuiPhoto',)
     list_display = ('nome', 'responsavel', 'telefone', 'tipo', 'possuiPhoto',)
@@ -62,6 +70,7 @@ class ParceriaAdmin(admin.ModelAdmin):
     )
 
 
+@register(CampanhaParaDoacoes)
 class CampanhaParaDoacoesAdmin(admin.ModelAdmin):
     list_display = ('titulo', 'projeto', 'dataInicio', 'dataFim',)
     search_fields = ('titulo',)
@@ -75,6 +84,7 @@ class CampanhaParaDoacoesAdmin(admin.ModelAdmin):
     )
 
 
+@register(DepoimentoSobreProjeto)
 class DepoimentoSobreProjetoAdmin(admin.ModelAdmin):
     readonly_fields = ('possuiPhoto',)
     list_display = ('nome', 'idade', 'projeto', 'possuiPhoto',)
@@ -92,6 +102,7 @@ class DepoimentoSobreProjetoAdmin(admin.ModelAdmin):
     )
 
 
+@register(Noticia)
 class NoticiaAdmin(admin.ModelAdmin):
     readonly_fields = ('possuiPhoto',)
     list_display = ('titulo', 'data', 'link', 'possuiPhoto')
@@ -106,6 +117,7 @@ class NoticiaAdmin(admin.ModelAdmin):
     )
 
 
+@register(ReceitaDeDoacoes)
 class ReceitaDeDoacoesAdmin(admin.ModelAdmin):
     list_display = ('data', 'valor', 'anonimo', 'utilizacao', 'meioPagto',)
     search_fields = ('valor', 'utilizacao', 'meioPagto', 'nome',)
@@ -122,10 +134,27 @@ class ReceitaDeDoacoesAdmin(admin.ModelAdmin):
     )
 
 
-admin.site.register(Membro, MembroAdmin)
-admin.site.register(Projeto, ProjetoAdmin)
-admin.site.register(CampanhaParaDoacoes, CampanhaParaDoacoesAdmin)
-admin.site.register(DepoimentoSobreProjeto, DepoimentoSobreProjetoAdmin)
-admin.site.register(Parceria, ParceriaAdmin)
-admin.site.register(ReceitaDeDoacoes, ReceitaDeDoacoesAdmin)
-admin.site.register(Noticia, NoticiaAdmin)
+@register(InformacoesGeraisONG)
+class InformacoesGeraisONGAdmin(admin.ModelAdmin):
+    actions = None
+    list_display = ('nome', 'endereco', 'email', 'telefone',)
+    fieldsets = (
+        ('Informações de Contato', {
+            'fields': ('nome', 'endereco', 'email', 'telefone',)
+        }),
+        ('Redes Sociais', {
+            'fields': ('facebook', 'instagram', 'youtube', 'twitter',)
+        }),
+        ("Identidade da ONG", {
+            'fields': ('missao', 'visao', 'valores', 'principios', 'proverbio',)
+        }),
+        ("Em Inglês", {
+            'fields': ('mission', 'vision', 'values', 'principles', 'proverb',)
+        })
+    )
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
