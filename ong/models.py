@@ -314,6 +314,35 @@ class Noticia(models.Model):
     apagarPhoto = models.BooleanField(blank=True, default=False, verbose_name='excluir foto de capa?', help_text='Marque esta opção apenas se deseja excluir a foto de capa ao salvar')
 
 
+class InformacoesGeraisONG(models.Model):
+    class Meta:
+        verbose_name = 'informações gerais'
+        verbose_name_plural = 'informações gerais'
+
+    def __str__(self):
+        return self.nome
+
+    missao = models.TextField(blank=False, verbose_name='missão')
+    visao = models.TextField(blank=False, verbose_name='visão')
+    valores = models.TextField(blank=False, verbose_name='valores')
+    principios = models.TextField(blank=False, verbose_name='principios')
+    proverbio = models.TextField(blank=False, verbose_name='provérbio', help_text='Frase que será mostrada na página inicial')
+    nome = models.CharField(blank=False, max_length=100, verbose_name='Nome', help_text='Nome da ONG, que aparecerá em todos os lugares')
+    endereco = models.CharField(blank=False, max_length=200, verbose_name='endereco')
+    email = models.CharField(blank=False, max_length=100, verbose_name='email')
+    telefone = models.CharField(blank=False, max_length=20, verbose_name='telefone')
+    facebook = models.URLField(blank=True, verbose_name='facebook')
+    twitter = models.URLField(blank=True, verbose_name='twitter')
+    instagram = models.URLField(blank=True, verbose_name='instagram')
+    youtube = models.URLField(blank=True, verbose_name='youtube')
+    # informacoes que precisam ser traduzidas
+    mission = models.TextField(blank=False, verbose_name='missão, em inglês')
+    vision = models.TextField(blank=False, verbose_name='visão, em inglês')
+    values = models.TextField(blank=False, verbose_name='valores, em inglês')
+    principles = models.TextField(blank=False, verbose_name='principios, em inglês')
+    proverb = models.TextField(blank=False, verbose_name='provérbio, em inglês', help_text='Frase que será mostrada na página inicial')
+
+
 def image_to_b64(image_file):
     import base64
     with open(image_file.path, 'rb') as f:
