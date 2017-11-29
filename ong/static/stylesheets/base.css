@@ -1,12 +1,13 @@
 @import url('./home/doacoes.css');
 @import url('./home/em_numeros.css');
-@import url('./home/visao.css');
+@import url('./home/proverbio.css');
 @import url('./home/noticias.css');
 @import url('./home/projetos.css');
 @import url('./home/fale_conosco.css');
 @import url('./home/carrousel.css');
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Bad+Script');
 
 body {
     font-family: 'Roboto', sans-serif;
