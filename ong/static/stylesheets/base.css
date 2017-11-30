@@ -6,10 +6,10 @@
 @import url('./home/fale_conosco.css');
 @import url('./home/carrousel.css');
 
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 header {
