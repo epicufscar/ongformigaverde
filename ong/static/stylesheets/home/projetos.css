@@ -1,44 +1,36 @@
-#projetos .card{
-	float: left;
+#projetos {
+    padding: 20px 30px 50px;
+}
+
+#projetos .card {
+    background-color: #d9ead3;
 }
 
 #projetos .card-img-top {
-	width: 238px;
-	padding: 15px 0 0 0;
-}
-
-#projetos .text-center {
-	width: 240px;
-	background-color: #d9ead3;
-}
-
-#projetos .card-title {
-	font-size: 18px;
-	font-family: "Roboto Black";
+	width: 100%;
+	padding: 15px 0 0;
+    object-fit: cover;
+    height: 175px;
 }
 
 #projetos .card-text {
-	font-size: 14px;
+	font-size: 0.9em;
 }
 
 #projetos .btn {
-	display: flex;
-	justify-content: center;
-	padding: 7px;
-	width: 115px;
-	height: 35px;
-}
-
-#projetos .btn-primary {
+    width: 125px;
+    font-size: 0.9em;
+    padding: 7px;
 	background-color: #82a82a;
 	border-color: #82a82a;
+    margin-top: 7px;
+    color: #fff;
 }
 
-#projetos .btn-secondary {
+#projetos .btn-donation {
 	background-color: #f1c232;
 }
 
-#projetos .btn-block {
-	align-self: center;
+#projetos .caption {
+    padding: 15px;
 }
-
