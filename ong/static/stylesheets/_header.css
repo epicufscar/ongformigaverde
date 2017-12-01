@@ -2,13 +2,35 @@ header {
     position: fixed;
     top: 0; left: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 99;
 }
 
 header .nav-topper {
-    height: 40px;
-    padding: 5px 10px;
+    height: 50px;
+    min-width: 320px;
+    padding: 15px 30px 5px;
     background-color: #f3eaeac3;
+    text-align: right;
+    color: #4f4f4f;
+}
+
+header .nav-topper i {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 7px 0;
+    width: 40px;
+    text-align: center;
+    margin-top: -5px;
+}
+
+header .nav-topper i:hover {
+    color: #fff;
+    background-color: #e06666ff;
+}
+
+header .nav-topper span {
+    margin-left: 20px;
 }
 
 header nav {
@@ -74,6 +96,7 @@ header .nav-img {
     height: 150px;
     left: 50px;
     top: -40px;
+    z-index: 100;
 }
 
 header .btn-donation {
@@ -82,4 +105,44 @@ header .btn-donation {
     position: absolute;
     width: 25%;
     right: 0;
+}
+
+header .navbar-toggler {
+    color: #fff !important;
+    height: 50px;
+    padding: 0 17px;
+    border: 1px dotted #ccc !important;
+    position: absolute;
+    top: 5px;
+    right: 25px;
+}
+
+@media (max-width: 62em) {
+    header .nav-img {
+        position: absolute;
+        height: 80px;
+        left: 25px;
+        top: -5px;
+    }
+
+    header .nav-item .btn-ddown {
+        width: 100%;
+    }
+
+    header .dropdown div {
+        max-width: 100%;
+    }
+
+    header .btn-donation {
+        position: relative;
+        top: 20px;
+        width: 100%;
+    }
+
+    header .navbar-nav {
+        position: absolute;
+        left: 0;
+        top: 61px;
+        width: 100%;
+    }
 }
