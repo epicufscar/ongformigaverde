@@ -5,22 +5,22 @@
 @import url('./home/projetos.css');
 @import url('./home/fale_conosco.css');
 @import url('./home/carrousel.css');
+@import url('./_header.css');
 
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,600');
 @import url('https://fonts.googleapis.com/css?family=Bad+Script');
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif !important;
+    overflow-x: hidden !important;
 }
 
-header {
-    position: fixed;
-    top: 0; left: 0;
-    height: 60px;
-    width: 100%;
-    background-color: #f3eaeac3;
-    padding: 10px 15px;
-    z-index: 1;
+a, a:visited {
+    color: #4f4f4f;
+}
+
+a:hover, a:active {
+    color: #e06666ff;
 }
 
 footer {
@@ -30,5 +30,15 @@ footer {
 }
 
 #home {
-    margin-top: 60px;
+    margin-top: 80px;
+}
+
+#home > .row {
+    width: 100vw;
+
+}
+
+.no-padding {
+   padding: 0 !important;
+   margin: 0 !important;
 }

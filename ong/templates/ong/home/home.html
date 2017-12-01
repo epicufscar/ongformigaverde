@@ -6,16 +6,16 @@
 {% block body %}
     <main id="home">
         {% include 'ong/home/_carrousel.html' %}
-        <section class="row">
-            <div class="col-md-9 col-sm-12">
+        <div class="row">
+            <div class="col-md-9 col-sm-12 no-padding">
                 {% include 'ong/home/_projetos.html' %}
                 {% include 'ong/home/_em_numeros.html' %}
                 {% include 'ong/home/_proverbio.html' %}
             </div>
-            <div class="col-md-3 col-sm-12">
+            <div class="col-md-3 col-sm-12 no-padding">
                 {% include 'ong/home/_noticias.html' %}
             </div>
-        </section>
+        </div>
         {% include 'ong/home/_doacoes.html' %}
         {% include 'ong/home/_fale_conosco.html' %}
     </main>
