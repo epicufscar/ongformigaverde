@@ -7,8 +7,7 @@ header {
 
 header .nav-topper {
     height: 50px;
-    min-width: 320px;
-    padding: 15px 30px 5px;
+    padding: 15px 25px 5px;
     background-color: #f3eaeac3;
     text-align: right;
     color: #4f4f4f;
@@ -17,7 +16,7 @@ header .nav-topper {
 header .nav-topper i {
     cursor: pointer;
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 7px;
     padding: 7px 0;
     width: 40px;
     text-align: center;
@@ -30,7 +29,8 @@ header .nav-topper i:hover {
 }
 
 header .nav-topper span {
-    margin-left: 20px;
+    float: right;
+    margin-left: 25px;
 }
 
 header nav {
@@ -120,9 +120,19 @@ header .navbar-toggler {
 @media (max-width: 62em) {
     header .nav-img {
         position: absolute;
-        height: 80px;
+        height: 90px;
         left: 25px;
-        top: -5px;
+        top: -15px;
+    }
+
+    header .nav-topper {
+        height: 55px;
+        text-align: center;
+    }
+
+    header .nav-topper span {
+        float: none;
+        margin: 0 15px 0 0;
     }
 
     header .nav-item .btn-ddown {
@@ -144,5 +154,20 @@ header .navbar-toggler {
         left: 0;
         top: 61px;
         width: 100%;
+    }
+}
+
+@media (max-width: 22em) {
+    header .nav-topper {
+        height: 50px;
+    }
+
+    header .nav-topper i {
+        display: none;
+    }
+
+    header .nav-topper span {
+        float: right;
+        margin: 0;
     }
 }
