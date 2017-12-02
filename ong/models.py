@@ -335,6 +335,17 @@ class InformacoesGeraisONG(models.Model):
     twitter = models.URLField(blank=True, verbose_name='twitter')
     instagram = models.URLField(blank=True, verbose_name='instagram')
     youtube = models.URLField(blank=True, verbose_name='youtube')
+    #fotos do carrousel
+    photo1 = models.URLField(blank=True, verbose_name='foto', help_text='URL da foto que será exibida na home')
+    photo2 = models.URLField(blank=True, verbose_name='foto', help_text='URL da foto que será exibida na home')
+    photo3 = models.URLField(blank=True, verbose_name='foto', help_text='URL da foto que será exibida na home')
+    photo4 = models.URLField(blank=True, verbose_name='foto', help_text='URL da foto que será exibida na home')
+    photo5 = models.URLField(blank=True, verbose_name='foto', help_text='URL da foto que será exibida na home')
+    photo6 = models.URLField(blank=True, verbose_name='foto', help_text='URL da foto que será exibida na home')
+    photo7 = models.URLField(blank=True, verbose_name='foto', help_text='URL da foto que será exibida na home')
+    photo8 = models.URLField(blank=True, verbose_name='foto', help_text='URL da foto que será exibida na home')
+    photo9 = models.URLField(blank=True, verbose_name='foto', help_text='URL da foto que será exibida na home')
+    photo10 = models.URLField(blank=True, verbose_name='foto', help_text='URL da foto que será exibida na home')
     # informacoes que precisam ser traduzidas
     mission = models.TextField(blank=False, verbose_name='missão, em inglês')
     vision = models.TextField(blank=False, verbose_name='visão, em inglês')
