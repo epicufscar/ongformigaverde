@@ -150,7 +150,10 @@ class InformacoesGeraisONGAdmin(admin.ModelAdmin):
         }),
         ("Em Inglês", {
             'fields': ('mission', 'vision', 'values', 'principles', 'proverb',)
-        })
+        }),
+        ("Fotos da Página Inicial", {
+            'fields': ('photo1', 'photo2', 'photo3', 'photo4', 'photo5', 'photo6', 'photo7', 'photo8', 'photo9', 'photo10',)
+        }),
     )
 
     def has_add_permission(self, request):
