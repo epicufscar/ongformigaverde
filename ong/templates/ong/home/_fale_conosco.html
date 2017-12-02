@@ -1,3 +1,42 @@
 <section id="fale-conosco">
-    FALE CONOSCO
+	<h4>FALE CONOSCO</h4>
+	<div class="row">
+		<div class="fc-left col-md-6">
+			<iframe id="gmap_canvas" src="https://maps.google.com/maps?q=ong formiga verde&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+			<div class="fc-phone">
+				<span class="fa-stack">
+					<i class="fa fa-circle fa-stack-2x"></i>
+					<i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+				</span>
+				<span>+55 (16) 3372-9132</span>
+			</div>
+			<div class="fc-email">
+				<span class="fa-stack">
+					<i class="fa fa-circle fa-stack-2x"></i>
+					<i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+				</span>
+				<span>formigaverdesf@yahoo.com.br</span>
+			</div>
+		</div>
+		<div class="fc-right col-md-6">
+			<form method="POST">
+				{% csrf_token %}
+				<fieldset>
+					<legend>Parcerias, doações, sugestões ou dúvidas</legend>
+					<input type="text" class="form-control" name="name" placeholder="Nome" />
+					<input type="text" class="form-control" name="email" placeholder="Email" />
+					<input type="text" class="form-control" name="subject" placeholder="Assunto" />
+					<textarea class="form-control" name="message" placeholder="Mensagem"></textarea>
+				</fieldset>
+				<button type="submit" class="btn btn-success">Enviar</button>
+			</form>
+
+            <!-- FEEDBACK MESSAGE -->
+            {% if email_success == True %}
+            	<script type="text/javascript">alert("MENSAGEM ENVIADA COM SUCESSO. AGUARDE NOSSO RETORNO!")</script>
+            {% elif email_success == False %}
+            	<script type="text/javascript">alert("SUA MENSAGEM FALHOU! POR FAVOR, TENTE NOVAMENTE.")</script>
+            {% endif %}
+		</div>
+	</div>
 </section>

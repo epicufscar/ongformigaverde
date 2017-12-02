@@ -14,6 +14,10 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*']
 
+EMAIL_BACKEND = "sgbackend.SendGridBackend"
+
+SENDGRID_API_KEY = config('SENDGRID_API_KEY')
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
