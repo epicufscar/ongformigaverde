@@ -19,16 +19,24 @@
 			</div>
 		</div>
 		<div class="fc-right col-md-6">
-			<form>
+			<form method="POST">
+				{% csrf_token %}
 				<fieldset>
 					<legend>Parcerias, doações, sugestões ou dúvidas</legend>
 					<input type="text" class="form-control" name="name" placeholder="Nome" />
 					<input type="text" class="form-control" name="email" placeholder="Email" />
 					<input type="text" class="form-control" name="subject" placeholder="Assunto" />
-					<textarea class="form-control" placeholder="Mensagem"></textarea>
+					<textarea class="form-control" name="message" placeholder="Mensagem"></textarea>
 				</fieldset>
-				<button type="button" class="btn btn-success">Enviar</button>
+				<button type="submit" class="btn btn-success">Enviar</button>
 			</form>
+
+            <!-- FEEDBACK MESSAGE -->
+            {% if email_success == True %}
+            	<script type="text/javascript">alert("MENSAGEM ENVIADA COM SUCESSO. AGUARDE NOSSO RETORNO!")</script>
+            {% elif email_success == False %}
+            	<script type="text/javascript">alert("SUA MENSAGEM FALHOU! POR FAVOR, TENTE NOVAMENTE.")</script>
+            {% endif %}
 		</div>
 	</div>
 </section>
