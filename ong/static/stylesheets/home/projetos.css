@@ -22,13 +22,14 @@
     font-size: 0.9em;
     padding: 7px;
 	background-color: #82a82a;
-	border-color: #82a82a;
+	border-color: #2a9134;
     margin-top: 7px;
     color: #fff;
 }
 
 #projetos .btn-donation {
 	background-color: #f1c232;
+    border-color: #ff9914;
 }
 
 #projetos .caption {

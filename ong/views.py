@@ -1,6 +1,9 @@
 from django.shortcuts import render
-
+from .models import *
 
 def home(request):
-    return render(request, 'ong/home/home.html')
+    data = {
+        'projetos': Projeto.objects.all()
+    }
+    return render(request, 'ong/home/home.html', data)
 
