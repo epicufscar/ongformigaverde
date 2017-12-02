@@ -5,3 +5,5 @@ prettyconf==1.2.3
 psycopg2==2.7.3.2
 pytz==2017.3
 whitenoise==3.3.1
+sendgrid==3.6.5
+sendgrid-django==4.0.4
