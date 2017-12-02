@@ -2,3 +2,25 @@
     background-color: #f1c232ff;
     padding: 20px 15px;
 }
+
+#doacoes .card {
+    padding: 20px;
+}
+
+#doacoes .card img {
+    max-height: 45px;
+    margin-bottom: 10px;
+}
+
+#doacoes .btn-fale-conosco {
+    background-color: #e06666ff;
+    padding: 7px;
+    color: #fff;
+}
+
+#doacoes .btn-entenda-doacao {
+    border-radius: 5px;
+    padding: 7px;
+    background-color: #000;
+    color: #fff;
+}
