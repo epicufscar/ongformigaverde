@@ -1,9 +1,13 @@
 #fale-conosco {
-    padding: 20px 15px;
+    padding: 20px 30px;
 }
 @media (min-width: 48em) {
 	#fale-conosco .fc-left {
-		border-right: 1px dashed black;
+		border-right: 1px dashed #777;
+		padding-right: 25px;
+	}
+	#fale-conosco .fc-right {
+		padding-left: 25px;
 	}
 }
 @media (max-width: 48em) {
@@ -20,16 +24,16 @@
 }
 #fale-conosco .fc-left iframe {
 	width: 100%;
-	height: 200px;
+	height: 300px;
+	margin-bottom: 15px;
 }
 #fale-conosco .fc-left .fa-envelope:before {
 	display: block;
-	margin-top: -1px
+	margin-top: -1px;
 }
 #fale-conosco .fc-phone, #fale-conosco .fc-email {
 	display: block;
 	width: 15em;
-	margin-top: 0.5em;
 }
 #fale-conosco .fc-right legend {
 	font-size: 1em;
@@ -37,6 +41,9 @@
 #fale-conosco .fc-right input {
 	width: 80%;
 	margin-bottom: 0.5em
+}
+#fale-conosco .fc-right textarea {
+	height: 163px;
 }
 #fale-conosco .fc-right button {
 	margin-top: 0.5em;
