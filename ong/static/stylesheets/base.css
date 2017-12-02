@@ -6,6 +6,7 @@
 @import url('./home/fale_conosco.css');
 @import url('./home/carrousel.css');
 @import url('./_header.css');
+@import url('./_footer.css');
 
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,600');
 @import url('https://fonts.googleapis.com/css?family=Bad+Script');
@@ -13,14 +14,6 @@
 body {
     font-family: 'Roboto Condensed', sans-serif !important;
     overflow-x: hidden !important;
-}
-
-a, a:visited {
-    color: #4f4f4f;
-}
-
-a:hover, a:active {
-    color: #e06666ff;
 }
 
 footer {
