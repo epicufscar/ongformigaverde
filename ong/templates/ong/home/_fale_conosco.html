@@ -1,22 +1,18 @@
 <section id="fale-conosco">
-	<h4>FALE CONOSCO</h4>
+	<div class="text-center"><h2>FALE CONOSCO</h2></div>
 	<div class="row">
-		<div class="fc-left col-md-6">
+		<div class="fc-left col-md-6 text-center">
 			<iframe id="gmap_canvas" src="https://maps.google.com/maps?q=ong formiga verde&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-			<div class="fc-phone">
-				<span class="fa-stack">
-					<i class="fa fa-circle fa-stack-2x"></i>
-					<i class="fa fa-phone fa-stack-1x fa-inverse"></i>
-				</span>
-				<span>+55 (16) 3372-9132</span>
-			</div>
-			<div class="fc-email">
-				<span class="fa-stack">
-					<i class="fa fa-circle fa-stack-2x"></i>
-					<i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-				</span>
-				<span>formigaverdesf@yahoo.com.br</span>
-			</div>
+            <div class="contacts">
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <span>{{ informacoes_ong.telefone }}</span>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <span>{{ informacoes_ong.email }}</span>
+                </div>
+            </div>
 		</div>
 		<div class="fc-right col-md-6">
 			<form method="POST">
