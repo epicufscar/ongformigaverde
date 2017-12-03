@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 from .models import *
 
+
 def home(request):
     data = {
         'informacoes_ong': InformacoesGeraisONG.objects.first(),
@@ -18,7 +19,7 @@ def home(request):
         subject = "[VIA SITE] " + request.POST['subject']
         content = request.POST['message'] + '\n\n----- \n' + name + '\n' + email
 
-        response = send_mail(subject, content, email, [{{% data['informacoes_ong'].email %}}])
+        response = send_mail(subject, content, email, [data['informacoes_ong'].email])
 
         data['email_success'] = response == 1
 
