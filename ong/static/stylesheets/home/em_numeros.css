@@ -3,3 +3,11 @@
     background-color: #e06666ff;
     padding: 20px 15px 20px 30px;
 }
+
+@media (max-width: 48em) {
+     #em-numeros .row div {
+        margin-bottom: 10px;
+         border-bottom: 1px dotted #e0938b;
+         padding-bottom: 15px;
+    }
+}
