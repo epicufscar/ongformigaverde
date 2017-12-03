@@ -15,14 +15,6 @@ body {
     overflow-x: hidden !important;
 }
 
-a, a:visited {
-    color: #4f4f4f;
-}
-
-a:hover, a:active {
-    color: #e06666ff;
-}
-
 footer {
     color: #fff;
     background-color: #434343ff;
