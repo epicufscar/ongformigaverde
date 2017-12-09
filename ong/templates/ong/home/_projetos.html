@@ -1,6 +1,5 @@
 {% load staticfiles %}
 <section id="projetos">
-
     <h4>NOSSOS PROJETOS</h4>
     {% if projetos %}
     <div class="owl-carousel owl-theme">
@@ -22,7 +21,7 @@
                 {% else %}
                     <p class="flex-text text-muted card-text">{{ projeto.descricao }}</p>
                 {% endif %}
-                <a href="/projetos/{{ projeto.id }}" class="btn">CONHECER</a>
+                <a href="#" class="btn">CONHECER</a>
                 {% for campanha in campanha_doacao %}
                     {% if campanha.projeto.nome == projeto.nome %}
                         <a href="#" class="btn btn-donation">DOAR</a>
@@ -35,7 +34,7 @@
 
     <hr>
     <div class="float-right">
-        <a href="#">CONHECA TODOS OS PROJETOS</a>
+        <a href="#">CONHEÇA TODOS OS PROJETOS</a>
     </div>
     {% endif %}
 </section>

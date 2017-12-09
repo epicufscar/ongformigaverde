@@ -11,4 +11,3 @@ def home(request):
         'campanha_doacao': CampanhaParaDoacoes.objects.all()
     }
     return render(request, 'ong/home/home.html', data)
-
