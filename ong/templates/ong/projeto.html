@@ -1,0 +1,17 @@
+{% extends 'ong/base.html' %}
+{% load staticfiles %}
+
+{% block title %} {{ projeto.nome }} {% endblock title %}
+
+{% block body %}
+    <h4> {{ projeto.nome }}</h4>
+    <div class="description">
+        {{ projeto.descricao }}
+    </div>
+    <div class="owl-carousel owl-theme">
+        <article class="card">
+            <img class="card-img-top" >
+        </article>
+    </div>
+{% endblock body %}
+
