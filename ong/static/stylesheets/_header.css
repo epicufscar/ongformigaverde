@@ -5,6 +5,15 @@ header {
     z-index: 99;
 }
 
+header a, header a:visited {
+    color: #4f4f4f;
+}
+
+header a:hover, header a:active {
+    color: #e06666ff;
+}
+
+
 header .nav-topper {
     height: 50px;
     padding: 15px 25px 5px;

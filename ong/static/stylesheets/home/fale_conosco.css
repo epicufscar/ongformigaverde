@@ -1,51 +1,94 @@
 #fale-conosco {
-    padding: 20px 30px;
+	padding: 30px 30px;
 }
+
 @media (min-width: 48em) {
 	#fale-conosco .fc-left {
-		border-right: 1px dashed #777;
+		border-right: 1px dotted #4f4f4f;
 		padding-right: 25px;
 	}
 	#fale-conosco .fc-right {
 		padding-left: 25px;
 	}
 }
+
 @media (max-width: 48em) {
 	#fale-conosco .fc-left {
-		border-bottom: 1px dashed black;
-		padding-bottom: 15px;
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 25px;
 		margin-bottom: 15px;
 	}
+
+	#fale-conosco .fc-right {
+		padding-top: 15px;
+	}
 }
-#fale-conosco .fc-left > * {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
+
 #fale-conosco .fc-left iframe {
 	width: 100%;
 	height: 300px;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
 }
-#fale-conosco .fc-left .fa-envelope:before {
-	display: block;
+
+#fale-conosco .fc-left div {
+	margin-top: 5px;
+}
+
+#fale-conosco .fc-left div span {
+	border-bottom: 1px dotted #000;
+	padding: 3px;
+}
+
+#fale-conosco .fc-left i {
+	background-color: #000;
+	color: #fff;
+	padding: 7px;
+	width: 35px;
+	border-radius: 50%;
+}
+
+#fale-conosco .fa-envelope {
 	margin-top: -1px;
 }
-#fale-conosco .fc-phone, #fale-conosco .fc-email {
-	display: block;
-	width: 15em;
-}
+
 #fale-conosco .fc-right legend {
-	font-size: 1em;
+	font-size: 1.1em;
 }
+
 #fale-conosco .fc-right input {
 	width: 80%;
 	margin-bottom: 0.5em
 }
+
 #fale-conosco .fc-right textarea {
 	height: 163px;
 }
+
 #fale-conosco .fc-right button {
 	margin-top: 0.5em;
 	float: right;
+}
+
+#fale-conosco input,
+#fale-conosco textarea {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+#fale-conosco .btn {
+	cursor: pointer;
+    width: 40%;
+	min-width: 130px;
+    font-size: 1em;
+    padding: 10px;
+    background-color: #82a82a;
+    border-color: #2a9134;
+    color: #fff;
+}
+
+#fale-conosco .btn:hover {
+    background-color: #6b8a23;
+    border-color: #587129;
+    color: #ffffff;
 }
