@@ -16,12 +16,6 @@ body {
     overflow-x: hidden !important;
 }
 
-footer {
-    color: #fff;
-    background-color: #434343ff;
-    padding: 15px;
-}
-
 #home > .row {
     width: 100vw;
 }
