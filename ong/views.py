@@ -13,7 +13,7 @@ def home(request):
         'campanha_doacao': CampanhaParaDoacoes.objects.all(),
         'email_success': None
     }
-
+    
     if request.method == 'POST':
         name = request.POST['name']
         email = str(name).title() + " <" + request.POST['email'] + ">"
@@ -25,3 +25,43 @@ def home(request):
         data['email_success'] = response == 1
 
     return render(request, 'ong/home/home.html', data)
+
+  
+def historia(request):
+    data = {}
+    return render(request, 'ong/historia.html', data)
+
+
+def missao(request):
+    data = {}
+    return render(request, 'ong/missao.html', data)
+
+
+def equipe(request):
+    data = {}
+    return render(request, 'ong/equipe.html', data)
+
+
+def parceiros(request):
+    data = {}
+    return render(request, 'ong/parceiros.html', data)
+
+
+def projetos(request):
+    data = {}
+    return render(request, 'ong/projetos.html', data)
+
+
+def doacoes(request):
+    data = {}
+    return render(request, 'ong/doacoes.html', data)
+
+
+def transparencia(request):
+    data = {}
+    return render(request, 'ong/transparencia.html', data)
+
+
+def noticias(request):
+    data = {}
+    return render(request, 'ong/noticias.html', data)
