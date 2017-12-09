@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <footer id="footer">
     <div class="row">
         <div class="col-md-3">
@@ -16,8 +17,8 @@
             <a href="#"> Doações </a> <br>
             <a href="#"> Receita de Doações </a>
         </div>
-        <div class="col-md-3">
-            <img src="http://static.wixstatic.com/media/241667_686f955dfade40ddb6182db754709ffa.png/v1/fill/w_231,h_186,al_c,usm_0.66_1.00_0.01/241667_686f955dfade40ddb6182db754709ffa.png" />
+        <div id="footer_logo" class="col-md-3">
+            <img src="{% static "images/logo_footer.png" %}"/>
         </div>
     </div>
 </footer>
