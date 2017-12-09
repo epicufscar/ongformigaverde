@@ -6,8 +6,9 @@ def home(request):
         'informacoes_ong': InformacoesGeraisONG.objects.first(),
         'projetos_andamento': Projeto.objects.filter(dataFim=None).count(),
         'parceiros': Parceria.objects.count(),
-        'intercambistas': Membro.objects.exclude(pais='BRASIL').count()
-        'projetos': Projeto.objects.all()
+        'intercambistas': Membro.objects.exclude(pais='BRASIL').count(),
+        'projetos': Projeto.objects.all(),
+        'campanha_doacao': CampanhaParaDoacoes.objects.all()
     }
     return render(request, 'ong/home/home.html', data)
 
