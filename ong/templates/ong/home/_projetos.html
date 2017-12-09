@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <section id="projetos">
 
     <h4>NOSSOS PROJETOS</h4>
@@ -9,15 +10,19 @@
                 {% if projeto.possuiPhoto %}
                     <img class="card-img-top" src="data:image/png;base64,{{ projeto.photo64 }}"/>
                 {% else %}
-                    <img class="card-img-top" src="../../../static/images/formiga.jpg">
+                    <img class="card-img-top" src="{% static "images/formiga.jpg" %}">
                 {% endif %}
             </a>
             <div class="caption text-center">
                 <a href="#">
                     <h4 class="card-title">{{ projeto.nome }}</h4>
                 </a>
-                <p class="flex-text text-muted card-text">{{ projeto.descricao|slice:":100" }}...</p>
-                <a href="#" class="btn">CONHECER</a>
+                {% if projeto.descricao|length >= 100 %}
+                    <p class="flex-text text-muted card-text">{{ projeto.descricao|slice:":100" }}...</p>
+                {% else %}
+                    <p class="flex-text text-muted card-text">{{ projeto.descricao }}</p>
+                {% endif %}
+                <a href="/projetos/{{ projeto.id }}" class="btn">CONHECER</a>
                 {% for campanha in campanha_doacao %}
                     {% if campanha.projeto.nome == projeto.nome %}
                         <a href="#" class="btn btn-donation">DOAR</a>

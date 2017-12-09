@@ -42,7 +42,7 @@
     margin-top: 7px;
     color: #fff;
     position: absolute;
-    bottom: 55px;
+    bottom: 10px;
     left: calc(50% - 62.5px);
 }
 
@@ -56,7 +56,7 @@
     color: #4f4f4f;
     background-color: #f1c232;
     border-color: #ff9914;
-    bottom: 15px;
+    bottom: 50px;
 }
 
 #projetos .btn-donation:hover {
@@ -67,6 +67,7 @@
 
 #projetos .caption {
     padding: 15px;
+    hyphens: auto;
 }
 
 #projetos .float-right a {
