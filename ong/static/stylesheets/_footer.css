@@ -1,0 +1,38 @@
+footer {
+    color: #fff;
+    background-color: #000;
+    padding: 15px;
+}
+
+footer a, footer a:visited {
+    color: #fff;
+}
+
+footer a:hover, footer a:active {
+    color: #e06666ff;
+}
+
+footer .row div {
+    padding-left: 5%;
+    margin-top: 25px;
+}
+
+footer .row {
+    margin-bottom: 40px;
+}
+
+footer .row div a {
+    height: 12px;
+    padding: 5px;
+    display: block;
+}
+
+footer #footer_logo {
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+footer #footer_logo img {
+    height: 150px;
+    filter:grayscale(100%) contrast(150%) invert(100%);
+}
