@@ -1,20 +1,32 @@
+{% load staticfiles %}
 <section id="projetos">
-
     <h4>NOSSOS PROJETOS</h4>
     {% if projetos %}
     <div class="owl-carousel owl-theme">
     {% for projeto in projetos %}
         <article class="card">
             <a href="#" title="">
-                <img class="card-img-top" src="http://placehold.it/500x250"/>
+                {% if projeto.possuiPhoto %}
+                    <img class="card-img-top" src="data:image/png;base64,{{ projeto.photo64 }}"/>
+                {% else %}
+                    <img class="card-img-top" src="{% static "images/formiga.jpg" %}">
+                {% endif %}
             </a>
             <div class="caption text-center">
                 <a href="#">
                     <h4 class="card-title">{{ projeto.nome }}</h4>
                 </a>
-                <p class="flex-text text-muted card-text">{{ projeto.descricao|slice:":100" }}...</p>
+                {% if projeto.descricao|length >= 100 %}
+                    <p class="flex-text text-muted card-text">{{ projeto.descricao|slice:":100" }}...</p>
+                {% else %}
+                    <p class="flex-text text-muted card-text">{{ projeto.descricao }}</p>
+                {% endif %}
                 <a href="#" class="btn">CONHECER</a>
-                <a href="#" class="btn btn-donation">DOAR</a>
+                {% for campanha in campanha_doacao %}
+                    {% if campanha.projeto.nome == projeto.nome %}
+                        <a href="#" class="btn btn-donation">DOAR</a>
+                    {% endif %}
+                {% endfor %}
             </div>
         </article>
     {% endfor %}
@@ -22,7 +34,7 @@
 
     <hr>
     <div class="float-right">
-        <a href="#">CONHECA TODOS OS PROJETOS</a>
+        <a href="#">CONHEÇA TODOS OS PROJETOS</a>
     </div>
     {% endif %}
 </section>

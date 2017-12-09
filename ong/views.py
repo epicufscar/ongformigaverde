@@ -9,6 +9,7 @@ def home(request):
         'parceiros': Parceria.objects.count(),
         'intercambistas': Membro.objects.exclude(pais='BRASIL').count(),
         'projetos': Projeto.objects.all(),
+        'campanha_doacao': CampanhaParaDoacoes.objects.all(),
         'email_success': None
     }
 
@@ -23,4 +24,3 @@ def home(request):
         data['email_success'] = response == 1
 
     return render(request, 'ong/home/home.html', data)
-
