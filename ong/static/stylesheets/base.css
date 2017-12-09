@@ -7,6 +7,7 @@
 @import url('./home/carrousel.css');
 @import url('./_header.css');
 @import url('./_footer.css');
+@import url('./projeto.css');
 
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,600');
 @import url('https://fonts.googleapis.com/css?family=Bad+Script');
@@ -26,5 +27,5 @@ body {
 }
 
 .page-top {
-    margin-top: 100px;
+    margin-top: 110px;
 }
