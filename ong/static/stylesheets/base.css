@@ -24,3 +24,7 @@ body {
    padding: 0 !important;
    margin: 0 !important;
 }
+
+.page-top {
+    margin-top: 100px;
+}
