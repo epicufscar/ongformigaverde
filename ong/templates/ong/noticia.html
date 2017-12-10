@@ -1,0 +1,11 @@
+{% extends 'ong/base.html' %}
+{% load staticfiles %}
+
+{% block title %}{{ noticia.titulo }}{% endblock title %}
+
+{% block body %}
+    <main id="p-noticia" class="page-top">
+        <h3>{{ noticia.titulo }}</h3>
+        <p>{{ noticia.texto }}</p>
+    </main>
+{% endblock body %}
