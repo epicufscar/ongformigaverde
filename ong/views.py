@@ -14,7 +14,7 @@ def home(request):
         'campanha_doacao': CampanhaParaDoacoes.objects.all(),
         'email_success': None
     }
-    
+
     if request.method == 'POST':
         name = request.POST['name']
         email = str(name).title() + " <" + request.POST['email'] + ">"
@@ -27,7 +27,7 @@ def home(request):
 
     return render(request, 'ong/home/home.html', data)
 
-  
+
 def historia(request):
     data = {}
     return render(request, 'ong/historia.html', data)
@@ -69,7 +69,39 @@ def noticias(request):
 
 
 def noticia(request, id):
+    noticia = Noticia.objects.get(id=id)
+    if noticia.linkVideo.__contains__('youtube'):
+        noticia.isYoutube = True
+        noticia.youtubeEmbed = noticia.linkVideo.replace('watch?v=', 'embed/')
+        noticia.linkVideo = noticia.linkVideo.replace('youtube.com', 'youtu.be')
+        noticia.linkVideo = noticia.linkVideo.replace('watch?v=', '')
+        noticia.linkVideo = noticia.linkVideo.replace('www.', '')
+
+    elif noticia.linkVideo.__contains__('facebook'):
+        noticia.isFacebook = True
+        noticia.facebookEmbed = noticia.linkVideo
+        noticia.linkVideo = noticia.linkVideo.replace('facebook.com', 'fb.com')
+        noticia.linkVideo = noticia.linkVideo.replace('www.', '')
+
+    if noticia.linkFotos.__contains__('facebook'):
+        noticia.facebookAlbum = noticia.linkFotos
+        noticia.linkFotos = noticia.linkFotos.replace('facebook.com', 'fb.com')
+        noticia.linkFotos = noticia.linkFotos.replace('www.', '')
+
+    try:
+        next = noticia.get_next_by_data()
+    except Noticia.DoesNotExist:
+        next = None
+
+    try:
+        previous = noticia.get_previous_by_data()
+    except Noticia.DoesNotExist:
+        previous = None
+
     data = {
-        'noticia': Noticia.objects.get(id=id)
+        'noticia': noticia,
+        'informacoes_ong': InformacoesGeraisONG.objects.first(),
+        'proxima': next,
+        'anterior': previous
     }
     return render(request, 'ong/noticia.html', data)
