@@ -1,5 +1,9 @@
 #p-projeto {
-    background-color: #4f4f4f;
+    background-color: #ffffff;
+}
+
+#p-projeto .card {
+    background-color: #d9ead3;
 }
 
 #p-projeto .img-top {
@@ -11,7 +15,6 @@
 
 #p-projeto .project-description {
     padding: 15px;
-    background-color: #d9ead3;
 }
 
 #p-projeto .project-description div {
@@ -20,5 +23,17 @@
 
 #p-projeto .caption {
     color: #185682;
+    padding: 15px;
+    hyphens: auto;
 }
 
+#p-projeto .card-img-top {
+    width: 100%;
+    padding: 15px 0 0;
+    object-fit: cover;
+    height: 175px;
+}
+
+#p-projeto .card-text {
+    color: #000;
+}
