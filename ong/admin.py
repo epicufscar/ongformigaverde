@@ -7,6 +7,7 @@ from .models import *
 admin.site.unregister(auth.models.User)
 admin.site.unregister(auth.models.Group)
 
+
 @register(Membro)
 class MembroAdmin(admin.ModelAdmin):
     readonly_fields = ('possuiPhoto',)
@@ -112,7 +113,7 @@ class NoticiaAdmin(admin.ModelAdmin):
             'fields': ('data', 'titulo', 'texto',)
         }),
         ('Mídias', {
-            'fields': ('photo', 'possuiPhoto', 'apagarPhoto', 'link', 'linkFotos', 'linkVideo',)
+            'fields': ('photo', 'possuiPhoto', 'apagarPhoto', 'linkFotos', 'linkVideo', 'link',)
         })
     )
 

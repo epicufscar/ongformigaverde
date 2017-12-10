@@ -141,8 +141,8 @@ class Projeto(models.Model):
     publico = models.CharField(blank=False, max_length=2, choices=PUBLICO, verbose_name='público alvo')
     dataInicio = models.DateField(blank=False, verbose_name='data de início do projeto')
     dataFim = models.DateField(blank=True, null=True, verbose_name='data de término do projeto', help_text='Preencher, se houver')
-    linkFotos = models.URLField(blank=True, verbose_name='link para álbum de fotos do projeto')
-    linkVideo = models.URLField(blank=True, verbose_name='link para vídeo do projeto')
+    linkFotos = models.URLField(blank=True, verbose_name='link para álbum de fotos do projeto no Facebook')
+    linkVideo = models.URLField(blank=True, verbose_name='link para vídeo do projeto (Youtube ou Facebook)')
     membros = models.ManyToManyField(Membro, blank=True, verbose_name='membros', help_text='Membros responsáveis pelo projeto, se houver.')
     parceiros = models.ManyToManyField(Parceria, blank=True, verbose_name='parceiros', help_text='Parceiros envolvidos com o projeto, se houver.')
     photo = models.ImageField(null=True, blank=True, upload_to='ong/static/images/', verbose_name='foto de capa do projeto', help_text='Utilize este campo para carregar uma nova foto ou substituir foto existente')
@@ -290,8 +290,6 @@ class Noticia(models.Model):
         return '[' + str(self.data) + '] ' + self.titulo
 
     def save(self, *args, **kwargs):
-        self.titulo = self.titulo.capitalize()
-
         if self.photo64:
             self.possuiPhoto = True
 
@@ -306,9 +304,9 @@ class Noticia(models.Model):
     data = models.DateField(blank=False, verbose_name='data de postagem', help_text='Corresponde à data que aparecerá no site')
     titulo = models.CharField(blank=False, max_length=100, verbose_name='título da notícia')
     texto = models.TextField(blank=False, verbose_name='texto da notícia')
-    link = models.URLField(blank=True, verbose_name='link para conteúdo externo', help_text='Exemplo: link para um post no Facebook ou para um site externo')
-    linkFotos = models.URLField(blank=True, verbose_name='link para álbum de fotos da notícia')
-    linkVideo = models.URLField(blank=True, verbose_name='link para vídeo sobre a notícia')
+    link = models.URLField(blank=True, verbose_name='link para conteúdo externo', help_text='Exemplo: link para uma notícia no São Carlos Agora ou outro site')
+    linkFotos = models.URLField(blank=True, verbose_name='link para álbum de fotos da notícia no Facebook')
+    linkVideo = models.URLField(blank=True, verbose_name='link para vídeo sobre a notícia (Youtube ou Facebook)')
     photo = models.ImageField(null=True, blank=True, upload_to='ong/static/images/', verbose_name='foto de capa', help_text='Utilize este campo para carregar uma nova foto ou substituir foto existente')
     photo64 = models.TextField(null=True, editable=False)
     possuiPhoto = models.BooleanField(blank=True, default=False, verbose_name='possui foto de capa?')
