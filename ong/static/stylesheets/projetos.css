@@ -1,5 +1,8 @@
 #p-projetos {
-	
+	padding-top: 45px;
+}
+#p-projetos #projetos {
+	padding: unset;
 }
 #p-projetos .card {
 	margin: 10px 5px;
