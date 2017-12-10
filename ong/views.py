@@ -10,6 +10,7 @@ def home(request):
         'parceiros': Parceria.objects.count(),
         'intercambistas': Membro.objects.exclude(pais='BRASIL').count(),
         'projetos': Projeto.objects.all(),
+        'noticias': Noticia.objects.order_by('-data')[:10],
         'campanha_doacao': CampanhaParaDoacoes.objects.all(),
         'email_success': None
     }
@@ -65,3 +66,10 @@ def transparencia(request):
 def noticias(request):
     data = {}
     return render(request, 'ong/noticias.html', data)
+
+
+def noticia(request, id):
+    data = {
+        'noticia': Noticia.objects.get(id=id)
+    }
+    return render(request, 'ong/noticia.html', data)
