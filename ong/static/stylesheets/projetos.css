@@ -1,0 +1,24 @@
+#p-projetos {
+	
+}
+#p-projetos .card {
+	margin: 10px 5px;
+}
+#p-projetos #projetos .card {
+	height: unset;
+}
+#p-projetos #projetos .card > .row {
+	height: 100%;
+}
+#p-projetos #projetos .card-img-top {
+	padding: 15px 0 0;
+	height: 100%;
+}
+@media (min-width: 48em) {
+	#p-projetos #projetos .card-img-top {
+		padding: 0 0 0 15px;
+	}
+}
+#p-projetos #projetos .caption {
+	padding: 10px 10px 75px !important;
+}

@@ -48,7 +48,10 @@ def parceiros(request):
 
 
 def projetos(request):
-    data = {}
+    data = {
+        'projetos': Projeto.objects.all(),
+        'campanha_doacao': CampanhaParaDoacoes.objects.all()
+    }
     return render(request, 'ong/projetos.html', data)
 
 
