@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<div class="col-md-6 no-padding">
+    <article class="card">
+    	<div class="row no-padding">
+            <a href="#" title="" class="col-md-5 no-padding">
+                {% if projeto.possuiPhoto %}
+                    <img class="card-img-top" src="data:image/png;base64,{{ projeto.photo64 }}"/>
+                {% else %}
+                    <img class="card-img-top" src="{% static "images/formiga.jpg" %}">
+                {% endif %}
+            </a>
+            <div class="caption text-center col-md-7 no-padding">
+                <a href="#">
+                    <h5 class="card-title">{{ projeto.nome }}</h5>
+                </a>
+                {% if projeto.descricao|length >= 150 %}
+                    <p class="flex-text text-muted card-text">{{ projeto.descricao|slice:":150" }}...</p>
+                {% else %}
+                    <p class="flex-text text-muted card-text">{{ projeto.descricao }}</p>
+                {% endif %}
+                <a href="#" class="btn">CONHECER</a>
+                {% for campanha in campanha_doacao %}
+                    {% if campanha.projeto.nome == projeto.nome %}
+                        <a href="#" class="btn btn-donation">DOAR</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+</div>
