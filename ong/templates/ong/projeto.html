@@ -15,31 +15,32 @@
             </div>
         </div>
 
-        <hr>
+        {% if depoimentos %}
+            <hr>
 
-        <h3 class="caption text-center">DEPOIMENTOS</h3>
-        <section>
+            <h3 class="caption text-center">DEPOIMENTOS</h3>
             {% for depo in depoimentos %}
                 {% if depo.projeto.nome == projeto.nome %}
-                    <div class="card" style="width: 20rem;">
+                    <article class="card">
                         {% if depo.possuiPhoto %}
-                            <img class="card-img-top" src="data:image/png;base64,{{ depo.photo64 }}">
+                            <img class="card-img-top" src="data:image/png;base64,{{ depo.photo64 }}"/>
                         {% else %}
                             <img class="card-img-top" src="{% static "images/formiga.jpg" %}">
                         {% endif %}
                         <div class="caption text-center">
                             <h4 class="card-title">{{ depo.nome }}, {{ depo.idade }} anos</h4>
-                            <p class="flex-text text-muted card-text">{{ depo.depoimento }}</p>
+                            <p class="flex-text text-muted card-text">"{{ depo.depoimento }}"</p>
                         </div>
-                    </div>
+                    </article>
                 {% endif %}
             {% endfor %}
-        </section>
+        {% endif %}
+
+        <hr>
+        <a class="btn-secondary">ANTERIOR</a>
+        <a class="btn-primary">VOLTAR</a>
+        <a class="btn-secondary">PROXIMO</a>
     </main>
 {% endblock body %}
 
-{% block scripts %}
-    <script src="{% static "javascripts/projeto.js" %}"
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
-{% endblock scripts %}
+
