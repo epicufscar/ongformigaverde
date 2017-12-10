@@ -4,15 +4,21 @@
 #p-projetos .card {
 	margin: 10px 5px;
 }
-#p-projetos #projetos .card {
-	height: unset;
+@media (min-width: 48em) {
+	#p-projetos #projetos .card {
+		height: 235px;
+	}
 }
 #p-projetos #projetos .card > .row {
 	height: 100%;
 }
 #p-projetos #projetos .card-img-top {
 	padding: 15px 0 0;
-	height: 100%;
+}
+@media (min-width: 48em) {
+	#p-projetos #projetos .card-img-top {
+		height: 100%;
+	}
 }
 @media (min-width: 48em) {
 	#p-projetos #projetos .card-img-top {
@@ -21,4 +27,8 @@
 }
 #p-projetos #projetos .caption {
 	padding: 10px 10px 75px !important;
+}
+#p-projetos #projetos .card-text {
+	max-height: 100px;
+    overflow: hidden;
 }
