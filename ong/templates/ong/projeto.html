@@ -5,15 +5,28 @@
 
 {% block body %}
     <main id="p-projeto" class="page-top">
-        <h4> {{ projeto.nome }}</h4>
-        <div class="description">
-            {{ projeto.descricao }}
+        <div>
+            <img class="img-top" src="data:image/png;base64,{{ projeto.photo64 }}">
+        </div>
+        <div class="project-description">
+            <h4 class="caption text-center"> {{ projeto.nome }} </h4>
+            <div>
+                {{ projeto.descricao }}
+            </div>
         </div>
         <div class="owl-carousel owl-theme">
+            {% for depo in depoimentos %}
             <article class="card">
-                <img class="card-img-top" >
+                {% if depo.possuiPhoto %}
+                    <img class="card-img-top" src="data:image/png;base64,{{ depo.photo64 }}">
+                {% else %}
+                    <img class="card-img-top" src="{% static "images/formiga.jpg" %}">
+                {% endif %}
+
+                <h4 class="card-title">{{ depo.nome }}, {{ depo.idade }}</h4>
+                <p class="flex-text text-muted card-text">"{{ depo.depoimento }}"</p>
             </article>
+            {% endfor %}
         </div>
     </main>
 {% endblock body %}
-

@@ -69,6 +69,7 @@ def noticias(request):
 
 def projeto(request, id):
     data = {
-        'projeto': Projeto.objects.get(id = id)
+        'projeto': Projeto.objects.get(id = id),
+        'depoimentos': DepoimentoSobreProjeto.objects.all()
     }
     return render(request, 'ong/projeto.html', data)
