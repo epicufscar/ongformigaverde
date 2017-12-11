@@ -76,3 +76,11 @@ def transparencia(request):
 def noticias(request):
     data = {}
     return render(request, 'ong/noticias.html', data)
+
+
+def projeto(request, id):
+    data = {
+        'projeto': Projeto.objects.get(id = id),
+        'depoimentos': DepoimentoSobreProjeto.objects.all()
+    }
+    return render(request, 'ong/projeto.html', data)
