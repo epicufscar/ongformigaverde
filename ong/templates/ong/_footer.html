@@ -1,25 +1,27 @@
 {% load staticfiles %}
 <footer id="footer">
-    <div class="row">
-        <div class="col-md-3">
-            <a href="{% url "historia" %}"> História </a> <br>
-            <a href="{% url "missao" %}"> Missão </a> <br>
-            <a href="{% url "missao" %}"> Visão </a> <br>
-            <a href="{% url "missao" %}"> Valores </a>
-        </div>
-        <div class="col-md-3">
-            <a href="{% url "equipe" %}"> Equipe </a> <br>
-            <a href="{% url "equipe" %}"> Intercambistas </a> <br>
-            <a href="{% url "parceiros" %}"> Parceiros </a> <br>
-        </div>
-        <div class="col-md-3">
-            <a href="{% url "projetos" %}"> Projetos </a> <br>
-            <a href="{% url "doacoes" %}"> Doações </a> <br>
-            <a href="{% url "transparencia" %}"> Receita de Doações </a> <br>
-            <a href="{% url "noticias" %}"> Notícias </a> <br>
-        </div>
-        <div id="footer_logo" class="col-md-3">
-            <a href="{% url "home" %}"> <img src="{% static "images/logo_footer.png" %}"/> </a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <a href="{% url "historia" %}"> História </a> <br>
+                <a href="{% url "missao" %}"> Missão </a> <br>
+                <a href="{% url "missao" %}"> Visão </a> <br>
+                <a href="{% url "missao" %}"> Valores </a>
+            </div>
+            <div class="col-md-3">
+                <a href="{% url "equipe" %}"> Equipe </a> <br>
+                <a href="{% url "equipe" %}"> Intercambistas </a> <br>
+                <a href="{% url "parceiros" %}"> Parceiros </a> <br>
+            </div>
+            <div class="col-md-3">
+                <a href="{% url "projetos" %}"> Projetos </a> <br>
+                <a href="{% url "doacoes" %}"> Doações </a> <br>
+                <a href="{% url "transparencia" %}"> Receita de Doações </a> <br>
+                <a href="{% url "noticias" %}"> Notícias </a> <br>
+            </div>
+            <div id="footer_logo" class="col-md-3">
+                <a href="{% url "home" %}"> <img src="{% static "images/logo_footer.png" %}"/> </a>
+            </div>
         </div>
     </div>
 </footer>
