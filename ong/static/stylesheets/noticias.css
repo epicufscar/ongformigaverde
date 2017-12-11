@@ -6,3 +6,13 @@
     text-align: justify;
     text-justify: inter-word;
 }
+
+#p-noticias a,
+#p-noticias a:visited {
+    color: #000;
+}
+
+#p-noticias a:hover,
+#p-noticia a:active {
+    color: #e06666ff;
+}
