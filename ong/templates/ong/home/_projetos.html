@@ -5,7 +5,7 @@
     <div class="owl-carousel owl-theme">
     {% for projeto in projetos %}
         <article class="card">
-            <a href="#" title="">
+            <a href="projeto/{{ projeto.id }}" title="">
                 {% if projeto.possuiPhoto %}
                     <img class="card-img-top" src="data:image/png;base64,{{ projeto.photo64 }}"/>
                 {% else %}
@@ -13,7 +13,7 @@
                 {% endif %}
             </a>
             <div class="caption text-center">
-                <a href="#">
+                <a href="projeto/{{ projeto.id }}">
                     <h4 class="card-title">{{ projeto.nome }}</h4>
                 </a>
                 {% if projeto.descricao|length >= 100 %}
@@ -21,7 +21,7 @@
                 {% else %}
                     <p class="flex-text text-muted card-text">{{ projeto.descricao }}</p>
                 {% endif %}
-                <a href="#" class="btn">CONHECER</a>
+                <a href="projeto/{{ projeto.id }}" class="btn">CONHECER</a>
                 {% for campanha in campanha_doacao %}
                     {% if campanha.projeto.nome == projeto.nome %}
                         <a href="#" class="btn btn-donation">DOAR</a>
