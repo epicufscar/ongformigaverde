@@ -17,7 +17,7 @@
                     <p>
                         {{ noticia.texto|slice:":150" }}
                         {% if noticia.texto|length >= 150 %}
-                        ... <a href={% url "noticia" id=noticia.id %}"> Continue lendo </a>
+                        ... <a href="{% url "noticia" id=noticia.id %}"> Continue lendo </a>
                         {% endif %}
                     </p>
                 </div>
