@@ -7,13 +7,19 @@
     <main id="p-noticias" class="page-top container">
         <div class="col-md-6">
             {% for noticia in noticias %}
+                <!-- <h4> <a href="{% url "noticia" id=noticia.id %}"> {{ noticia.titulo }} </a> </h4> -->
                 <h4> <a href="#"> {{ noticia.titulo }} </a> </h4>
                 <p> {{ noticia.data }}</p>
                 {% if noticia.possuiPhoto %}
                     <img src="data:image/png;base64,{{ noticia.photo64 }}"/>
                     <br> <br>
                 {% endif %}
-                <p> {{ noticia.texto|linebreaksbr }}</p>
+                <p>
+                    {{ noticia.texto|slice:":150" }}
+                    {% if noticia.texto|length >= 150 %}
+                        ...
+                    {% endif %}
+                </p>
             {% endfor %}
         </div>
     </main>
