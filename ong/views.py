@@ -75,7 +75,10 @@ def transparencia(request):
 
 
 def noticias(request):
-    data = {}
+    data = {
+        'noticias': Noticia.objects.all().order_by('-data')
+    }
+
     return render(request, 'ong/noticias.html', data)
 
 
