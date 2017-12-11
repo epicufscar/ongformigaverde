@@ -44,3 +44,33 @@
 #p-projeto .card-text {
     color: #000;
 }
+
+#p-projeto .btn {
+    width: 125px;
+    font-size: 0.9em;
+    padding: 7px;
+    background-color: #82a82a;
+    border-color: #2a9134;
+    margin-top: 20px;
+    color: #fff;
+    position: relative;
+    bottom: 10px;
+}
+
+#p-projeto .btn-left {
+    margin-left: 250px;
+}
+
+#p-projeto .btn-right {
+    margin-right: 250px;
+}
+
+#p-projeto .disabled {
+    font-family: "Roboto Condensed";
+}
+
+#p-projeto .btn:hover {
+    background-color: #6b8a23;
+    border-color: #587129;
+    color: #ffffff;
+}

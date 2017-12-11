@@ -21,10 +21,10 @@
                 {% else %}
                     <p class="flex-text text-muted card-text">{{ projeto.descricao }}</p>
                 {% endif %}
-                <a href="#" class="btn">CONHECER</a>
+                <a href="{% url "projeto" id=projeto.id %}" class="btn">CONHECER</a>
                 {% for campanha in campanha_doacao %}
                     {% if campanha.projeto.nome == projeto.nome %}
-                        <a href="#" class="btn btn-donation">DOAR</a>
+                        <a href="{% url "doacoes" %}" class="btn btn-donation">DOAR</a>
                     {% endif %}
                 {% endfor %}
             </div>
@@ -34,7 +34,7 @@
 
     <hr>
     <div class="float-right">
-        <a href="#">CONHEÇA TODOS OS PROJETOS</a>
+        <a href="{% url "projetos" %}">CONHEÇA TODOS OS PROJETOS</a>
     </div>
     {% endif %}
 </section>

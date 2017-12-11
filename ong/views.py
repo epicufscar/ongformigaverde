@@ -68,8 +68,23 @@ def noticias(request):
 
 
 def projeto(request, id):
+    projeto = Projeto.objects.get(id=id)
+
+    try:
+        previous = projeto.get_previous_by_dataInicio()
+    except Projeto.DoesNotExist:
+        previous = None
+
+    try:
+        next = projeto.get_next_by_dataInicio()
+    except Projeto.DoesNotExist:
+        next = None
+
     data = {
-        'projeto': Projeto.objects.get(id = id),
-        'depoimentos': DepoimentoSobreProjeto.objects.all()
+        'projeto': projeto,
+        'depoimentos': DepoimentoSobreProjeto.objects.all(),
+        'informacoes_ong': InformacoesGeraisONG.objects.first(),
+        'proximo': next,
+        'anterior': previous
     }
     return render(request, 'ong/projeto.html', data)

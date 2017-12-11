@@ -6,7 +6,11 @@
 {% block body %}
     <main id="p-projeto" class="page-top">
         <div>
-            <img class="img-top" src="data:image/png;base64,{{ projeto.photo64 }}">
+            {% if projeto.possuiPhoto %}
+                <img class="img-top" src="data:image/png;base64,{{ projeto.photo64 }}">
+            {% else %}
+                <img class="img-top" src="{% static "images/formiga.jpg" %}"
+            {% endif %}
         </div>
         <div class="project-description">
             <h3 class="caption text-center"> {{ projeto.nome }} </h3>
@@ -20,28 +24,36 @@
 
             <h3 class="caption text-center">DEPOIMENTOS</h3>
             <div class="owl-carousel owl-theme">
-            {% for depo in depoimentos %}
-                {% if depo.projeto.nome == projeto.nome %}
-                    <article class="card">
-                        {% if depo.possuiPhoto %}
-                            <img class="card-img-top" src="data:image/png;base64,{{ depo.photo64 }}"/>
-                        {% else %}
-                            <img class="card-img-top" src="{% static "images/formiga.jpg" %}">
-                        {% endif %}
-                        <div class="caption text-center">
-                            <h4 class="card-title">{{ depo.nome }}, {{ depo.idade }} anos</h4>
-                            <p class="flex-text text-muted card-text">"{{ depo.depoimento }}"</p>
-                        </div>
-                    </article>
-                {% endif %}
-            {% endfor %}
+                {% for depo in depoimentos %}
+                    {% if depo.projeto.nome == projeto.nome %}
+                        <article class="card">
+                            {% if depo.possuiPhoto %}
+                                <img class="card-img-top" src="data:image/png;base64,{{ depo.photo64 }}"/>
+                            {% else %}
+                                <img class="card-img-top" src="{% static "images/formiga.jpg" %}">
+                            {% endif %}
+                            <div class="caption text-center">
+                                <h4 class="card-title">{{ depo.nome }}, {{ depo.idade }} anos</h4>
+                                <p class="flex-text text-muted card-text">"{{ depo.depoimento }}"</p>
+                            </div>
+                        </article>
+                    {% endif %}
+                {% endfor %}
             </div>
         {% endif %}
-        <div>
-            <hr>
-            <a class="btn-secondary">ANTERIOR</a>
-            <a class="btn-primary">VOLTAR</a>
-            <a class="btn-secondary">PROXIMO</a>
+        <hr>
+        <div class="d-flex justify-content-between">
+            {% if anterior.id %}
+                <a href="{% url "projeto" id=anterior.id %}" class="btn btn-left">ANTERIOR</a>
+            {% else %}
+                <button type="button" class="btn btn-left disabled"> ANTERIOR </button>
+            {% endif %}
+            <a href="{% url "projetos" %}" class="btn btn-middle">VOLTAR</a>
+            {% if proximo.id %}
+                <a href="{% url "projeto" id=proximo.id %}" class="btn btn-right">PRÓXIMO</a>
+            {% else %}
+                <button type="button" class="btn btn-right disabled"> PRÓXIMO </button>
+            {% endif %}
         </div>
 
     </main>
