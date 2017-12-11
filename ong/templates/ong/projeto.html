@@ -19,6 +19,7 @@
             <hr>
 
             <h3 class="caption text-center">DEPOIMENTOS</h3>
+            <div class="owl-carousel owl-theme">
             {% for depo in depoimentos %}
                 {% if depo.projeto.nome == projeto.nome %}
                     <article class="card">
@@ -34,12 +35,15 @@
                     </article>
                 {% endif %}
             {% endfor %}
+            </div>
         {% endif %}
+        <div>
+            <hr>
+            <a class="btn-secondary">ANTERIOR</a>
+            <a class="btn-primary">VOLTAR</a>
+            <a class="btn-secondary">PROXIMO</a>
+        </div>
 
-        <hr>
-        <a class="btn-secondary">ANTERIOR</a>
-        <a class="btn-primary">VOLTAR</a>
-        <a class="btn-secondary">PROXIMO</a>
     </main>
 {% endblock body %}
 
