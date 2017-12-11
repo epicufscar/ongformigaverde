@@ -21,6 +21,10 @@ body {
     width: 100vw;
 }
 
+#outter-doacoes {
+    background-color: #f1c232ff;
+}
+
 .no-padding {
    padding: 0 !important;
    margin: 0 !important;
@@ -29,3 +33,86 @@ body {
 .page-top {
     margin-top: 110px;
 }
+
+
+@media (min-width: 992px) {
+    #em-numeros, #visao {
+        padding-left: 5%;
+    }
+
+    #noticias {
+        float: left;
+        max-width: 100%;
+    }
+
+    #projetos {
+        width: 100%;
+        height: 600px;
+    }
+
+    #projetos .content {
+        float: right;
+        max-width: 98%;
+    }
+}
+
+@media (min-width: 1200px) {
+    #em-numeros, #visao {
+        padding-left: 7%;
+    }
+
+    #projetos .content {
+        max-width: 95%;
+    }
+}
+
+@media (min-width: 1300px) {
+    #em-numeros, #visao {
+        padding-left: 10%;
+    }
+}
+
+@media (min-width: 1400px) {
+    #noticias {
+        max-width: 90%;
+    }
+
+    #projetos .content {
+        max-width: 92%;
+    }
+}
+
+@media (min-width: 1600px) {
+    #em-numeros, #visao {
+        padding-left: 15%;
+    }
+
+    #noticias {
+        max-width: 85%;
+    }
+
+    #projetos .content {
+        max-width: 85%;
+    }
+}
+
+@media (min-width: 1800px) {
+    #em-numeros, #visao {
+        padding-left: 20%;
+    }
+
+    #noticias {
+        max-width: 80%;
+    }
+
+    #projetos .content {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 1900px) {
+    #projetos .content {
+        max-width: 78%;
+    }
+}
+
