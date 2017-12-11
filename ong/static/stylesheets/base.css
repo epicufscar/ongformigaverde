@@ -73,6 +73,22 @@ body {
 }
 
 @media (min-width: 1400px) {
+    header .navbar {
+        padding-left: 5%;
+    }
+
+    header .nav-topper {
+        padding-right: 5%;
+    }
+
+    header .btn-donation {
+        right: 5%;
+    }
+
+    header .nav-img {
+        left: calc(5% + 40px);
+    }
+
     #noticias {
         max-width: 90%;
     }
@@ -83,6 +99,22 @@ body {
 }
 
 @media (min-width: 1600px) {
+    header .navbar {
+        padding-left: 7.5%;
+    }
+
+    header .nav-topper {
+        padding-right: 7.5%;
+    }
+
+    header .btn-donation {
+        right: 7.5%;
+    }
+
+    header .nav-img {
+        left: calc(7.5% + 40px);
+    }
+
     #em-numeros, #visao {
         padding-left: 15%;
     }
@@ -97,6 +129,22 @@ body {
 }
 
 @media (min-width: 1800px) {
+    header .navbar {
+        padding-left: 10%;
+    }
+
+    header .nav-topper {
+        padding-right: 10%;
+    }
+
+    header .btn-donation {
+        right: 10%;
+    }
+
+    header .nav-img {
+        left: calc(10% + 40px);
+    }
+
     #em-numeros, #visao {
         padding-left: 20%;
     }
