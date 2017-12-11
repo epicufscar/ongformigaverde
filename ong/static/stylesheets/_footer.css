@@ -12,27 +12,35 @@ footer a:hover, footer a:active {
     color: #e06666ff;
 }
 
-footer .row div {
-    padding-left: 5%;
-    margin-top: 25px;
-}
-
 footer .row {
+    margin-top: 20px;
     margin-bottom: 40px;
+    text-align: center;
 }
 
 footer .row div a {
-    height: 12px;
-    padding: 5px;
-    display: block;
+    display: inline-block;
+    padding: 5px 0;
 }
 
 footer #footer_logo {
-    padding-left: 0;
-    margin-top: 10px;
+    margin-top: -5px;
 }
 
 footer #footer_logo img {
-    height: 150px;
+    max-width: 100%;
+    max-height: 150px;
     filter:grayscale(100%) contrast(150%) invert(100%);
+}
+
+@media (max-width: 48em) {
+    footer #footer_logo {
+        margin-top: -25px;
+    }
+}
+
+@media (max-width: 36em) {
+    footer #footer_logo {
+        margin-top: -5px;
+    }
 }
