@@ -1,34 +1,36 @@
 <aside id="noticias">
-    <h3 id="section-title">NOTÍCIAS</h3>
-    {% for noticia in noticias %}
-        <div class="noticia">
-            <div class="row">
-                <div class="col-xl-{% if noticia.possuiPhoto %}4{% else %}12{% endif %}
-                    col-lg-12 col-md-12 col-sm-{% if noticia.possuiPhoto %}4{% else %}12{% endif %}">
-                    {% if noticia.possuiPhoto %}
-                        <a href="{% url "noticia" id=noticia.id %}">
-                            <img src="data:image/png;base64,{{ noticia.photo64 }}"/>
-                        </a>
-                    {% endif %}
-                </div>
-                <div class="col-xl-{% if noticia.possuiPhoto %}8{% else %}12{% endif %}
-                    col-lg-12 col-md-12 col-sm-{% if noticia.possuiPhoto %}8{% else %}12{% endif %}">
-                    <h6>{{ noticia.data }}</h6>
-                    <a href="{% url "noticia" id=noticia.id %}">
-                        <h5>{{ noticia.titulo }}</h5>
-                    </a>
-                    <p>{{ noticia.texto|slice:":150" }}
-                        {% if noticia.texto|length >= 150 %}
-                            ...
+    <div class="content">
+        <h3 id="section-title">NOTÍCIAS</h3>
+        {% for noticia in noticias %}
+            <div class="noticia">
+                <div class="row">
+                    <div class="col-xl-{% if noticia.possuiPhoto %}4{% else %}12{% endif %}
+                        col-lg-12 col-md-12 col-sm-{% if noticia.possuiPhoto %}4{% else %}12{% endif %}">
+                        {% if noticia.possuiPhoto %}
+                            <a href="{% url "noticia" id=noticia.id %}">
+                                <img src="data:image/png;base64,{{ noticia.photo64 }}"/>
+                            </a>
                         {% endif %}
-                    </p>
+                    </div>
+                    <div class="col-xl-{% if noticia.possuiPhoto %}8{% else %}12{% endif %}
+                        col-lg-12 col-md-12 col-sm-{% if noticia.possuiPhoto %}8{% else %}12{% endif %}">
+                        <h6>{{ noticia.data }}</h6>
+                        <a href="{% url "noticia" id=noticia.id %}">
+                            <h5>{{ noticia.titulo }}</h5>
+                        </a>
+                        <p>{{ noticia.texto|slice:":150" }}
+                            {% if noticia.texto|length >= 150 %}
+                                ...
+                            {% endif %}
+                        </p>
+                    </div>
                 </div>
             </div>
+        {% endfor %}
+        <div id="more-news">
+            <a href="{% url "noticias" %}">
+                <p>MAIS NOTÍCIAS...</p>
+            </a>
         </div>
-    {% endfor %}
-    <div id="more-news">
-        <a href="{% url "noticias" %}">
-            <p>MAIS NOTÍCIAS...</p>
-        </a>
     </div>
 </aside>
