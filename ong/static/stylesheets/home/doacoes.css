@@ -5,7 +5,7 @@
 }
 
 #doacoes .item {
-    padding: 15px 15px 65px;
+    padding: 15px 15px 50px;
     background-color: #fff;
     border-radius: 5px;
     width: 100%;
@@ -71,7 +71,7 @@
     }
 }
 
-@media (max-width: 48em) {
+@media (max-width: 62em) {
     #doacoes .btn,
     #doacoes img {
         position: initial;
@@ -83,11 +83,5 @@
 
     #doacoes .row div {
         margin-bottom: 10px;
-    }
-}
-
-@media (min-width: 93em) {
-    #doacoes .item {
-        padding-bottom: 80px;
     }
 }

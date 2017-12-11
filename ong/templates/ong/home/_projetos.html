@@ -1,7 +1,8 @@
 {% load staticfiles %}
 <section id="projetos">
-    <h4>NOSSOS PROJETOS</h4>
-    {% if projetos %}
+    <div class="content">
+        <h4>NOSSOS PROJETOS</h4>
+        {% if projetos %}
         <div class="owl-carousel owl-theme">
         {% for projeto in projetos %}
             <article class="card">
@@ -36,6 +37,7 @@
         <div class="float-right">
             <a href="{% url "projetos" %}">CONHEÇA TODOS OS PROJETOS</a>
         </div>
-    {% endif %}
+        {% endif %}
+    </div>
 </section>
 

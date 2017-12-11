@@ -7,17 +7,17 @@
     <main id="home">
         {% include 'ong/home/_carrousel.html' %}
         <div class="row">
-            <div class="col-md-9 col-sm-12 no-padding">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-sm-12 no-padding">
                 {% include 'ong/home/_projetos.html' %}
                 {% include 'ong/home/_em_numeros.html' %}
                 {% include 'ong/home/_proverbio.html' %}
             </div>
-            <div class="col-md-3 col-sm-12 no-padding">
+            <div class="col-xl-5 col-lg-4 col-md-3 col-sm-12 no-padding">
                 {% include 'ong/home/_noticias.html' %}
             </div>
         </div>
-        {% include 'ong/home/_doacoes.html' %}
-        {% include 'ong/home/_fale_conosco.html' %}
+        <div id="outter-doacoes">{% include 'ong/home/_doacoes.html' %}</div>
+        <div id="outter-fale-conosco">{% include 'ong/home/_fale_conosco.html' %}</div>
     </main>
 {% endblock body %}
 
