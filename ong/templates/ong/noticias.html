@@ -5,25 +5,23 @@
 
 {% block body %}
     <main id="p-noticias" class="page-top container">
-        <div class="row">
-            <div class="col-md-6">
+        <div class="col-md-6">
             {% for noticia in noticias %}
-                    <div class="noticia">
-                        <h4> <a href="{% url "noticia" id=noticia.id %}"> {{ noticia.titulo }} </a> </h4>
-                        <p> {{ noticia.data }}</p>
-                        {% if noticia.possuiPhoto %}
-                            <img src="data:image/png;base64,{{ noticia.photo64 }}"/>
-                            <br> <br>
+                <div class="noticia">
+                    <h4> <a href="{% url "noticia" id=noticia.id %}"> {{ noticia.titulo }} </a> </h4>
+                    <p> {{ noticia.data }}</p>
+                    {% if noticia.possuiPhoto %}
+                        <img src="data:image/png;base64,{{ noticia.photo64 }}"/>
+                        <br> <br>
+                    {% endif %}
+                    <p>
+                        {{ noticia.texto|slice:":150" }}
+                        {% if noticia.texto|length >= 150 %}
+                        ... <a href={% url "noticia" id=noticia.id %}"> Continue lendo </a>
                         {% endif %}
-                        <p>
-                            {{ noticia.texto|slice:":150" }}
-                            {% if noticia.texto|length >= 150 %}
-                            ... <a href={% url "noticia" id=noticia.id %}"> Continue lendo </a>
-                            {% endif %}
-                        </p>
-                    </div>
+                    </p>
+                </div>
             {% endfor %}
-            </div>
         </div>
     </main>
 {% endblock body %}
