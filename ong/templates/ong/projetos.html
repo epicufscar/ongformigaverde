@@ -5,32 +5,37 @@
 
 {% block body %}
     <main id="p-projetos" class="container page-top">
-		<h3>TODOS OS PROJETOS</h3>
+		<h3>NOSSOS PROJETOS</h3>
 		{% if criancas %}
+            <hr>
 			<h4>Para crianças</h4>
 			<section id="projetos" class="py-2">
 				<div class="row no-padding">
-				{% for projeto in criancas %}
-					{% include 'ong/_projetos-card-projeto.html' %}
-				{% endfor %}
+                    {% for projeto in criancas %}
+                        {% include 'ong/_projetos-card-projeto.html' %}
+                    {% endfor %}
+                </div>
 			</section>
 		{% endif %}
 		{% if adultos %}
-			<h4>Para adultos</h4>
+			<hr>
+            <h4>Para adultos</h4>
 			<section id="projetos" class="py-2">
 				<div class="row no-padding">
-				{% for projeto in adultos %}
-					{% include 'ong/_projetos-card-projeto.html' %}
-				{% endfor %}
+                    {% for projeto in adultos %}
+                        {% include 'ong/_projetos-card-projeto.html' %}
+                    {% endfor %}
+                </div>
 			</section>
 		{% endif %}
 		{% if todos %}
-			<h4>Todas as idades</h4>
+			<hr>
+            <h4>Todas as idades</h4>
 			<section id="projetos" class="py-2">
 				<div class="row no-padding">
-				{% for projeto in todos %}
-					{% include 'ong/_projetos-card-projeto.html' %}
-				{% endfor %}
+                    {% for projeto in todos %}
+                        {% include 'ong/_projetos-card-projeto.html' %}
+                    {% endfor %}
 				</div>
 			</section>
 		{% endif %}

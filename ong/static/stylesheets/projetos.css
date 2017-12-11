@@ -1,37 +1,52 @@
 #p-projetos {
-	padding-top: 45px;
+    padding-top: 45px;
+    padding-bottom: 30px;
 }
+
 #p-projetos #projetos {
-	padding: unset;
+    padding: unset;
 }
+
 #p-projetos .card {
-	margin: 10px 5px;
+    margin: 10px 5px;
 }
+
 @media (min-width: 48em) {
-	#p-projetos #projetos .card {
-		height: 235px;
-	}
+    #p-projetos #projetos .card {
+        height: 235px;
+    }
 }
+
 #p-projetos #projetos .card > .row {
-	height: 100%;
+    height: 100%;
 }
+
 #p-projetos #projetos .card-img-top {
-	padding: 15px 0 0;
+    padding: 15px 0 0;
 }
+
 @media (min-width: 48em) {
-	#p-projetos #projetos .card-img-top {
-		height: 100%;
-	}
+    #p-projetos #projetos .card-img-top {
+        height: 100%;
+    }
 }
+
 @media (min-width: 48em) {
-	#p-projetos #projetos .card-img-top {
-		padding: 0 0 0 15px;
-	}
+    #p-projetos #projetos .card-img-top {
+        padding: 0 0 0 15px;
+    }
 }
+
 #p-projetos #projetos .caption {
-	padding: 10px 10px 75px !important;
+    padding: 10px 10px 75px !important;
 }
+
 #p-projetos #projetos .card-text {
-	max-height: 100px;
+    max-height: 100px;
     overflow: hidden;
+}
+
+#p-projetos h4 {
+    margin-bottom: -5px;
+    margin-left: 3px;
 }
