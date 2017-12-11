@@ -49,7 +49,18 @@ def parceiros(request):
 
 
 def projetos(request):
-    data = {}
+    data = {
+        'projetos': Projeto.objects.all(),
+        'campanha_doacao': CampanhaParaDoacoes.objects.all(),
+        'criancas': None,
+        'adultos': None,
+        'todos': None
+    }
+
+    data['criancas'] = [p for p in data['projetos'] if p.publico == "P1"]
+    data['adultos'] = [p for p in data['projetos'] if p.publico == "P2"]
+    data['todos'] = [p for p in data['projetos'] if p.publico == "P3"]
+
     return render(request, 'ong/projetos.html', data)
 
 
@@ -105,3 +116,11 @@ def noticia(request, id):
         'anterior': previous
     }
     return render(request, 'ong/noticia.html', data)
+
+
+def projeto(request, id):
+    data = {
+        'projeto': Projeto.objects.get(id = id),
+        'depoimentos': DepoimentoSobreProjeto.objects.all()
+    }
+    return render(request, 'ong/projeto.html', data)
