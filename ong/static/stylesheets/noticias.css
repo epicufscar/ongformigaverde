@@ -16,3 +16,7 @@
 #p-noticia a:active {
     color: #e06666ff;
 }
+
+#p-noticias div .noticia {
+    padding-bottom: 50px;
+}
