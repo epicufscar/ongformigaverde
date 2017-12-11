@@ -4,15 +4,17 @@
 {% block title %}Notícias{% endblock title %}
 
 {% block body %}
-    <main id="p-noticias" class="page-top">
-
-        {% for noticia in noticias %}
-            <h1> {{ noticia.titulo }} </h1>
-            <h5> {{ noticia.data }}</h5>
-            {% if noticia.possuiPhoto %}
-                <img src="data:image/png;base64,{{ noticia.photo64 }}"/>
-            {% endif %}
-            <p> {{ noticia.texto }}</p>
-        {% endfor %}
+    <main id="p-noticias" class="page-top container">
+        <div class="col-md-6">
+            {% for noticia in noticias %}
+                <h4> <a href="#"> {{ noticia.titulo }} </a> </h4>
+                <p> {{ noticia.data }}</p>
+                {% if noticia.possuiPhoto %}
+                    <img src="data:image/png;base64,{{ noticia.photo64 }}"/>
+                    <br> <br>
+                {% endif %}
+                <p> {{ noticia.texto|linebreaksbr }}</p>
+            {% endfor %}
+        </div>
     </main>
 {% endblock body %}
