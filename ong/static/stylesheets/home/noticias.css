@@ -1,8 +1,9 @@
 #noticias {
     background-color: #d9ead3ff;
-    height: 850px;
+    height: 869px;
     padding: 30px;
     overflow-y: hidden;
+    position: relative;
 }
 
 #noticias a, #noticias a:visited {
@@ -75,6 +76,11 @@
 
 @media (max-width: 47em) {
     #noticias .noticia .row {
-        padding-top: 10px;
+        padding-top: 5px;
+    }
+
+    #noticias .noticia {
+        padding-left: 10%;
+        padding-right: 10%;
     }
 }
