@@ -20,3 +20,7 @@
 #p-noticias div .noticia {
     padding-bottom: 50px;
 }
+
+#p-noticias div {
+    padding-top: 20px;
+}
