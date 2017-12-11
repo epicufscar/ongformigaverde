@@ -78,3 +78,14 @@
 #projetos .float-right a:hover {
     color: #333333;
 }
+
+@media (max-width: 48em) {
+    #projetos {
+        text-align: center;
+    }
+
+    #projetos .card {
+        max-width: 300px;
+        margin-left: calc(50% - 150px);
+    }
+}
