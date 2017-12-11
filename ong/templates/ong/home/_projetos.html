@@ -24,7 +24,7 @@
                     <a href="{% url "projeto" id=projeto.id %}" class="btn">CONHECER</a>
                     {% for campanha in campanha_doacao %}
                         {% if campanha.projeto.nome == projeto.nome %}
-                            <a href="{{ campanha.link }}" class="btn btn-donation">DOAR</a>
+                            <a href="{{ campanha.link }}" target="_blank" class="btn btn-donation">DOAR</a>
                         {% endif %}
                     {% endfor %}
                 </div>
