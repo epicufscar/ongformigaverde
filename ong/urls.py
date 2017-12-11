@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^transparencia/$', transparencia, name='transparencia'),
     url(r'^noticias/$', noticias, name='noticias'),
     url(r'^noticia/(?P<id>[0-9]+)$', noticia, name='noticia')
+    url(r'^projeto/(?P<id>[0-9]+)$', projeto, name='projeto')
 ]
