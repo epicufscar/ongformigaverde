@@ -1,0 +1,107 @@
+{% extends 'ong/base.html' %}
+{% load staticfiles %}
+
+{% block title %}{{ noticia.titulo }}{% endblock title %}
+
+{% block body %}
+    <main id="p-noticia" class="page-top">
+        <div class="container">
+            <div class="row">
+                <div id="noticia-body"
+                     class="col-md-{% if noticia.link or noticia.isFacebook or noticia.isYoutube %}6{% else %}12{% endif %} col-sm-12">
+                    <h3>{{ noticia.titulo }}</h3>
+                    <p>{{ noticia.texto|safe }}</p>
+                    <div class="text-center">
+                        {% if noticia.possuiPhoto %}
+                            <img id="img-cover" class="{% if noticia.link or noticia.isFacebook or noticia.isYoutube %}{% else %}img-origin{% endif %}" src="data:image/png;base64,{{ noticia.photo64 }}"/>
+                        {% endif %}
+
+                        {% if noticia.linkFotos %}
+                            <div id="photos">
+                                <a class="btn btn-galery" href="{{ noticia.linkFotos }}" target="_blank">Galeria de Fotos</a>
+                                <div class="fb-post"
+                                     data-href="{{ noticia.facebookAlbum }}"
+                                     data-show-text="true"
+                                     data-width="auto"
+                                     data-adapt-container-width="true">
+                                    <blockquote cite="{{ noticia.facebookAlbum }}"
+                                                class="fb-xfbml-parse-ignore">
+                                        <a href="{{ noticia.facebookAlbum }}">{{ noticia.titulo }}</a>
+                                        <p>{{ noticia.titulo }}</p>
+                                        Postado por: <a href="{{ informacoes_ong.facebook }}">{{ informacoes_ong.nome }}</a>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div id="noticia-midias" class="col-md-6 col-sm-12">
+                    <div>
+                        {% if noticia.isYoutube %}
+                            <div class="yt-container">
+                                <iframe width="560"
+                                        height="349"
+                                        src="{{ noticia.youtubeEmbed }}?rel=0&hd=1"
+                                        frameborder="0" allowfullscreen>
+                                </iframe>
+                            </div>
+                        {% endif %}
+
+                        {% if noticia.isFacebook %}
+                            <div class="fb-video"
+                                 data-href="{{ noticia.facebookEmbed }}"
+                                 data-width="auto"
+                                 data-show-text="true">
+                                <blockquote cite="{{ noticia.facebookEmbed }}"
+                                            class="fb-xfbml-parse-ignore">
+                                    <a href="{{ noticia.facebookEmbed }}">{{ noticia.titulo }}</a>
+                                    <p>{{ noticia.titulo }}</p>
+                                    Postado por: <a href="{{ informacoes_ong.facebook }}">{{ informacoes_ong.nome }}</a>
+                                </blockquote>
+                            </div>
+                        {% endif %}
+
+                        {% if noticia.link or noticia.linkVideo or noticia.linkFotos %}
+                            <div id="external">
+                                LINKS E ANEXOS: <br>
+                                {% if noticia.link %}
+                                    <div>
+                                        <i class="fa fa-link"> </i>&nbsp;
+                                        <a href="{{ noticia.link }}" target="_blank">{{ noticia.link }}</a>
+                                    </div>
+                                {% endif %}
+                                {% if noticia.linkVideo %}
+                                    <div>
+                                        <i class="fa fa-play"> </i>&nbsp;
+                                        <a href="{{ noticia.linkVideo }}" target="_blank">{{ noticia.linkVideo }}</a>
+                                    </div>
+                                {% endif %}
+                                {% if noticia.linkFotos %}
+                                    <div>
+                                        <i class="fa fa-picture-o"> </i>&nbsp;
+                                        <a href="{{ noticia.linkFotos }}" target="_blank">{{ noticia.linkFotos }}</a>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="more-news">
+            <div class="float-left">
+                {% if anterior.id %}
+                    <a href="{% url "noticia" id=anterior.id %}" title="{{ anterior.titulo }}"><i class="fa fa-chevron-left"></i> ANTERIOR</a>
+                {% endif %}
+            </div>
+            <div class="float-right">
+                {% if proxima.id %}
+                    <a href="{% url "noticia" id=proxima.id %}" title="{{ proxima.titulo }}">PRÓXIMA <i class="fa fa-chevron-right"></i></a>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock body %}

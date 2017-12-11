@@ -4,7 +4,40 @@
 {% block title %}Projetos{% endblock title %}
 
 {% block body %}
-    <main id="p-projetos" class="page-top">
-
+    <main id="p-projetos" class="container page-top">
+		<h3>NOSSOS PROJETOS</h3>
+		{% if criancas %}
+            <hr>
+			<h4>Para crianças</h4>
+			<section id="projetos" class="py-2">
+				<div class="row no-padding">
+                    {% for projeto in criancas %}
+                        {% include 'ong/_projetos-card-projeto.html' %}
+                    {% endfor %}
+                </div>
+			</section>
+		{% endif %}
+		{% if adultos %}
+			<hr>
+            <h4>Para adultos</h4>
+			<section id="projetos" class="py-2">
+				<div class="row no-padding">
+                    {% for projeto in adultos %}
+                        {% include 'ong/_projetos-card-projeto.html' %}
+                    {% endfor %}
+                </div>
+			</section>
+		{% endif %}
+		{% if todos %}
+			<hr>
+            <h4>Todas as idades</h4>
+			<section id="projetos" class="py-2">
+				<div class="row no-padding">
+                    {% for projeto in todos %}
+                        {% include 'ong/_projetos-card-projeto.html' %}
+                    {% endfor %}
+				</div>
+			</section>
+		{% endif %}
     </main>
 {% endblock body %}

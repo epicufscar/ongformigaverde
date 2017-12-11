@@ -10,10 +10,11 @@ def home(request):
         'parceiros': Parceria.objects.count(),
         'intercambistas': Membro.objects.exclude(pais='BRASIL').count(),
         'projetos': Projeto.objects.all(),
+        'noticias': Noticia.objects.order_by('-data')[:10],
         'campanha_doacao': CampanhaParaDoacoes.objects.all(),
         'email_success': None
     }
-    
+
     if request.method == 'POST':
         name = request.POST['name']
         email = str(name).title() + " <" + request.POST['email'] + ">"
@@ -26,7 +27,7 @@ def home(request):
 
     return render(request, 'ong/home/home.html', data)
 
-  
+
 def historia(request):
     data = {}
     return render(request, 'ong/historia.html', data)
@@ -48,7 +49,18 @@ def parceiros(request):
 
 
 def projetos(request):
-    data = {}
+    data = {
+        'projetos': Projeto.objects.all(),
+        'campanha_doacao': CampanhaParaDoacoes.objects.all(),
+        'criancas': None,
+        'adultos': None,
+        'todos': None
+    }
+
+    data['criancas'] = [p for p in data['projetos'] if p.publico == "P1"]
+    data['adultos'] = [p for p in data['projetos'] if p.publico == "P2"]
+    data['todos'] = [p for p in data['projetos'] if p.publico == "P3"]
+
     return render(request, 'ong/projetos.html', data)
 
 
@@ -65,3 +77,50 @@ def transparencia(request):
 def noticias(request):
     noticias = Noticia.objects.all().order_by('-data')
     return render(request, 'ong/noticias.html', {'noticias': noticias})
+
+
+def noticia(request, id):
+    noticia = Noticia.objects.get(id=id)
+    if noticia.linkVideo.__contains__('youtube'):
+        noticia.isYoutube = True
+        noticia.youtubeEmbed = noticia.linkVideo.replace('watch?v=', 'embed/')
+        noticia.linkVideo = noticia.linkVideo.replace('youtube.com', 'youtu.be')
+        noticia.linkVideo = noticia.linkVideo.replace('watch?v=', '')
+        noticia.linkVideo = noticia.linkVideo.replace('www.', '')
+
+    elif noticia.linkVideo.__contains__('facebook'):
+        noticia.isFacebook = True
+        noticia.facebookEmbed = noticia.linkVideo
+        noticia.linkVideo = noticia.linkVideo.replace('facebook.com', 'fb.com')
+        noticia.linkVideo = noticia.linkVideo.replace('www.', '')
+
+    if noticia.linkFotos.__contains__('facebook'):
+        noticia.facebookAlbum = noticia.linkFotos
+        noticia.linkFotos = noticia.linkFotos.replace('facebook.com', 'fb.com')
+        noticia.linkFotos = noticia.linkFotos.replace('www.', '')
+
+    try:
+        next = noticia.get_next_by_data()
+    except Noticia.DoesNotExist:
+        next = None
+
+    try:
+        previous = noticia.get_previous_by_data()
+    except Noticia.DoesNotExist:
+        previous = None
+
+    data = {
+        'noticia': noticia,
+        'informacoes_ong': InformacoesGeraisONG.objects.first(),
+        'proxima': next,
+        'anterior': previous
+    }
+    return render(request, 'ong/noticia.html', data)
+
+
+def projeto(request, id):
+    data = {
+        'projeto': Projeto.objects.get(id = id),
+        'depoimentos': DepoimentoSobreProjeto.objects.all()
+    }
+    return render(request, 'ong/projeto.html', data)

@@ -20,20 +20,20 @@ $(document).ready(function () {
         },
         messages: {
             "name": {
-                required: "Hm... Nós gostamos de saber o nome dos nossos contatos. Qual o seu?",
-                minlength: "Seu nome é curtinho assim mesmo? Que tal preencher com teu sobrenome também?"
+                required: "Precisamos saber com quem conversamos. Qual o seu nome?",
+                minlength: "Este me parece ser um nome curto de mais. Que tal adicionar o sobrenome também?"
             },
             "email": {
                 required: "Por favor, informe um e-mail para que possamos te responder...",
-                email: "Este e-mail não parece ser válido. Corrige aí, vai!"
+                email: "Você deve inserir um e-mail válido, por favor."
             },
             "subject": {
                 required: "Que tal nos dizer o assunto da sua mensagem?",
-                minlength: "Que tal um assunto mais claro? Este está muito curtinho ainda..."
+                minlength: "Este assunto parece ser curto demais, tente aumentá-lo."
             },
             "message": {
-                required: "Ué... Escreve aí sua mensagem! Nós prometemos ler e responder tudo. :)",
-                minlength: "É só isso mesmo? Quanto mais clara a sua mensagem for, mais clara será nossa resposta! "
+                required: "É aqui que você deve inserir sua mensagem. Nós prometemos ler e responder tudo.",
+                minlength: "É só isso mesmo? Quanto mais clara for sua mensagem, mais clara poderá ser nossa resposta!"
             }
         }
     });
