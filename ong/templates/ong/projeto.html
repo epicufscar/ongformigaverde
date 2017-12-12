@@ -18,8 +18,7 @@
                 {{ projeto.descricao }}
             </div>
         </div>
-
-    <hr>
+    
 
         <div class="container">
             <div id="projeto-midias">
@@ -75,23 +74,22 @@
             <h3 class="caption text-center">DEPOIMENTOS</h3>
             <div class="owl-carousel owl-theme">
                 {% for depo in depoimentos %}
-                    {% if depo.projeto.nome == projeto.nome %}
-                        <article class="card">
-                            {% if depo.possuiPhoto %}
-                                <img class="card-img-top" src="data:image/png;base64,{{ depo.photo64 }}"/>
-                            {% else %}
-                                <img class="card-img-top" src="{% static "images/formiga.jpg" %}">
-                            {% endif %}
-                            <div class="caption text-center">
-                                <h4 class="card-title">{{ depo.nome }}, {{ depo.idade }} anos</h4>
-                                <p class="flex-text text-muted card-text">"{{ depo.depoimento }}"</p>
-                            </div>
-                        </article>
-                    {% endif %}
+                    <article class="card">
+                        {% if depo.possuiPhoto %}
+                            <img class="card-img-top" src="data:image/png;base64,{{ depo.photo64 }}"/>
+                        {% else %}
+                            <img class="card-img-top" src="{% static "images/formiga.jpg" %}">
+                        {% endif %}
+                        <div class="caption text-center">
+                            <h4 class="card-title">{{ depo.nome }}, {{ depo.idade }} anos</h4>
+                            <p class="flex-text text-muted card-text">"{{ depo.depoimento }}"</p>
+                        </div>
+                    </article>
                 {% endfor %}
             </div>
         {% endif %}
 
+        <hr>
 
         <div class="d-flex justify-content-between">
             {% if anterior.id %}

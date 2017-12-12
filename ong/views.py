@@ -100,7 +100,7 @@ def projeto(request, id):
 
     data = {
         'projeto': projeto,
-        'depoimentos': DepoimentoSobreProjeto.objects.all(),
+        'depoimentos': DepoimentoSobreProjeto.objects.filter(projeto=projeto),
         'informacoes_ong': InformacoesGeraisONG.objects.first(),
         'proximo': next,
         'anterior': previous
