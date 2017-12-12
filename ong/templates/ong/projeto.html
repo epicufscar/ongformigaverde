@@ -19,42 +19,94 @@
             </div>
         </div>
 
-        {% if depoimentos %}
-            <hr>
-
-            <h3 class="caption text-center">DEPOIMENTOS</h3>
-            <div class="owl-carousel owl-theme">
-                {% for depo in depoimentos %}
-                    {% if depo.projeto.nome == projeto.nome %}
-                        <article class="card">
-                            {% if depo.possuiPhoto %}
-                                <img class="card-img-top" src="data:image/png;base64,{{ depo.photo64 }}"/>
-                            {% else %}
-                                <img class="card-img-top" src="{% static "images/formiga.jpg" %}">
-                            {% endif %}
-                            <div class="caption text-center">
-                                <h4 class="card-title">{{ depo.nome }}, {{ depo.idade }} anos</h4>
-                                <p class="flex-text text-muted card-text">"{{ depo.depoimento }}"</p>
-                            </div>
-                        </article>
+        <div class="container">
+            <div id="projeto-midias" class="col-md-6 col-sm-12">
+                <div>
+                    {% if projeto.isYoutube %}
+                        <div class="yt-container">
+                            <iframe width="560"
+                                    height="349"
+                                    src="{{ projeto.youtubeEmbed }}?rel=0&hd=1"
+                                    frameborder="0" allowfullscreen>
+                            </iframe>
+                        </div>
                     {% endif %}
-                {% endfor %}
+
+                    {% if projeto.isFacebook %}
+                        <div class="fb-video"
+                             data-href="{{ projeto.facebookEmbed }}"
+                             data-widht="auto"
+                             data-show-text="true">
+                            <blockquote cite="{{ projeto.facebookEmbed }}"
+                                        class="fb-xfbml-parse-ignore">
+                                <a href="{{ projeto.facebookEmbed }}">{{ projeto.nome }}</a>
+                                <p>{{ projeto.nome }}</p>
+                                Postado por: <a href="{{ informacoes_ong.facebook }}">{{ informacoes_ong.nome }}</a>
+                            </blockquote>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="row text-center">
+                    {% if projeto.linkFotos %}
+                        <div id="photos">
+                            <a class="btn btn-galery" href="{{ projeto.linkFotos }}" target="_blank">Galeria de Fotos</a>
+                            <div class="fb-post"
+                                 data-href="{{ projeto.facebookAlbum }}"
+                                 data-show-text="true"
+                                 data-width="auto"
+                                 data-adapt-container-width="true">
+
+                                <blockquote cite="{{ projeto.facebookAlbum }}"
+                                            class="fb-xfbml-parse-ignore">
+                                    <a href="{{ projeto.facebookAlbum }}">{{ projeto.nome }}</a>
+                                    <p>{{ projeto.nome }}</p>
+                                    Postado por: <a href="{{ informacoes_ong.facebook }}">{{ informacoes_ong.nome }}</a>
+                                </blockquote>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+
             </div>
-        {% endif %}
-        <hr>
-        <div class="d-flex justify-content-between">
-            {% if anterior.id %}
-                <a href="{% url "projeto" id=anterior.id %}" class="btn btn-left">ANTERIOR</a>
-            {% else %}
-                <button type="button" class="btn btn-left disabled"> ANTERIOR </button>
+
+
+
+            {% if depoimentos %}
+                <hr>
+
+                <h3 class="caption text-center">DEPOIMENTOS</h3>
+                <div class="owl-carousel owl-theme">
+                    {% for depo in depoimentos %}
+                        {% if depo.projeto.nome == projeto.nome %}
+                            <article class="card">
+                                {% if depo.possuiPhoto %}
+                                    <img class="card-img-top" src="data:image/png;base64,{{ depo.photo64 }}"/>
+                                {% else %}
+                                    <img class="card-img-top" src="{% static "images/formiga.jpg" %}">
+                                {% endif %}
+                                <div class="caption text-center">
+                                    <h4 class="card-title">{{ depo.nome }}, {{ depo.idade }} anos</h4>
+                                    <p class="flex-text text-muted card-text">"{{ depo.depoimento }}"</p>
+                                </div>
+                            </article>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             {% endif %}
-            <a href="{% url "projetos" %}" class="btn btn-middle">VOLTAR</a>
-            {% if proximo.id %}
-                <a href="{% url "projeto" id=proximo.id %}" class="btn btn-right">PRÓXIMO</a>
-            {% else %}
-                <button type="button" class="btn btn-right disabled"> PRÓXIMO </button>
-            {% endif %}
-        </div>
+            <hr>
+            <div class="d-flex justify-content-between">
+                {% if anterior.id %}
+                    <a href="{% url "projeto" id=anterior.id %}" class="btn btn-left">ANTERIOR</a>
+                {% else %}
+                    <button type="button" class="btn btn-left disabled"> ANTERIOR </button>
+                {% endif %}
+                <a href="{% url "projetos" %}" class="btn btn-middle">VOLTAR</a>
+                {% if proximo.id %}
+                    <a href="{% url "projeto" id=proximo.id %}" class="btn btn-right">PRÓXIMO</a>
+                {% else %}
+                    <button type="button" class="btn btn-right disabled"> PRÓXIMO </button>
+                {% endif %}
+            </div>
 
     </main>
 {% endblock body %}

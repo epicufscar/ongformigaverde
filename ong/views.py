@@ -70,6 +70,24 @@ def noticias(request):
 def projeto(request, id):
     projeto = Projeto.objects.get(id=id)
 
+    if projeto.linkVideo.__contains__('youtube'):
+        projeto.isYoutube = True
+        projeto.youtubeEmbed = projeto.linkVideo.replace('watch?v=', 'embed/')
+        projeto.linkVideo = projeto.linkVideo.replace('youtube.com', 'youtu.be')
+        projeto.linkVideo = projeto.linkVideo.replace('watch?v=', '')
+        projeto.linkVideo = projeto.linkVideo.replace('www.', '')
+
+    elif projeto.linkVideo.__contains__('facebook'):
+        projeto.isFacebook = True
+        projeto.facebookEmbed = projeto.linkVideo
+        projeto.linkVideo = projeto.linkVideo.replace('facebook.com', 'fb.com')
+        projeto.linkVideo = projeto.linkVideo.replace('www.', '')
+
+    if projeto.linkFotos.__contains__('facebook'):
+        projeto.facebookAlbum = projeto.linkFotos
+        projeto.linkFotos = projeto.linkFotos.replace('facebook.com', 'fb.com')
+        projeto.linkFotos = projeto.linkFotos.replace('www.', '')
+
     try:
         previous = projeto.get_previous_by_dataInicio()
     except Projeto.DoesNotExist:
