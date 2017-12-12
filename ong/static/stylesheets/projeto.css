@@ -74,3 +74,13 @@
     border-color: #587129;
     color: #ffffff;
 }
+
+#p-projeto .fb-photos {
+    margin: auto;
+    width: 50%;
+}
+
+#p-projeto .yt-container {
+    margin: auto;
+    width: 50%;
+}
