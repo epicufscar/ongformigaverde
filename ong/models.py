@@ -325,7 +325,7 @@ class InformacoesGeraisONG(models.Model):
     visao = models.TextField(blank=False, verbose_name='visão')
     valores = models.TextField(blank=False, verbose_name='valores')
     principios = models.TextField(blank=False, verbose_name='principios')
-    proverbio = models.TextField(blank=False, verbose_name='provérbio', help_text='Frase que será mostrada na página inicial')
+    proverbio = models.TextField(blank=False, max_length=100, verbose_name='provérbio', help_text='Frase que será mostrada na página inicial')
     nome = models.CharField(blank=False, max_length=100, verbose_name='Nome', help_text='Nome da ONG, que aparecerá em todos os lugares')
     endereco = models.CharField(blank=False, max_length=200, verbose_name='endereco')
     email = models.CharField(blank=False, max_length=100, verbose_name='email')
@@ -350,7 +350,7 @@ class InformacoesGeraisONG(models.Model):
     vision = models.TextField(blank=False, verbose_name='visão, em inglês')
     values = models.TextField(blank=False, verbose_name='valores, em inglês')
     principles = models.TextField(blank=False, verbose_name='principios, em inglês')
-    proverb = models.TextField(blank=False, verbose_name='provérbio, em inglês', help_text='Frase que será mostrada na página inicial')
+    proverb = models.TextField(blank=False, max_length=100, verbose_name='provérbio, em inglês', help_text='Frase que será mostrada na página inicial')
 
 
 def image_to_b64(image_file):
