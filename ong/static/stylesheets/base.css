@@ -26,6 +26,14 @@ body {
 
 #outter-doacoes {
     background-color: #f1c232ff;
+    float: left;
+    width: 100vw;
+}
+
+#outter-fale-conosco {
+    float: left;
+    width: 100vw;
+    background-color: #fff;
 }
 
 .no-padding {
@@ -37,6 +45,52 @@ body {
     margin-top: 110px;
 }
 
+.yt-container {
+    position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.yt-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.btn-galery {
+    width: 100% !important;
+    padding: 15px;
+    background-color: #5b80b2;
+    color: #fff !important;
+    border-radius: 5px 5px 0 0;
+}
+
+.btn-galery:hover {
+    background-color: #415f9a;
+    color: #fff !important;
+}
+
+.nav-bottom a,
+.nav-bottom a:visited {
+    color: #000;
+}
+
+.nav-bottom a:hover,
+.nav-bottom a:active {
+    color: #e06666ff;
+}
+
+.nav-bottom {
+    font-weight: 600;
+    padding: 15px 30px 25px;
+    min-height: 60px;
+    border-top: 2px solid #000;
+    background-color: #f2f2f2;
+    margin-bottom: 0;
+}
 
 @media (min-width: 992px) {
     #em-numeros, #visao {

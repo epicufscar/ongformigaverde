@@ -2,8 +2,7 @@
 <section id="projetos">
     <div class="content">
         <h4>NOSSOS PROJETOS</h4>
-        {% if projetos %}
-        <div class="owl-carousel owl-theme">
+        <div id="owl-carousel" class="owl-carousel owl-theme">
         {% for projeto in projetos %}
             <article class="card">
                 <a href="{% url "projeto" id=projeto.id %}" title="">
@@ -35,9 +34,8 @@
 
         <hr>
         <div class="float-right">
-            <a href="{% url "projetos" %}">CONHEÇA TODOS OS PROJETOS</a>
+            <b><a href="{% url "projetos" %}">CONHEÇA TODOS OS PROJETOS</a></b>
         </div>
-        {% endif %}
     </div>
 </section>
 

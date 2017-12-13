@@ -1,4 +1,4 @@
-$('.owl-carousel').owlCarousel({
+$('#owl-carousel').owlCarousel({
     loop: false,
     margin: 15,
     nav: false,
@@ -23,4 +23,15 @@ $('.owl-carousel').owlCarousel({
             items: 5
         }
     }
+});
+
+$('#owl-depoimentos').owlCarousel({
+    loop: true,
+    margin: 15,
+    nav: false,
+    responsiveClass: true,
+    items: 1,
+    autoplay: true,
+    autoplayTimeout: 10000,
+    autoplayHoverPause: true
 });
