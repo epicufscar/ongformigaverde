@@ -1,0 +1,181 @@
+header {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+header a, header a:visited {
+    color: #4f4f4f;
+}
+
+header a:hover, header a:active {
+    color: #e06666ff;
+}
+
+header .nav-topper {
+    height: 50px;
+    padding: 15px 25px 5px;
+    background-color: #f3eaea;
+    text-align: right;
+    color: #4f4f4f;
+}
+
+header .nav-topper i {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 7px 0;
+    width: 40px;
+    text-align: center;
+    margin-top: -5px;
+}
+
+header .nav-topper i:hover {
+    color: #fff;
+    background-color: #e06666ff;
+}
+
+header .nav-topper span {
+    float: right;
+    margin-left: 25px;
+}
+
+header nav {
+    height: 60px;
+    background-color: #264e2cff !important;
+}
+
+header nav > div {
+    margin-left: 180px;
+}
+
+header .dropdown .dropdown-menu {
+    background-color: #f3f3f3;
+    padding: 10px 15px;
+}
+
+header .btn-donation:hover,
+header .btn-donation:active,
+header .nav-item .btn-ddown:hover,
+header .nav-item .btn-ddown:active {
+    background-color: #e06666ff !important;
+    color: #fff !important;
+}
+
+header .nav-item .show .btn-ddown {
+    background-color: #e06666ff !important;
+}
+
+header button {
+    height: 60px;
+    text-align: center;
+    border: 0;
+    border-right: 1px dotted #ccc !important;
+    cursor: pointer;
+    padding: 15px 10px 7px;
+    font-size: 1.3em;
+    font-family: 'Roboto Condensed', sans-serif !important;
+}
+
+header .nav-item .btn-ddown {
+    color: #fff;
+    background-color: #264e2cff;
+    width: 175px;
+}
+
+header .nav-item a {
+    height: 40px;
+    padding: 10px;
+    font-weight: 600;
+    display: block;
+}
+
+header .dropdown div {
+    min-width: 200px;
+}
+
+header .dropdown .row {
+    width: 400px;
+}
+
+header .nav-img {
+    position: absolute;
+    height: 150px;
+    left: 50px;
+    top: -50px;
+    z-index: 100;
+}
+
+header .btn-donation {
+    background-color: #f1c232ff !important;
+    color: #4f4f4f !important;
+    position: absolute;
+    width: 25%;
+    right: 0;
+}
+
+header .navbar-toggler {
+    color: #fff !important;
+    height: 50px;
+    padding: 0 17px;
+    border: 1px dotted #ccc !important;
+    position: absolute;
+    top: 5px;
+    right: 25px;
+}
+
+@media (max-width: 62em) {
+    header .nav-img {
+        position: absolute;
+        height: 90px;
+        left: 25px;
+        top: -15px;
+    }
+
+    header .nav-topper {
+        height: 55px;
+        text-align: center;
+    }
+
+    header .nav-topper span {
+        float: none;
+        margin: 0 15px 0 0;
+    }
+
+    header .nav-item .btn-ddown {
+        width: 100%;
+    }
+
+    header .dropdown div {
+        max-width: 100%;
+    }
+
+    header .btn-donation {
+        position: relative;
+        top: 20px;
+        width: 100%;
+    }
+
+    header .navbar-nav {
+        position: absolute;
+        left: 0;
+        top: 61px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 22em) {
+    header .nav-topper {
+        height: 50px;
+    }
+
+    header .nav-topper i {
+        display: none;
+    }
+
+    header .nav-topper span {
+        float: right;
+        margin: 0;
+    }
+}

@@ -1,3 +1,91 @@
 #projetos {
+    padding: 20px 30px 50px;
+}
+
+#projetos a {
+    color: #185682;
+    text-decoration: none;
+}
+
+#projetos a:hover {
+    color: #103753;
+}
+
+#projetos .card {
+    height: 430px;
+    background-color: #d9ead3;
+}
+
+#projetos .card:hover {
+    -webkit-box-shadow: 0 0 10px -4px rgba(0,0,0,1);
+    -moz-box-shadow: 0 0 10px -4px rgba(0,0,0,1);
+    box-shadow: 0 0 10px -4px rgba(0,0,0,1);
+}
+
+#projetos .card-img-top {
+    width: 100%;
+    padding: 15px 0 0;
+    object-fit: cover;
+    height: 175px;
+}
+
+#projetos .card-text {
+    font-size: 0.9em;
+}
+
+#projetos .btn {
+    width: 125px;
+    font-size: 0.9em;
+    padding: 7px;
+    background-color: #82a82a;
+    border-color: #2a9134;
+    margin-top: 7px;
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 62.5px);
+}
+
+#projetos .btn:hover {
+    background-color: #6b8a23;
+    border-color: #587129;
+    color: #ffffff;
+}
+
+#projetos .btn-donation {
+    color: #4f4f4f;
+    background-color: #f1c232;
+    border-color: #ff9914;
+    bottom: 50px;
+}
+
+#projetos .btn-donation:hover {
+    background-color: #ffa229;
+    border-color: #e89426;
+    color: #4f4f4f;
+}
+
+#projetos .caption {
     padding: 15px;
+    hyphens: auto;
+}
+
+#projetos .float-right a {
+    text-decoration: none;
+    color: #4f4f4f;
+}
+
+#projetos .float-right a:hover {
+    color: #333333;
+}
+
+@media (max-width: 48em) {
+    #projetos {
+        text-align: center;
+    }
+
+    #projetos .card {
+        max-width: 300px;
+        margin-left: calc(50% - 150px);
+    }
 }

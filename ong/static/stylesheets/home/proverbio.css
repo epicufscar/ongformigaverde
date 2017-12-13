@@ -1,0 +1,15 @@
+#visao {
+    color: #fff;
+    background-color: #434343ff;
+    padding: 25px 15px 25px 30px;
+    text-align: center;
+    font-family: 'Bad Script', cursive;
+    font-size: 1.5em;
+    height: 160px;
+}
+
+@media (max-width: 48em) {
+    #visao {
+        height: auto;
+    }
+}

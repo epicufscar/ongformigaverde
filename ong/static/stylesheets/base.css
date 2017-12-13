@@ -1,32 +1,223 @@
 @import url('./home/doacoes.css');
 @import url('./home/em_numeros.css');
-@import url('./home/visao.css');
+@import url('./home/proverbio.css');
 @import url('./home/noticias.css');
 @import url('./home/projetos.css');
 @import url('./home/fale_conosco.css');
 @import url('./home/carrousel.css');
+@import url('./_header.css');
+@import url('./_footer.css');
+@import url('./noticia.css');
+@import url('./noticias.css');
+@import url('./projeto.css');
+@import url('./projetos.css');
 
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,600');
+@import url('https://fonts.googleapis.com/css?family=Bad+Script');
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif !important;
+    overflow-x: hidden !important;
 }
 
-header {
-    position: fixed;
-    top: 0; left: 0;
-    height: 60px;
-    width: 100%;
-    background-color: #f3eaeac3;
-    padding: 10px 15px;
+#home > .row {
+    width: 100vw;
 }
 
-footer {
-    color: #fff;
-    background-color: #434343ff;
+#outter-doacoes {
+    background-color: #f1c232ff;
+    float: left;
+    width: 100vw;
+}
+
+#outter-fale-conosco {
+    float: left;
+    width: 100vw;
+    background-color: #fff;
+}
+
+.no-padding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+.page-top {
+    margin-top: 110px;
+}
+
+.yt-container {
+    position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.yt-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.btn-galery {
+    width: 100% !important;
     padding: 15px;
+    background-color: #5b80b2;
+    color: #fff !important;
+    border-radius: 5px 5px 0 0;
 }
 
-#home {
-    margin-top: 60px;
+.btn-galery:hover {
+    background-color: #415f9a;
+    color: #fff !important;
 }
+
+.nav-bottom a,
+.nav-bottom a:visited {
+    color: #000;
+}
+
+.nav-bottom a:hover,
+.nav-bottom a:active {
+    color: #e06666ff;
+}
+
+.nav-bottom {
+    font-weight: 600;
+    padding: 15px 30px 25px;
+    min-height: 60px;
+    border-top: 2px solid #000;
+    background-color: #f2f2f2;
+    margin-bottom: 0;
+}
+
+@media (min-width: 992px) {
+    #em-numeros, #visao {
+        padding-left: 5%;
+    }
+
+    #noticias {
+        float: left;
+        max-width: 100%;
+    }
+
+    #projetos {
+        width: 100%;
+        height: 600px;
+    }
+
+    #projetos .content {
+        float: right;
+        max-width: 98%;
+    }
+}
+
+@media (min-width: 1200px) {
+    #em-numeros, #visao {
+        padding-left: 7%;
+    }
+
+    #projetos .content {
+        max-width: 95%;
+    }
+}
+
+@media (min-width: 1300px) {
+    #em-numeros, #visao {
+        padding-left: 10%;
+    }
+}
+
+@media (min-width: 1400px) {
+    header .navbar {
+        padding-left: 5%;
+    }
+
+    header .nav-topper {
+        padding-right: 5%;
+    }
+
+    header .btn-donation {
+        right: 5%;
+    }
+
+    header .nav-img {
+        left: calc(5% + 40px);
+    }
+
+    #noticias {
+        max-width: 90%;
+    }
+
+    #projetos .content {
+        max-width: 92%;
+    }
+}
+
+@media (min-width: 1600px) {
+    header .navbar {
+        padding-left: 7.5%;
+    }
+
+    header .nav-topper {
+        padding-right: 7.5%;
+    }
+
+    header .btn-donation {
+        right: 7.5%;
+    }
+
+    header .nav-img {
+        left: calc(7.5% + 40px);
+    }
+
+    #em-numeros, #visao {
+        padding-left: 15%;
+    }
+
+    #noticias {
+        max-width: 85%;
+    }
+
+    #projetos .content {
+        max-width: 85%;
+    }
+}
+
+@media (min-width: 1800px) {
+    header .navbar {
+        padding-left: 10%;
+    }
+
+    header .nav-topper {
+        padding-right: 10%;
+    }
+
+    header .btn-donation {
+        right: 10%;
+    }
+
+    header .nav-img {
+        left: calc(10% + 40px);
+    }
+
+    #em-numeros, #visao {
+        padding-left: 20%;
+    }
+
+    #noticias {
+        max-width: 80%;
+    }
+
+    #projetos .content {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 1900px) {
+    #projetos .content {
+        max-width: 78%;
+    }
+}
+
