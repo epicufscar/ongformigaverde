@@ -1,0 +1,86 @@
+#p-projeto {
+    background-color: #ffffff;
+}
+
+#p-projeto .card {
+    background-color: #d9ead3;
+    margin: 15px;
+}
+
+#p-projeto .card:hover {
+    -webkit-box-shadow: 0px 0px 10px -4px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 10px -4px rgba(0,0,0,1);
+    box-shadow: 0px 0px 10px -4px rgba(0,0,0,1);
+}
+
+#p-projeto .img-top {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: 50% 20%;
+}
+
+#p-projeto .project-description {
+    padding: 15px;
+}
+
+#p-projeto .project-description div {
+    color: #4f4f4f;
+}
+
+#p-projeto .caption {
+    color: #185682;
+    padding: 15px;
+    hyphens: auto;
+}
+
+#p-projeto .card-img-top {
+    width: 100%;
+    padding: 15px 0 0;
+    object-fit: cover;
+    height: 175px;
+}
+
+#p-projeto .card-text {
+    color: #000;
+}
+
+#p-projeto .btn {
+    width: 125px;
+    font-size: 0.9em;
+    padding: 7px;
+    background-color: #82a82a;
+    border-color: #2a9134;
+    margin-top: 20px;
+    color: #fff;
+    position: relative;
+    bottom: 10px;
+}
+
+#p-projeto .btn-left {
+    margin-left: 250px;
+}
+
+#p-projeto .btn-right {
+    margin-right: 250px;
+}
+
+#p-projeto .disabled {
+    font-family: "Roboto Condensed";
+}
+
+#p-projeto .btn:hover {
+    background-color: #6b8a23;
+    border-color: #587129;
+    color: #ffffff;
+}
+
+#p-projeto .fb-photos {
+    margin: auto;
+    width: 50%;
+}
+
+#p-projeto .yt-container {
+    margin: auto;
+    width: 50%;
+}
