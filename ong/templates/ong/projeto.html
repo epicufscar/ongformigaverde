@@ -1,0 +1,111 @@
+{% extends 'ong/base.html' %}
+{% load staticfiles %}
+
+{% block title %} {{ projeto.nome }} {% endblock title %}
+
+{% block body %}
+    <main id="p-projeto" class="page-top">
+        <div>
+            {% if projeto.possuiPhoto %}
+                <img class="img-top" src="data:image/png;base64,{{ projeto.photo64 }}">
+            {% else %}
+                <img class="img-top" src="{% static "images/formiga.jpg" %}"
+            {% endif %}
+        </div>
+        <div class="project-description">
+            <h3 class="caption text-center"> {{ projeto.nome }} </h3>
+            <div>
+                {{ projeto.descricao }}
+            </div>
+        </div>
+    
+
+        <div class="container">
+            <div id="projeto-midias">
+                <div>
+                    {% if projeto.isYoutube %}
+                        <div class="yt-container">
+                            <iframe width="560"
+                                    height="349"
+                                    src="{{ projeto.youtubeEmbed }}?rel=0&hd=1"
+                                    frameborder="0" allowfullscreen>
+                            </iframe>
+                        </div>
+                    {% endif %}
+
+                    {% if projeto.isFacebook %}
+                        <div class="fb-video"
+                             data-href="{{ projeto.facebookEmbed }}"
+                             data-widht="auto"
+                             data-show-text="true">
+                            <blockquote cite="{{ projeto.facebookEmbed }}"
+                                        class="fb-xfbml-parse-ignore">
+                                <a href="{{ projeto.facebookEmbed }}">{{ projeto.nome }}</a>
+                                <p>{{ projeto.nome }}</p>
+                                Postado por: <a href="{{ informacoes_ong.facebook }}">{{ informacoes_ong.nome }}</a>
+                            </blockquote>
+                        </div>
+                    {% endif %}
+                </div>
+                {% if projeto.linkFotos %}
+                    <div id="photos" class="fb-photos text-center">
+                        <div class="fb-post"
+                             data-href="{{ projeto.facebookAlbum }}"
+                             data-show-text="true"
+                             data-width="auto"
+                             data-adapt-container-width="true">
+
+                            <blockquote cite="{{ projeto.facebookAlbum }}"
+                                        class="fb-xfbml-parse-ignore">
+                                <a href="{{ projeto.facebookAlbum }}">{{ projeto.nome }}</a>
+                                <p>{{ projeto.nome }}</p>
+                                Postado por: <a href="{{ informacoes_ong.facebook }}">{{ informacoes_ong.nome }}</a>
+                            </blockquote>
+                        </div>
+                        <a class="btn btn-galery" href="{{ projeto.linkFotos }}" target="_blank">Galeria de Fotos</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if depoimentos %}
+            <hr>
+
+            <h3 class="caption text-center">DEPOIMENTOS</h3>
+            <div class="owl-carousel owl-theme">
+                {% for depo in depoimentos %}
+                    <article class="card">
+                        {% if depo.possuiPhoto %}
+                            <img class="card-img-top" src="data:image/png;base64,{{ depo.photo64 }}"/>
+                        {% else %}
+                            <img class="card-img-top" src="{% static "images/formiga.jpg" %}">
+                        {% endif %}
+                        <div class="caption text-center">
+                            <h4 class="card-title">{{ depo.nome }}, {{ depo.idade }} anos</h4>
+                            <p class="flex-text text-muted card-text">"{{ depo.depoimento }}"</p>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <hr>
+
+        <div class="d-flex justify-content-between">
+            {% if anterior.id %}
+                <a href="{% url "projeto" id=anterior.id %}" class="btn btn-left">ANTERIOR</a>
+            {% else %}
+                <button type="button" class="btn btn-left disabled"> ANTERIOR </button>
+            {% endif %}
+            <a href="{% url "projetos" %}" class="btn btn-middle">VOLTAR</a>
+            {% if proximo.id %}
+                <a href="{% url "projeto" id=proximo.id %}" class="btn btn-right">PRÓXIMO</a>
+            {% else %}
+                <button type="button" class="btn btn-right disabled"> PRÓXIMO </button>
+            {% endif %}
+        </div>
+
+    </main>
+{% endblock body %}
+
+

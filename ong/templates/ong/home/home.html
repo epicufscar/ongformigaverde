@@ -6,17 +6,24 @@
 {% block body %}
     <main id="home">
         {% include 'ong/home/_carrousel.html' %}
-        <section class="row">
-            <div class="col-md-9 col-sm-12">
+        <div class="row">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-sm-12 no-padding">
                 {% include 'ong/home/_projetos.html' %}
                 {% include 'ong/home/_em_numeros.html' %}
-                {% include 'ong/home/_visao.html' %}
+                {% include 'ong/home/_proverbio.html' %}
             </div>
-            <div class="col-md-3 col-sm-12">
+            <div class="col-xl-5 col-lg-4 col-md-3 col-sm-12 no-padding">
                 {% include 'ong/home/_noticias.html' %}
             </div>
-        </section>
-        {% include 'ong/home/_doacoes.html' %}
-        {% include 'ong/home/_fale_conosco.html' %}
+        </div>
+        <div id="outter-doacoes">{% include 'ong/home/_doacoes.html' %}</div>
+        <div id="outter-fale-conosco">{% include 'ong/home/_fale_conosco.html' %}</div>
     </main>
 {% endblock body %}
+
+{% block scripts %}
+    <script src="../../../static/javascripts/home/projetos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
+    <script src="{% static "javascripts/home/forms-validation.js" %}></script>
+{% endblock scripts %}

@@ -1,4 +1,87 @@
 #doacoes {
+    color: #000;
     background-color: #f1c232ff;
-    padding: 15px;
+    padding: 20px 15px;
+}
+
+#doacoes .item {
+    padding: 15px 15px 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+#doacoes img {
+    max-height: 45px;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    left: 0;
+    object-fit: contain;
+
+}
+
+#doacoes .item .card-title {
+    padding: 7px 0;
+    border-bottom: 1px solid #000;
+}
+
+#doacoes .item .card-text {
+    padding: 10px;
+}
+
+#doacoes .btn-fale-conosco {
+    background-color: #e06666ff;
+    padding: 10px;
+    color: #fff;
+}
+
+#doacoes .btn-fale-conosco:hover {
+    background-color: #da9738;
+    border: 1px solid #da6928;
+}
+
+#doacoes .btn-entenda-doacao:hover {
+    background-color: #199bd7;
+}
+
+#doacoes .btn-entenda-doacao {
+    padding: 5px;
+    background-color: #000;
+    color: #fff;
+    height: 32px;
+}
+
+#doacoes .btn,
+#doacoes .btn-entenda-doacao {
+    position: absolute;
+    bottom: 10px;
+    width: 60%;
+    left: calc(50% - 30%);
+}
+
+#doacoes .btn-entenda-doacao::after {
+    content: 'Entenda como usamos suas doações';
+}
+
+@media (max-width: 56em) {
+    #doacoes .btn-entenda-doacao::after {
+        content: 'Receita de doações';
+    }
+}
+
+@media (max-width: 62em) {
+    #doacoes .btn,
+    #doacoes img {
+        position: initial;
+    }
+
+    #doacoes .item {
+        padding-bottom: 5px;
+    }
+
+    #doacoes .row div {
+        margin-bottom: 10px;
+    }
 }

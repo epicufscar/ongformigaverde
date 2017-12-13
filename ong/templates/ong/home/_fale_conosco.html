@@ -1,3 +1,38 @@
-<section id="fale-conosco">
-    FALE CONOSCO
+<section id="fale-conosco" class="container">
+	<div class="text-center"><h2>FALE CONOSCO</h2></div>
+	<div class="row">
+		<div class="fc-left col-md-6 text-center">
+			<iframe id="gmap_canvas" src="https://maps.google.com/maps?q=ong formiga verde&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <div class="contacts">
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <span>{{ informacoes_ong.telefone }}</span>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <span>{{ informacoes_ong.email }}</span>
+                </div>
+            </div>
+		</div>
+		<div class="fc-right col-md-6">
+			<form id="contact-form" method="POST">
+				{% csrf_token %}
+				<fieldset>
+					<legend>Parcerias, doações, sugestões ou dúvidas</legend>
+					<input type="text" class="form-control" name="name" placeholder="Nome" />
+					<input type="text" class="form-control" name="email" placeholder="Email" />
+					<input type="text" class="form-control" name="subject" placeholder="Assunto" />
+					<textarea class="form-control" name="message" placeholder="Mensagem"></textarea>
+				</fieldset>
+				<button type="submit" class="btn btn-success">Enviar</button>
+			</form>
+
+            <!-- FEEDBACK MESSAGE -->
+            {% if email_success == True %}
+            	<script type="text/javascript">alert("MENSAGEM ENVIADA COM SUCESSO. AGUARDE NOSSO RETORNO!")</script>
+            {% elif email_success == False %}
+            	<script type="text/javascript">alert("SUA MENSAGEM FALHOU! POR FAVOR, TENTE NOVAMENTE.")</script>
+            {% endif %}
+		</div>
+	</div>
 </section>
