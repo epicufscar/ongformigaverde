@@ -26,13 +26,11 @@ body {
 
 #outter-doacoes {
     background-color: #f1c232ff;
-    float: left;
-    width: 100vw;
+    width: 100%;
 }
 
 #outter-fale-conosco {
-    float: left;
-    width: 100vw;
+    width: 100%;
     background-color: #fff;
 }
 
