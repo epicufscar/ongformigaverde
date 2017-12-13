@@ -5,6 +5,8 @@
 
 #p-projetos #projetos {
     padding: unset;
+    width: unset;
+    height: unset;
 }
 
 #p-projetos .card {
