@@ -6,7 +6,7 @@
 {% block body %}
     <main id="home">
         {% include 'ong/home/_carrousel.html' %}
-        <div class="row">
+        <div class="row no-padding">
             <div class="col-xl-7 col-lg-8 col-md-9 col-sm-12 no-padding">
                 {% include 'ong/home/_projetos.html' %}
                 {% include 'ong/home/_em_numeros.html' %}
@@ -16,7 +16,7 @@
                 {% include 'ong/home/_noticias.html' %}
             </div>
         </div>
-        <div class="row">
+        <div>
             <div id="outter-doacoes">{% include 'ong/home/_doacoes.html' %}</div>
             <div id="outter-fale-conosco">{% include 'ong/home/_fale_conosco.html' %}</div>
         </div>
@@ -26,5 +26,5 @@
 {% block scripts %}    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
-    <script src="{% static "javascripts/home/forms-validation.js" %}></script>
+    <script src="{% static "javascripts/home/forms-validation.js" %}"></script>
 {% endblock scripts %}
