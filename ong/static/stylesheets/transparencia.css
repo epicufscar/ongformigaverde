@@ -1,9 +1,17 @@
 #p-transparencia .highcharts-credits {
-    font-family: 'Roboto Condensed', sans-serif !important;
     display: none !important;
 }
 
 #p-transparencia .chart-container {
     padding-top: 2em;
     background-color: #f3eaea;
+}
+
+#p-transparencia .highcharts-container,
+#p-transparencia .highcharts-root {
+    font-family: 'Roboto Condensed', sans-serif !important;
+}
+
+#p-transparencia .highcharts-label text {
+    font-size: 1.3em !important;
 }

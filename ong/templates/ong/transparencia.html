@@ -22,12 +22,10 @@
            },
            title: {
               style: {
-                 fontSize: '2em',
+                 fontSize: '2.5em',
               }
            }
         };
-
-        // Apply the theme
         Highcharts.setOptions(Highcharts.theme);
 
         Highcharts.chart('chart', {
@@ -45,10 +43,10 @@
                     'Valor: R$ <b>{point.z}</b><br/>'
             },
             series: [{
-                minPointSize: 10,
+                minPointSize: 1,
                 innerSize: '30%',
                 zMin: 0,
-                name: 'countries',
+                name: 'Aplicação das Doações',
                 data: [{
                     name: 'Manutenção administrativa da ONG',
                     y: {{ chart.p1_quantidade|unlocalize }},
