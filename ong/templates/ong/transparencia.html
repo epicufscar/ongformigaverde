@@ -1,10 +1,84 @@
 {% extends 'ong/base.html' %}
 {% load staticfiles %}
+{% load l10n %}
 
 {% block title %}Transparência{% endblock title %}
 
 {% block body %}
     <main id="p-transparencia" class="page-top">
-
+        <section class="chart-container"><div id="chart"></div></section>
     </main>
 {% endblock body %}
+
+{% block scripts %}
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+    <script type="text/javascript">
+        Highcharts.theme = {
+           colors: ['#0e8787', '#006666', '#1a651a', '#009933', '#336600',
+              '#003300', '#669999'],
+           chart: {
+              backgroundColor: null
+           },
+           title: {
+              style: {
+                 fontSize: '2em',
+              }
+           }
+        };
+
+        // Apply the theme
+        Highcharts.setOptions(Highcharts.theme);
+
+        Highcharts.chart('chart', {
+            chart: {
+                type: 'pie'
+            },
+            title: {
+                text: 'Como utilizamos o dinheiro das doações'
+            },
+            tooltip: {
+                headerFormat: '',
+                pointFormat:
+                    '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
+                    'Quantidade: <b>{point.y}</b> doações<br/>' +
+                    'Valor: R$ <b>{point.z}</b><br/>'
+            },
+            series: [{
+                minPointSize: 10,
+                innerSize: '30%',
+                zMin: 0,
+                name: 'countries',
+                data: [{
+                    name: 'Manutenção administrativa da ONG',
+                    y: {{ chart.p1_quantidade|unlocalize }},
+                    z: {{ chart.p1_valor|unlocalize }}
+                }, {
+                    name: 'Aplicação em projetos existentes',
+                    y: {{ chart.p2_quantidade|unlocalize }},
+                    z: {{ chart.p2_valor|unlocalize }}
+                }, {
+                    name: 'Criação de novos projetos',
+                    y: {{ chart.p3_quantidade|unlocalize }},
+                    z: {{ chart.p3_valor|unlocalize }}
+                }, {
+                    name: 'Aquisição de recursos e materiais',
+                    y: {{ chart.p4_quantidade|unlocalize }},
+                    z: {{ chart.p4_valor|unlocalize }}
+                }, {
+                    name: 'Treinamentos para membros da equipe',
+                    y: {{ chart.p5_quantidade|unlocalize }},
+                    z: {{ chart.p5_valor|unlocalize }}
+                }, {
+                    name: 'Eventos e comemorações',
+                    y: {{ chart.p6_quantidade|unlocalize }},
+                    z: {{ chart.p6_valor|unlocalize }}
+                }, {
+                    name: 'Outras finalidades',
+                    y: {{ chart.p7_quantidade|unlocalize }},
+                    z: {{ chart.p7_valor|unlocalize }}
+                }]
+            }]
+        });
+    </script>
+{% endblock scripts %}

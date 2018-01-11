@@ -70,7 +70,69 @@ def doacoes(request):
 
 
 def transparencia(request):
-    data = {}
+    p1_valor = 0
+    p2_valor = 0
+    p3_valor = 0
+    p4_valor = 0
+    p5_valor = 0
+    p6_valor = 0
+    p7_valor = 0
+
+    p1_quantidade = 0
+    p2_quantidade = 0
+    p3_quantidade = 0
+    p4_quantidade = 0
+    p5_quantidade = 0
+    p6_quantidade = 0
+    p7_quantidade = 0
+
+    for receita in ReceitaDeDoacoes.objects.all():
+        if receita.utilizacao == 'P1':
+            p1_valor += receita.valor
+            p1_quantidade += 1
+
+        if receita.utilizacao == 'P2':
+            p2_valor += receita.valor
+            p2_quantidade += 1
+
+        if receita.utilizacao == 'P3':
+            p3_valor += receita.valor
+            p3_quantidade += 1
+
+        if receita.utilizacao == 'P4':
+            p4_valor += receita.valor
+            p4_quantidade += 1
+
+        if receita.utilizacao == 'P5':
+            p5_valor += receita.valor
+            p5_quantidade += 1
+
+        if receita.utilizacao == 'P6':
+            p6_valor += receita.valor
+            p6_quantidade += 1
+
+        if receita.utilizacao == 'P7':
+            p7_valor += receita.valor
+            p7_quantidade += 1
+
+    data = {
+        'chart': {
+            'p1_valor': p1_valor,
+            'p1_quantidade': p1_quantidade,
+            'p2_valor': p2_valor,
+            'p2_quantidade': p2_quantidade,
+            'p3_valor': p3_valor,
+            'p3_quantidade': p3_quantidade,
+            'p4_valor': p4_valor,
+            'p4_quantidade': p4_quantidade,
+            'p5_valor': p5_valor,
+            'p5_quantidade': p5_quantidade,
+            'p6_valor': p6_valor,
+            'p6_quantidade': p6_quantidade,
+            'p7_valor': p7_valor,
+            'p7_quantidade': p7_quantidade
+        }
+    }
     return render(request, 'ong/transparencia.html', data)
 
 
@@ -78,7 +140,6 @@ def noticias(request):
     data = {
         'noticias': Noticia.objects.all().order_by('-data')
     }
-
     return render(request, 'ong/noticias.html', data)
 
 
