@@ -4,15 +4,42 @@
 
 {% block title %}Transparência{% endblock title %}
 
+{% block styles %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.min.css" />
+{% endblock styles %}
+
 {% block body %}
     <main id="p-transparencia" class="page-top">
+        <section class="container">
+            <form id="period-form" method="POST">
+                {% csrf_token %}
+                <div class="input-daterange input-group">
+                    <input id="period-start" name="period-start" type="text" class="input-lg form-control" value="{{ periodStart }}"/>
+                    <span class="input-group-addon"> &nbsp; > &nbsp; </span>
+                    <input id="period-end" name="period-end" type="text" class="input-lg form-control" value="{{ periodEnd }}"/>
+                    <button type="submit" class="btn btn-filter-period">FILTRAR</button>
+                </div>
+            </form>
+        </section>
         <section class="chart-container"><div id="chart"></div></section>
     </main>
 {% endblock body %}
 
 {% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.pt-BR.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+
+    <script>
+    $('.input-daterange').datepicker({
+        format: "dd/mm/yyyy",
+        language: "pt-BR",
+        autoclose: true,
+        todayHighlight: true
+    });
+    </script>
+
     <script type="text/javascript">
         Highcharts.theme = {
            colors: ['#0e8787', '#006666', '#1a651a', '#009933', '#336600',

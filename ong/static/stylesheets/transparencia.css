@@ -1,10 +1,17 @@
+#p-transparencia {
+    padding-top: 45px;
+}
+
 #p-transparencia .highcharts-credits {
     display: none !important;
 }
 
 #p-transparencia .chart-container {
-    padding-top: 2em;
+    padding: 2em 0;
     background-color: #f3eaea;
+    border-top: 1px solid #264e2cff;
+    position: relative;
+    top: -1px
 }
 
 #p-transparencia .highcharts-container,
@@ -14,4 +21,27 @@
 
 #p-transparencia .highcharts-label text {
     font-size: 1.3em !important;
+}
+
+#p-transparencia .input-lg {
+    border-radius: 0;
+    border: 1px solid #264e2cff;
+    font-size: 0.9em;
+}
+
+#p-transparencia .input-group-addon,
+#p-transparencia .btn-filter-period {
+    border-radius: 0;
+    background-color: #264e2cff;
+    color: #fff;
+}
+
+#p-transparencia .btn-filter-period {
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.datepicker {
+    margin-top: 120px !important;
+    border: 1px solid #264e2cff;
 }

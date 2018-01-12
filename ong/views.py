@@ -1,3 +1,5 @@
+from datetime import datetime
+import dateutil.relativedelta
 from django.shortcuts import render
 from django.core.mail import send_mail
 from .models import *
@@ -70,6 +72,19 @@ def doacoes(request):
 
 
 def transparencia(request):
+    periodStart = None
+    periodEnd = None
+
+    if request.method == 'POST':
+        periodStart = request.POST['period-start']
+        periodEnd = request.POST['period-end']
+    else:
+        periodStart = (datetime.now() + dateutil.relativedelta.relativedelta(years=-1)).strftime('%d/%m/%Y')
+        periodEnd = datetime.now().strftime('%d/%m/%Y')
+
+    print(periodStart)
+    print(periodEnd)
+
     p1_valor = 0
     p2_valor = 0
     p3_valor = 0
@@ -87,35 +102,38 @@ def transparencia(request):
     p7_quantidade = 0
 
     for receita in ReceitaDeDoacoes.objects.all():
-        if receita.utilizacao == 'P1':
-            p1_valor += receita.valor
-            p1_quantidade += 1
+        if datetime.strptime(periodStart, '%d/%m/%Y').date() <= receita.data <= datetime.strptime(periodEnd, '%d/%m/%Y').date():
+            if receita.utilizacao == 'P1':
+                p1_valor += receita.valor
+                p1_quantidade += 1
 
-        if receita.utilizacao == 'P2':
-            p2_valor += receita.valor
-            p2_quantidade += 1
+            if receita.utilizacao == 'P2':
+                p2_valor += receita.valor
+                p2_quantidade += 1
 
-        if receita.utilizacao == 'P3':
-            p3_valor += receita.valor
-            p3_quantidade += 1
+            if receita.utilizacao == 'P3':
+                p3_valor += receita.valor
+                p3_quantidade += 1
 
-        if receita.utilizacao == 'P4':
-            p4_valor += receita.valor
-            p4_quantidade += 1
+            if receita.utilizacao == 'P4':
+                p4_valor += receita.valor
+                p4_quantidade += 1
 
-        if receita.utilizacao == 'P5':
-            p5_valor += receita.valor
-            p5_quantidade += 1
+            if receita.utilizacao == 'P5':
+                p5_valor += receita.valor
+                p5_quantidade += 1
 
-        if receita.utilizacao == 'P6':
-            p6_valor += receita.valor
-            p6_quantidade += 1
+            if receita.utilizacao == 'P6':
+                p6_valor += receita.valor
+                p6_quantidade += 1
 
-        if receita.utilizacao == 'P7':
-            p7_valor += receita.valor
-            p7_quantidade += 1
+            if receita.utilizacao == 'P7':
+                p7_valor += receita.valor
+                p7_quantidade += 1
 
     data = {
+        'periodStart': periodStart,
+        'periodEnd': periodEnd,
         'chart': {
             'p1_valor': p1_valor,
             'p1_quantidade': p1_quantidade,
