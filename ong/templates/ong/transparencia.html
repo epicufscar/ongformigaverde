@@ -6,6 +6,7 @@
 
 {% block styles %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 {% endblock styles %}
 
 {% block body %}
@@ -21,7 +22,44 @@
                 </div>
             </form>
         </section>
-        <section class="chart-container"><div id="chart"></div></section>
+
+        {% if receitas %}
+            <section class="chart-container"><div id="chart"></div></section>
+
+            <section class="container container-receitas">
+                <h4 class="receitas-title text-center">Doações do período</h4>
+                <table id="receitas" class="table" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Valor</th>
+                            <th>Utilização</th>
+                            <th>Doador</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for receita in receitas %}
+                            <tr class="receita">
+                                <td class="receita-data">{{ receita.data }}</td>
+                                <td class="receita-valor">R$ {{ receita.valor }}</td>
+                                <td class="receita-utilizacao">{{ receita.utilizacaoT }}</td>
+                                <td class="receita-doador">
+                                    {% if receita.anonimo %}Anônimo
+                                    {% else %} {{ receita.nome }}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </section>
+        {% else %}
+            <section class="chart-container text-center">
+                <h1><i class="fa fa-frown-o"></i></h1>
+                <h3>Não houveram doações no período selecionado.</h3>
+                <a href="{% url 'doacoes' %}" class="btn btn-donation">DOAR AGORA</a>
+            </section>
+        {% endif %}
     </main>
 {% endblock body %}
 
@@ -30,8 +68,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.pt-BR.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
     <script>
+    $('#receitas').DataTable({
+        pageLength: 5,
+        info: false,
+        searching: false,
+        lengthChange: false,
+        pagingType: "numbers"
+    });
+
     $('.input-daterange').datepicker({
         format: "dd/mm/yyyy",
         language: "pt-BR",
@@ -74,35 +121,58 @@
                 innerSize: '30%',
                 zMin: 0,
                 name: 'Aplicação das Doações',
-                data: [{
-                    name: 'Manutenção administrativa da ONG',
-                    y: {{ chart.p1_quantidade|unlocalize }},
-                    z: {{ chart.p1_valor|unlocalize }}
-                }, {
-                    name: 'Aplicação em projetos existentes',
-                    y: {{ chart.p2_quantidade|unlocalize }},
-                    z: {{ chart.p2_valor|unlocalize }}
-                }, {
-                    name: 'Criação de novos projetos',
-                    y: {{ chart.p3_quantidade|unlocalize }},
-                    z: {{ chart.p3_valor|unlocalize }}
-                }, {
-                    name: 'Aquisição de recursos e materiais',
-                    y: {{ chart.p4_quantidade|unlocalize }},
-                    z: {{ chart.p4_valor|unlocalize }}
-                }, {
-                    name: 'Treinamentos para membros da equipe',
-                    y: {{ chart.p5_quantidade|unlocalize }},
-                    z: {{ chart.p5_valor|unlocalize }}
-                }, {
-                    name: 'Eventos e comemorações',
-                    y: {{ chart.p6_quantidade|unlocalize }},
-                    z: {{ chart.p6_valor|unlocalize }}
-                }, {
-                    name: 'Outras finalidades',
-                    y: {{ chart.p7_quantidade|unlocalize }},
-                    z: {{ chart.p7_valor|unlocalize }}
-                }]
+                data: [
+                    {% if chart.p_quantidade.0 > 0 %}
+                        {
+                            name: 'Manutenção administrativa da ONG',
+                            y: {{ chart.p_quantidade.0|unlocalize }},
+                            z: {{ chart.p_valor.0|unlocalize }}
+                        },
+                    {% endif %}
+                    {% if chart.p_quantidade.1 > 0 %}
+                        {
+                            name: 'Aplicação em projetos existentes',
+                            y: {{ chart.p_quantidade.1|unlocalize }},
+                            z: {{ chart.p_valor.1|unlocalize }}
+                        },
+                    {% endif %}
+                    {% if chart.p_quantidade.2 > 0 %}
+                        {
+                            name: 'Criação de novos projetos',
+                            y: {{ chart.p_quantidade.2|unlocalize }},
+                            z: {{ chart.p_valor.2|unlocalize }}
+                        },
+                    {% endif %}
+                    {% if chart.p_quantidade.3 > 0 %}
+                        {
+                            name: 'Aquisição de recursos e materiais',
+                            y: {{ chart.p_quantidade.3|unlocalize }},
+                            z: {{ chart.p_valor.3|unlocalize }}
+                        },
+                    {% endif %}
+                    {% if chart.p_quantidade.4 > 0 %}
+                        {
+                            name: 'Treinamentos para membros da equipe',
+                            y: {{ chart.p_quantidade.4|unlocalize }},
+                            z: {{ chart.p_valor.4|unlocalize }}
+                        },
+                    {% endif %}
+                    {% if chart.p_quantidade.5 > 0 %}
+                        {
+                            name: 'Eventos e comemorações',
+                            y: {{ chart.p_quantidade.6|unlocalize }},
+                            z: {{ chart.p_valor.6|unlocalize }}
+                        },
+                    {% endif %}
+                    {% if chart.p_quantidade.6 > 0 %}
+                        {
+                            name: 'Outras finalidades',
+                            y: {{ chart.p_quantidade.6|unlocalize }},
+                            z: {{ chart.p_valor.6|unlocalize }}
+                        },
+                    {% endif %}
+
+                ]
             }]
         });
     </script>

@@ -82,73 +82,57 @@ def transparencia(request):
         periodStart = (datetime.now() + dateutil.relativedelta.relativedelta(years=-1)).strftime('%d/%m/%Y')
         periodEnd = datetime.now().strftime('%d/%m/%Y')
 
-    print(periodStart)
-    print(periodEnd)
+    p_valor = [0, 0, 0, 0, 0, 0, 0]
+    p_quantidade = [0, 0, 0, 0, 0, 0, 0]
+    receitas = []
 
-    p1_valor = 0
-    p2_valor = 0
-    p3_valor = 0
-    p4_valor = 0
-    p5_valor = 0
-    p6_valor = 0
-    p7_valor = 0
-
-    p1_quantidade = 0
-    p2_quantidade = 0
-    p3_quantidade = 0
-    p4_quantidade = 0
-    p5_quantidade = 0
-    p6_quantidade = 0
-    p7_quantidade = 0
-
-    for receita in ReceitaDeDoacoes.objects.all():
+    for receita in ReceitaDeDoacoes.objects.order_by('-data'):
         if datetime.strptime(periodStart, '%d/%m/%Y').date() <= receita.data <= datetime.strptime(periodEnd, '%d/%m/%Y').date():
             if receita.utilizacao == 'P1':
-                p1_valor += receita.valor
-                p1_quantidade += 1
+                receita.utilizacaoT = 'Manutenção administrativa da ONG'
+                p_valor[0] += receita.valor
+                p_quantidade[0] += 1
 
             if receita.utilizacao == 'P2':
-                p2_valor += receita.valor
-                p2_quantidade += 1
+                receita.utilizacaoT = 'Aplicação em projetos existentes'
+                p_valor[1] += receita.valor
+                p_quantidade[1] += 1
 
             if receita.utilizacao == 'P3':
-                p3_valor += receita.valor
-                p3_quantidade += 1
+                receita.utilizacaoT = 'Criação de novos projetos'
+                p_valor[2] += receita.valor
+                p_quantidade[2] += 1
 
             if receita.utilizacao == 'P4':
-                p4_valor += receita.valor
-                p4_quantidade += 1
+                receita.utilizacaoT = 'Aquisição de recursos e materiais'
+                p_valor[3] += receita.valor
+                p_quantidade[3] += 1
 
             if receita.utilizacao == 'P5':
-                p5_valor += receita.valor
-                p5_quantidade += 1
+                receita.utilizacaoT = 'Treinamentos para membros da equipe'
+                p_valor[4] += receita.valor
+                p_quantidade[4] += 1
 
             if receita.utilizacao == 'P6':
-                p6_valor += receita.valor
-                p6_quantidade += 1
+                receita.utilizacaoT = 'Eventos e comemorações'
+                p_valor[5] += receita.valor
+                p_quantidade[5] += 1
 
             if receita.utilizacao == 'P7':
-                p7_valor += receita.valor
-                p7_quantidade += 1
+                receita.utilizacaoT = 'Outras finalidades'
+                p_valor[6] += receita.valor
+                p_quantidade[6] += 1
+
+            receita.data = receita.data.strftime('%d/%b/%Y')
+            receitas.append(receita)
 
     data = {
+        'receitas': receitas,
         'periodStart': periodStart,
         'periodEnd': periodEnd,
         'chart': {
-            'p1_valor': p1_valor,
-            'p1_quantidade': p1_quantidade,
-            'p2_valor': p2_valor,
-            'p2_quantidade': p2_quantidade,
-            'p3_valor': p3_valor,
-            'p3_quantidade': p3_quantidade,
-            'p4_valor': p4_valor,
-            'p4_quantidade': p4_quantidade,
-            'p5_valor': p5_valor,
-            'p5_quantidade': p5_quantidade,
-            'p6_valor': p6_valor,
-            'p6_quantidade': p6_quantidade,
-            'p7_valor': p7_valor,
-            'p7_quantidade': p7_quantidade
+            'p_valor': p_valor,
+            'p_quantidade': p_quantidade
         }
     }
     return render(request, 'ong/transparencia.html', data)
