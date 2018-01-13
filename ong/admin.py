@@ -73,11 +73,11 @@ class ParceriaAdmin(admin.ModelAdmin):
 
 @register(CampanhaParaDoacoes)
 class CampanhaParaDoacoesAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'projeto', 'dataInicio', 'dataFim',)
+    list_display = ('titulo', 'projeto', 'dataInicio', 'dataFim', 'valorEsperado', 'valorArrecadado')
     search_fields = ('titulo',)
     fieldsets = (
         (None, {
-            'fields': ('titulo', 'descricao', 'link', 'projeto', 'dataInicio', 'dataFim',)
+            'fields': ('titulo', 'descricao', 'valorEsperado', 'link', 'projeto', 'dataInicio', 'dataFim', 'valorArrecadado')
         }),
         ('Em Inglês', {
             'fields': ('title', 'description')

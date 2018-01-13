@@ -171,10 +171,12 @@ class CampanhaParaDoacoes(models.Model):
 
     titulo = models.CharField(blank=False, max_length=100, verbose_name='título da campanha')
     descricao = models.TextField(blank=False, verbose_name='descrição')
+    valorEsperado = models.FloatField(blank=False, verbose_name='valor esperado')
     link = models.URLField(blank=False, verbose_name='link para campanha', help_text='Onde o dinheiro será arrecadado')
     projeto = models.ForeignKey(Projeto, null=True, blank=True, verbose_name='projeto', help_text='Projeto para o qual a campanha foi criada, se aplicável')
     dataInicio = models.DateField(blank=False, verbose_name='data de início da campanha')
     dataFim = models.DateField(blank=True, null=True, verbose_name='data de término da campanha', help_text='Até quando o link fica disponível no site?')
+    valorArrecadado = models.FloatField(blank=True, null=True, verbose_name='valor arrecadado (até o final da campanha)')
     # informacoes que precisam ser traduzidas
     title = models.CharField(blank=True, max_length=100, verbose_name='título, em inglês')
     description = models.TextField(blank=True, verbose_name='descrição, em inglês')
