@@ -67,7 +67,7 @@ header .nav-item .show .btn-ddown {
     background-color: #e06666ff !important;
 }
 
-header button {
+header .navbar button {
     height: 60px;
     text-align: center;
     border: 0;
@@ -123,6 +123,28 @@ header .navbar-toggler {
     position: absolute;
     top: 5px;
     right: 25px;
+}
+
+header .form-language,
+header .btn-language {
+    display: inline-block !important;
+}
+
+header .btn-language {
+    font-family: 'Roboto Condensed', sans-serif !important;
+    background-color: transparent;
+    font-size: 1em;
+    font-weight: normal;
+    text-decoration: underline;
+    text-transform: uppercase;
+    border: 0;
+    color: #4f4f4f;
+    padding: 0 0.5em;
+    cursor: pointer;
+}
+
+header .btn-language:hover {
+    color: #e06666ff;
 }
 
 @media (max-width: 62em) {
