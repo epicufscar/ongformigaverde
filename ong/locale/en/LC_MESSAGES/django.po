@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-13 18:42-0200\n"
+"POT-Creation-Date: 2018-01-13 18:53-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ong/templates/ong/_header.html:40
+#, fuzzy
+#| msgid "Quem Somos"
 msgid "Quem somos"
-msgstr "About us"
+msgstr "About Us"
 
 #: ong/templates/ong/_header.html:45
 msgid "NOSSA HISTÓRIA"
@@ -51,7 +53,7 @@ msgstr "EXCHANGE VISITORS"
 
 #: ong/templates/ong/_header.html:62
 msgid "Parcerias"
-msgstr "Our friends"
+msgstr "Our Partners"
 
 #: ong/templates/ong/_header.html:65
 msgid "COMUNIDADE"
