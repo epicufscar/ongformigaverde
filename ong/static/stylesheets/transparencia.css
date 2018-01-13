@@ -64,13 +64,13 @@
     margin-bottom: 50px;
 }
 
-#p-transparencia .receitas-title {
+#p-transparencia .container-receitas .receitas-heading {
     padding: 0.5em;
     background-color: #264e2cff;
     color: #fff;
 }
 
-#p-transparencia #receitas {
+#p-transparencia .container-receitas #receitas {
     margin-top: -7px !important;
     border-bottom: 1px solid #f2f2f2;
 }
@@ -89,6 +89,41 @@
 }
 
 #p-transparencia #receitas .receita:hover,
-#p-transparencia .dataTables_paginate a:hover {
-    background-color: #f3eaea;
+#p-transparencia .container-receitas .dataTables_paginate a:hover {
+    background-color: #e2f3e4;
+}
+
+#p-transparencia .container-campanhas .campanhas-heading,
+#p-transparencia #campanhas .campanha:hover,
+#p-transparencia .container-campanhas .dataTables_paginate a:hover {
+    background-color: #faefad;
+    color: #000;
+}
+
+
+#p-transparencia .receita-campanhas {
+    background-color: #f9ecc4;
+    padding: 2em 1em 3em;
+}
+
+#p-transparencia .container-campanhas #campanhas {
+    margin-top: -8px !important;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+#p-transparencia .container-campanhas .campanhas-heading {
+    background-color: #d9b973;
+    padding: 0.5em;
+}
+
+#p-transparencia .container-campanhas .table > tbody > tr > td,
+#p-transparencia .container-campanhas .table > thead > tr > th {
+    border-bottom: 1px solid #d9b973;
+}
+
+@media only screen and (max-width: 48em) {
+    #p-transparencia .receita-utilizacao,
+    #p-transparencia .campanha-finalizadoEm {
+        display: none;
+    }
 }

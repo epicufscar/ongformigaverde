@@ -27,14 +27,14 @@
             <section class="chart-container"><div id="chart"></div></section>
 
             <section class="container container-receitas">
-                <h4 class="receitas-title text-center">Doações no mesmo período</h4>
+                <h4 class="receitas-heading text-center">Doações no mesmo período</h4>
                 <table id="receitas" class="table" cellspacing="0" width="100%">
                     <thead>
                         <tr>
-                            <th>Data</th>
-                            <th>Valor</th>
-                            <th>Utilização</th>
-                            <th>Doador</th>
+                            <th class="receita-data">Data</th>
+                            <th class="receita-valor">Valor</th>
+                            <th class="receita-utilizacao">Utilização</th>
+                            <th class="receita-doador">Doador</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,6 +60,38 @@
                 <a href="{% url 'doacoes' %}" class="btn btn-donation">DOAR AGORA</a>
             </section>
         {% endif %}
+
+        <div class="receita-campanhas">
+            {% if campanhas %}
+                <section class="container container-campanhas">
+                    <h4 class="campanhas-heading text-center">Resumo das campanhas de doação</h4>
+                    <table id="campanhas" class="table" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="campanha-titulo">Título</th>
+                                <th class="campanha-finalizadoEm">Finalizada em</th>
+                                <th class="campanha-arrecadado">Valor arrecadado <span style="opacity: .5;">/ Valor esperado</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for campanha in campanhas %}
+                                <tr class="campanha">
+                                    <td class="campanha-titulo">{{ campanha.titulo }}</td>
+                                    {% if campanha.valorArrecadado > 0 %}
+                                        <td class="campanha-finalizadoEm">{{ campanha.dataFim }}</td>
+                                        <td class="campanha-arrecadado">R$ {{ campanha.valorArrecadado }} <span style="opacity: .5;">/ R$ {{ campanha.valorEsperado }}</span></td>
+                                    {% else %}
+                                        <td class="campanha-arrecadado"><i style="opacity: .5">Campanha em andamento...</i></td>
+                                        <td class="campanha-finalizadoEm"></td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </section>
+            {% endif %}
+        </div>
+
     </main>
 {% endblock body %}
 
@@ -71,7 +103,7 @@
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
     <script>
-    $('#receitas').DataTable({
+    $('#receitas, #campanhas').DataTable({
         pageLength: 5,
         info: false,
         searching: false,
@@ -160,8 +192,8 @@
                     {% if chart.p_quantidade.5 > 0 %}
                         {
                             name: 'Eventos e comemorações',
-                            y: {{ chart.p_quantidade.6|unlocalize }},
-                            z: {{ chart.p_valor.6|unlocalize }}
+                            y: {{ chart.p_quantidade.5|unlocalize }},
+                            z: {{ chart.p_valor.5|unlocalize }}
                         },
                     {% endif %}
                     {% if chart.p_quantidade.6 > 0 %}

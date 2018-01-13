@@ -85,6 +85,7 @@ def transparencia(request):
     p_valor = [0, 0, 0, 0, 0, 0, 0]
     p_quantidade = [0, 0, 0, 0, 0, 0, 0]
     receitas = []
+    campanhas = CampanhaParaDoacoes.objects.order_by('-dataFim')
 
     for receita in ReceitaDeDoacoes.objects.order_by('-data'):
         if datetime.strptime(periodStart, '%d/%m/%Y').date() <= receita.data <= datetime.strptime(periodEnd, '%d/%m/%Y').date():
@@ -127,6 +128,7 @@ def transparencia(request):
             receitas.append(receita)
 
     data = {
+        'campanhas': campanhas,
         'receitas': receitas,
         'periodStart': periodStart,
         'periodEnd': periodEnd,
