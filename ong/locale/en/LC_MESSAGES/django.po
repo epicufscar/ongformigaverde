@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-13 18:42-0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ong/templates/ong/_header.html:40
+msgid "Quem somos"
+msgstr "About us"
+
+#: ong/templates/ong/_header.html:45
+msgid "NOSSA HISTÓRIA"
+msgstr "OUR HISTORY"
+
+#: ong/templates/ong/_header.html:46
+msgid "MISSÃO"
+msgstr "MISSION"
+
+#: ong/templates/ong/_header.html:47
+msgid "VISÃO"
+msgstr "VISION"
+
+#: ong/templates/ong/_header.html:48
+msgid "VALORES"
+msgstr "VALUES"
+
+#: ong/templates/ong/_header.html:49
+msgid "PRINCÍPIOS"
+msgstr "PRINCIPLES"
+
+#: ong/templates/ong/_header.html:52
+msgid "EQUIPE"
+msgstr "TEAM"
+
+#: ong/templates/ong/_header.html:53
+msgid "INTERCAMBISTAS"
+msgstr "EXCHANGE VISITORS"
+
+#: ong/templates/ong/_header.html:62
+msgid "Parcerias"
+msgstr "Our friends"
+
+#: ong/templates/ong/_header.html:65
+msgid "COMUNIDADE"
+msgstr "COMUNITY"
+
+#: ong/templates/ong/_header.html:66
+msgid "UNIVERSIDADES"
+msgstr "UNIVERSITY"
+
+#: ong/templates/ong/_header.html:67
+msgid "EMPRESAS"
+msgstr "COMPANIES"
+
+#: ong/templates/ong/_header.html:74
+msgid "Fale Conosco"
+msgstr "Contact"
+
+#: ong/templates/ong/_header.html:81
+msgid "DOAÇÕES"
+msgstr "DONATIONS"
+
+#: ong/templates/ong/home/home.html:5
+msgid "Página Inicial"
+msgstr "Home"
+
+#: ongfv/settings.py:99
+msgid "Português"
+msgstr "Portuguese"
+
+#: ongfv/settings.py:100
+msgid "Inglês"
+msgstr "English"
