@@ -61,16 +61,6 @@
     left: calc(50% - 30%);
 }
 
-#doacoes .btn-entenda-doacao::after {
-    content: 'Entenda como usamos suas doações';
-}
-
-@media (max-width: 56em) {
-    #doacoes .btn-entenda-doacao::after {
-        content: 'Receita de doações';
-    }
-}
-
 @media (max-width: 62em) {
     #doacoes .btn,
     #doacoes img {

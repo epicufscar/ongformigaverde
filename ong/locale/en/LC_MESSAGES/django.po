@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-14 01:17-0200\n"
+"POT-Creation-Date: 2018-01-14 01:41-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,7 +57,7 @@ msgstr "Projects"
 msgid "Doações"
 msgstr "Donations"
 
-#: ong/templates/ong/_footer.html:22
+#: ong/templates/ong/_footer.html:22 ong/templates/ong/home/_doacoes.html:40
 msgid "Receita de Doações"
 msgstr "Donation Transparency"
 
@@ -113,13 +113,64 @@ msgstr "UNIVERSITY"
 msgid "EMPRESAS"
 msgstr "COMPANIES"
 
-#: ong/templates/ong/_header.html:74
+#: ong/templates/ong/_header.html:74 ong/templates/ong/home/_doacoes.html:15
+#: ong/templates/ong/home/_doacoes.html:24
 msgid "Fale Conosco"
 msgstr "Contact"
 
 #: ong/templates/ong/_header.html:81
 msgid "DOAÇÕES"
 msgstr "DONATIONS"
+
+#: ong/templates/ong/home/_doacoes.html:6
+msgid "SUA AJUDA É BEM-VINDA"
+msgstr "YOUR HELP IS GREATLY APPRECIATED"
+
+#: ong/templates/ong/home/_doacoes.html:11
+msgid "Talento"
+msgstr "Talent"
+
+#: ong/templates/ong/home/_doacoes.html:13
+msgid ""
+"Você pode doar seu tempo, seja ensinando o que você sabe, mobilizando "
+"pessoas, facilitando contatos ou mesmo ajudando na mão de obra, seja um "
+"VOLUNTÁRIO e/ou Educador Social"
+msgstr ""
+"You can donate your time by teaching what you know, mobilizing people, "
+"facilitating contacts or even providing manpower. Be a volunteer and/or "
+"social educator."
+
+#: ong/templates/ong/home/_doacoes.html:20
+msgid "Materiais"
+msgstr "Materials"
+
+#: ong/templates/ong/home/_doacoes.html:22
+msgid ""
+"A ONG Formiga Verde desenvolve atividades culturais e esportivas e você pode "
+"doar materiais para executar melhor os propósitos de nossa organização."
+msgstr ""
+"Formiga Verde develops cultural and sport activities and you can donate "
+"materials to allow our organization to improve its efficiency when pursuing its goals."
+
+#: ong/templates/ong/home/_doacoes.html:29
+msgid "Doação Financeira"
+msgstr "Financial Donation"
+
+#: ong/templates/ong/home/_doacoes.html:31
+msgid ""
+"Dependemos de doações financeiras para a execução de nossos projetos. Com "
+"esta doação, você não\n"
+"                    apenas vira parceiro da ONG Formiga Verde como também "
+"nos ajuda a abrir um leque de\n"
+"                    possibilidades para que indivíduos desenvolvam seus "
+"talentos e possam ter acesso às nossas\n"
+"                    propostas na áreas da educação formal e proteção social."
+msgstr ""
+"Our projects depend on the funding. With your donation, you will not only "
+"turn into a partner of the NGO Formiga Verde, but also you will help us to "
+"open up a range of responsibilities for individuals to develop their talents "
+"and have access to our proposals in the area of formal education and social protection. "
+"Our community empowerment seeks a more just and caring society."
 
 #: ong/templates/ong/home/_em_numeros.html:7
 msgid "PROJETOS"
