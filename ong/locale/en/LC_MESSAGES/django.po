@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-13 23:44-0200\n"
+"POT-Creation-Date: 2018-01-14 00:37-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,6 +121,22 @@ msgstr "Contact"
 msgid "DOAÇÕES"
 msgstr "DONATIONS"
 
+#: ong/templates/ong/home/_projetos.html:6
+msgid "NOSSOS PROJETOS"
+msgstr "OUR PROJECTS"
+
+#: ong/templates/ong/home/_projetos.html:26
+msgid "CONHECER"
+msgstr "MORE INFO"
+
+#: ong/templates/ong/home/_projetos.html:29
+msgid "DOAR"
+msgstr "DONATE"
+
+#: ong/templates/ong/home/_projetos.html:39
+msgid "CONHEÇA TODOS OS PROJETOS"
+msgstr "LIST ALL PROJECTS"
+
 #: ong/templates/ong/home/home.html:5
 msgid "Página Inicial"
 msgstr "Home"
@@ -133,5 +149,3 @@ msgstr "Portuguese"
 msgid "Inglês"
 msgstr "English"
 
-#~ msgid "Par"
-#~ msgstr "Our Partners"
