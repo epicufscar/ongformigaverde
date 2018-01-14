@@ -1,3 +1,10 @@
-<section id="visao">
-    {{ informacoes_ong.proverbio|safe }}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<section id="proverbio">
+    {% if LANGUAGE_CODE == "en" and informacoes_ong.proverb %}
+        {{ informacoes_ong.proverb|safe }}
+    {% else %}
+        {{ informacoes_ong.proverbio|safe }}
+    {% endif %}
 </section>
