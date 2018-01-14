@@ -67,7 +67,7 @@ header .nav-item .show .btn-ddown {
     background-color: #e06666ff !important;
 }
 
-header .navbar button {
+header button {
     height: 60px;
     text-align: center;
     border: 0;
@@ -137,7 +137,8 @@ header .btn-language {
     font-weight: normal;
     text-decoration: underline;
     text-transform: uppercase;
-    border: 0;
+    height: unset;
+    border: 0 !important;
     color: #4f4f4f;
     padding: 0 0.5em;
     cursor: pointer;
@@ -157,7 +158,6 @@ header .btn-language:hover {
 
     header .nav-topper {
         height: 55px;
-        text-align: center;
     }
 
     header .nav-topper span {
@@ -187,7 +187,7 @@ header .btn-language:hover {
     }
 }
 
-@media (max-width: 22em) {
+@media (max-width: 26em) {
     header .nav-topper {
         height: 50px;
     }
