@@ -5,6 +5,42 @@
 
 {% block body %}
     <main id="p-parceiros" class="page-top">
+    <h1> PARCEIROS </h1>
+    {% if comunidades %}
+        <hr>
+        <h4> Comunidade </h4>
+        <section id="parceiros" class="py-2">
+            <div class="row no-padding">
+                {% for parceiro in comunidades %}
+                    {% include 'ong/_parceiros-card-parceiros.html' %}
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
+
+    {%  if universidades %}
+        <hr>
+        <h4> Grupos universitários </h4>
+        <section id="parceiros" class="py-2">
+            <div class="row no-padding">
+                {% for parceiro in universidades %}
+                    {% include 'ong/_parceiros-card-parceiros.html' %}
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
+
+    {%  if empresas %}
+        <hr>
+        <h4> Empresas </h4>
+        <section id="parceiros" class="py-2">
+            <div class="row no-padding">
+                {% for parceiro in empresas %}
+                    {% include 'ong/_parceiros-card-parceiros.html' %}
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
 
     </main>
 {% endblock body %}
