@@ -1,11 +1,12 @@
 {% extends 'ong/base.html' %}
 {% load staticfiles %}
+{% load i18n %}
 
-{% block title %}Notícias{% endblock title %}
+{% block title %}{% trans "Notícias" %}{% endblock title %}
 
 {% block body %}
     <main id="p-noticias" class="page-top container">
-        <h3> TODAS AS NOTÍCIAS </h3>
+        <h3>{% trans "TODAS AS NOTÍCIAS" %}</h3>
         <div class="col-lg-9">
             {% for noticia in noticias %}
                 <div class="noticia">
@@ -22,7 +23,7 @@
                             <p>
                                 {{ noticia.texto|slice:":150" }}
                                 {% if noticia.texto|length >= 150 %}
-                                    ... <a href="{% url "noticia" id=noticia.id %}"><span id="continue">Continue lendo</span></a>
+                                    ... <a href="{% url "noticia" id=noticia.id %}"><span id="continue">{% trans "Continue lendo" %}</span></a>
                                 {% endif %}
                             </p>
                         </div>

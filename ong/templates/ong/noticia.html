@@ -1,5 +1,6 @@
 {% extends 'ong/base.html' %}
 {% load staticfiles %}
+{% load i18n %}
 
 {% block title %}{{ noticia.titulo }}{% endblock title %}
 
@@ -18,7 +19,7 @@
 
                         {% if noticia.linkFotos %}
                             <div id="photos">
-                                <a class="btn btn-galery" href="{{ noticia.linkFotos }}" target="_blank">Galeria de Fotos</a>
+                                <a class="btn btn-galery" href="{{ noticia.linkFotos }}" target="_blank">{% trans "Galeria de Fotos" %}</a>
                                 <div class="fb-post"
                                      data-href="{{ noticia.facebookAlbum }}"
                                      data-show-text="true"
@@ -28,7 +29,7 @@
                                                 class="fb-xfbml-parse-ignore">
                                         <a href="{{ noticia.facebookAlbum }}">{{ noticia.titulo }}</a>
                                         <p>{{ noticia.titulo }}</p>
-                                        Postado por: <a href="{{ informacoes_ong.facebook }}">{{ informacoes_ong.nome }}</a>
+                                        {% trans "Postado por" %}: <a href="{{ informacoes_ong.facebook }}">{{ informacoes_ong.nome }}</a>
                                     </blockquote>
                                 </div>
                             </div>
@@ -56,14 +57,14 @@
                                             class="fb-xfbml-parse-ignore">
                                     <a href="{{ noticia.facebookEmbed }}">{{ noticia.titulo }}</a>
                                     <p>{{ noticia.titulo }}</p>
-                                    Postado por: <a href="{{ informacoes_ong.facebook }}">{{ informacoes_ong.nome }}</a>
+                                    {% trans "Postado por" %}: <a href="{{ informacoes_ong.facebook }}">{{ informacoes_ong.nome }}</a>
                                 </blockquote>
                             </div>
                         {% endif %}
 
                         {% if noticia.link or noticia.linkVideo or noticia.linkFotos %}
                             <div id="external">
-                                LINKS E ANEXOS: <br>
+                                {% trans "LINKS E ANEXOS" %}: <br>
                                 {% if noticia.link %}
                                     <div>
                                         <i class="fa fa-link"> </i>&nbsp;
@@ -94,12 +95,12 @@
         <div class="nav-bottom">
             <div class="float-left">
                 {% if anterior.id %}
-                    <a href="{% url "noticia" id=anterior.id %}" title="{{ anterior.titulo }}"><i class="fa fa-chevron-left"></i> ANTERIOR</a>
+                    <a href="{% url "noticia" id=anterior.id %}" title="{{ anterior.titulo }}"><i class="fa fa-chevron-left"></i> {% trans "ANTERIOR" %}</a>
                 {% endif %}
             </div>
             <div class="float-right">
                 {% if proxima.id %}
-                    <a href="{% url "noticia" id=proxima.id %}" title="{{ proxima.titulo }}">PRÓXIMA <i class="fa fa-chevron-right"></i></a>
+                    <a href="{% url "noticia" id=proxima.id %}" title="{{ proxima.titulo }}">{% trans "PRÓXIMA" %} <i class="fa fa-chevron-right"></i></a>
                 {% endif %}
             </div>
         </div>
