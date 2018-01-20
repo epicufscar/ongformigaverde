@@ -43,7 +43,7 @@ header .nav-topper span {
 
 header nav {
     height: 60px;
-    background-color: #264e2cff !important;
+    background-color: #33764c !important;
 }
 
 header nav > div {
@@ -80,7 +80,7 @@ header button {
 
 header .nav-item .btn-ddown {
     color: #fff;
-    background-color: #264e2cff;
+    background-color: #33764c;
     width: 175px;
 }
 
