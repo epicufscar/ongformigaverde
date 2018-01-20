@@ -1,4 +1,4 @@
-#visao {
+#proverbio {
     color: #fff;
     background-color: #434343ff;
     padding: 25px 15px 25px 30px;
@@ -9,7 +9,7 @@
 }
 
 @media (max-width: 48em) {
-    #visao {
+    #proverbio {
         height: auto;
     }
 }

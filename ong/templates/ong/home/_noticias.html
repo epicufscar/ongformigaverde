@@ -1,6 +1,8 @@
+{% load i18n %}
+
 <aside id="noticias">
     <div class="content">
-        <h3 id="section-title">NOTÍCIAS</h3>
+        <h3 id="section-title">{% trans "NOTÍCIAS" %}</h3>
         {% for noticia in noticias %}
             <div class="noticia">
                 <div class="row">
@@ -29,7 +31,7 @@
         {% endfor %}
         <div id="more-news">
             <a href="{% url "noticias" %}">
-                <p>MAIS NOTÍCIAS...</p>
+                <p>{% trans "MAIS NOTÍCIAS..." %}</p>
             </a>
         </div>
     </div>

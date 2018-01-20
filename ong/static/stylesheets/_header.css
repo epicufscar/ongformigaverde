@@ -43,7 +43,7 @@ header .nav-topper span {
 
 header nav {
     height: 60px;
-    background-color: #264e2cff !important;
+    background-color: #33764c !important;
 }
 
 header nav > div {
@@ -80,7 +80,7 @@ header button {
 
 header .nav-item .btn-ddown {
     color: #fff;
-    background-color: #264e2cff;
+    background-color: #33764c;
     width: 175px;
 }
 
@@ -125,6 +125,29 @@ header .navbar-toggler {
     right: 25px;
 }
 
+header .form-language,
+header .btn-language {
+    display: inline-block !important;
+}
+
+header .btn-language {
+    font-family: 'Roboto Condensed', sans-serif !important;
+    background-color: transparent;
+    font-size: 1em;
+    font-weight: normal;
+    text-decoration: underline;
+    text-transform: uppercase;
+    height: unset;
+    border: 0 !important;
+    color: #4f4f4f;
+    padding: 0 0.5em;
+    cursor: pointer;
+}
+
+header .btn-language:hover {
+    color: #e06666ff;
+}
+
 @media (max-width: 62em) {
     header .nav-img {
         position: absolute;
@@ -135,7 +158,6 @@ header .navbar-toggler {
 
     header .nav-topper {
         height: 55px;
-        text-align: center;
     }
 
     header .nav-topper span {
@@ -165,7 +187,7 @@ header .navbar-toggler {
     }
 }
 
-@media (max-width: 22em) {
+@media (max-width: 26em) {
     header .nav-topper {
         height: 50px;
     }

@@ -1,14 +1,15 @@
 {% extends 'ong/base.html' %}
 {% load staticfiles %}
+{% load i18n %}
 
-{% block title %}Projetos{% endblock title %}
+{% block title %}{% trans "Projetos" %}{% endblock title %}
 
 {% block body %}
     <main id="p-projetos" class="container page-top">
-		<h3>NOSSOS PROJETOS</h3>
+		<h3>{% trans "NOSSOS PROJETOS" %}</h3>
 		{% if criancas %}
             <hr>
-			<h4>Para crianças</h4>
+			<h4>{% trans "Para crianças" %}</h4>
 			<section id="projetos" class="py-2">
 				<div class="row no-padding">
                     {% for projeto in criancas %}
@@ -19,7 +20,7 @@
 		{% endif %}
 		{% if adultos %}
 			<hr>
-            <h4>Para adultos</h4>
+            <h4>{% trans "Para adultos" %}</h4>
 			<section id="projetos" class="py-2">
 				<div class="row no-padding">
                     {% for projeto in adultos %}
@@ -30,7 +31,7 @@
 		{% endif %}
 		{% if todos %}
 			<hr>
-            <h4>Todas as idades</h4>
+            <h4>{% trans "Todas as idades" %}</h4>
 			<section id="projetos" class="py-2">
 				<div class="row no-padding">
                     {% for projeto in todos %}

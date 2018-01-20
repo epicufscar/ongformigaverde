@@ -1,26 +1,29 @@
 {% load staticfiles %}
+{% load i18n %}
+
 <footer id="footer">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <a href="{% url "historia" %}"> História </a> <br>
-                <a href="{% url "missao" %}"> Missão </a> <br>
-                <a href="{% url "missao" %}"> Visão </a> <br>
-                <a href="{% url "missao" %}"> Valores </a>
+                <a href="{% url "historia" %}">{% trans "História" %}</a><br>
+                <a href="{% url "missao" %}">{% trans "Missão" %}</a><br>
+                <a href="{% url "missao" %}">{% trans "Visão" %}</a><br>
+                <a href="{% url "missao" %}">{% trans "Valores" %}</a><br>
+                <a href="{% url "missao" %}">{% trans "Princípios" %}</a>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <a href="{% url "equipe" %}"> Equipe </a> <br>
-                <a href="{% url "equipe" %}"> Intercambistas </a> <br>
-                <a href="{% url "parceiros" %}"> Parceiros </a> <br>
+                <a href="{% url "equipe" %}">{% trans "Equipe" %}</a><br>
+                <a href="{% url "equipe" %}">{% trans "Intercambistas" %}</a><br>
+                <a href="{% url "parceiros" %}">{% trans "Parceiros" %}</a><br>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <a href="{% url "projetos" %}"> Projetos </a> <br>
-                <a href="{% url "doacoes" %}"> Doações </a> <br>
-                <a href="{% url "transparencia" %}"> Receita de Doações </a> <br>
-                <a href="{% url "noticias" %}"> Notícias </a> <br>
+                <a href="{% url "projetos" %}">{% trans "Projetos" %}</a><br>
+                <a href="{% url "doacoes" %}">{% trans "Doações" %}</a><br>
+                <a href="{% url "transparencia" %}">{% trans "Receita de Doações" %}</a><br>
+                <a href="{% url "noticias" %}">{% trans "Notícias" %}</a><br>
             </div>
             <div id="footer_logo" class="col-md-3 col-sm-6 col-xs-12">
-                <a href="{% url "home" %}"> <img src="{% static "images/logo_footer.png" %}"/> </a>
+                <a href="{% url "home" %}"><img src="{% static "images/logo_footer.png" %}"/></a>
             </div>
         </div>
     </div>

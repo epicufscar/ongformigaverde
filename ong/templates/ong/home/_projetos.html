@@ -1,7 +1,10 @@
 {% load staticfiles %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
 <section id="projetos">
     <div class="content">
-        <h4>NOSSOS PROJETOS</h4>
+        <h4>{% trans "NOSSOS PROJETOS" %}</h4>
         <div id="owl-carousel" class="owl-carousel owl-theme">
         {% for projeto in projetos %}
             <article class="card">
@@ -14,17 +17,29 @@
                 </a>
                 <div class="caption text-center">
                     <a href="{% url "projeto" id=projeto.id %}">
-                        <h4 class="card-title">{{ projeto.nome }}</h4>
+                        {% if LANGUAGE_CODE == "en" and projeto.name %}
+                            <h4 class="card-title">{{ projeto.name }}</h4>
+                        {% else %}
+                            <h4 class="card-title">{{ projeto.nome }}</h4>
+                        {% endif %}
                     </a>
-                    {% if projeto.descricao|length >= 100 %}
-                        <p class="flex-text text-muted card-text">{{ projeto.descricao|slice:":100" }}...</p>
+                    {% if LANGUAGE_CODE == "en" and projeto.description %}
+                        {% if projeto.description|length >= 100 %}
+                            <p class="flex-text text-muted card-text">{{ projeto.description|slice:":100" }}...</p>
+                        {% else %}
+                            <p class="flex-text text-muted card-text">{{ projeto.description }}</p>
+                        {% endif %}
                     {% else %}
-                        <p class="flex-text text-muted card-text">{{ projeto.descricao }}</p>
+                        {% if projeto.descricao|length >= 100 %}
+                            <p class="flex-text text-muted card-text">{{ projeto.descricao|slice:":100" }}...</p>
+                        {% else %}
+                            <p class="flex-text text-muted card-text">{{ projeto.descricao }}</p>
+                        {% endif %}
                     {% endif %}
-                    <a href="{% url "projeto" id=projeto.id %}" class="btn">CONHECER</a>
+                    <a href="{% url "projeto" id=projeto.id %}" class="btn">{% trans "CONHECER" %}</a>
                     {% for campanha in campanha_doacao %}
                         {% if campanha.projeto.nome == projeto.nome %}
-                            <a href="{{ campanha.link }}" target="_blank" class="btn btn-donation">DOAR</a>
+                            <a href="{{ campanha.link }}" target="_blank" class="btn btn-donation">{% trans "DOAR" %}</a>
                         {% endif %}
                     {% endfor %}
                 </div>
@@ -34,7 +49,7 @@
 
         <hr>
         <div class="float-right">
-            <b><a href="{% url "projetos" %}">CONHEÇA TODOS OS PROJETOS</a></b>
+            <b><a href="{% url "projetos" %}">{% trans "CONHEÇA TODOS OS PROJETOS" %}</a></b>
         </div>
     </div>
 </section>

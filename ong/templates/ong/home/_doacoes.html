@@ -1,42 +1,47 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
 <section id="doacoes" class="container">
     <div class="text-center">
-        <h2> SUA AJUDA É BEM-VINDA </h2>
+        <h2> {% trans "SUA AJUDA É BEM-VINDA" %} </h2>
     </div>
     <div class="row">
         <div class="col-lg-3 col-md-12 text-center">
             <div class="item">
-                <h4 class="card-title"> Talento </h4>
+                <h4 class="card-title"> {% trans "Talento" %} </h4>
                 <p class="card-text">
-                    Você pode doar seu tempo, seja ensinando o que você sabe, mobilizando pessoas, facilitando
-                    contatos ou mesmo ajudando na mão de obra, seja um VOLUNTÁRIO e/ou Educador Social
+                    {% blocktrans %}Você pode doar seu tempo, seja ensinando o que você sabe, mobilizando pessoas, facilitando contatos ou mesmo ajudando na mão de obra, seja um VOLUNTÁRIO e/ou Educador Social{% endblocktrans %}
                 </p>
-                <a href="{% url "home" %}#fale-conosco" class="btn btn-fale-conosco">Fale Conosco</a>
+                <a href="{% url "home" %}#fale-conosco" class="btn btn-fale-conosco">{% trans "Fale Conosco" %}</a>
             </div>
         </div>
         <div class="col-lg-3 col-md-12 text-center">
             <div class="item">
-                <h4 class="card-title"> Materiais </h4>
+                <h4 class="card-title"> {% trans "Materiais" %} </h4>
                 <p class="card-text">
-                    A ONG Formiga Verde desenvolve atividades culturais e esportivas e você pode doar materiais
-                    para executar melhor os propósitos de nossa organização.
+                    {% blocktrans %}A ONG Formiga Verde desenvolve atividades culturais e esportivas e você pode doar materiais para executar melhor os propósitos de nossa organização.{% endblocktrans %}
                 </p>
-                <a href="{% url "home" %}#fale-conosco" class="btn btn-fale-conosco">Fale Conosco</a>
+                <a href="{% url "home" %}#fale-conosco" class="btn btn-fale-conosco">{% trans "Fale Conosco" %}</a>
             </div>
         </div>
         <div class="col-lg-6 col-md-12 text-center">
             <div class="item">
-                <h4 class="card-title"> Doação Financeira </h4>
+                <h4 class="card-title"> {% trans "Doação Financeira" %} </h4>
                 <p class="card-text">
-                    Dependemos de doações financeiras para a execução de nossos projetos. Com esta doação, você não
+                    {% blocktrans %}Dependemos de doações financeiras para a execução de nossos projetos. Com esta doação, você não
                     apenas vira parceiro da ONG Formiga Verde como também nos ajuda a abrir um leque de
                     possibilidades para que indivíduos desenvolvam seus talentos e possam ter acesso às nossas
-                    propostas na áreas da educação formal e proteção social.
+                    propostas na áreas da educação formal e proteção social.{% endblocktrans %}
                 </p>
                 <div>
-                    <a href="#"><img src="https://www.paypalobjects.com/webstatic/mktg/merchant_portal/button/donate.pt.png" /></a>
+                    {% if LANGUAGE_CODE == "en" %}
+                        <a href="#"><img src="https://www.paypalobjects.com/webstatic/mktg/merchant_portal/button/donate.en.png" /></a>
+                    {% else %}
+                        <a href="#"><img src="https://www.paypalobjects.com/webstatic/mktg/merchant_portal/button/donate.pt.png" /></a>
+                    {% endif %}
                 </div>
                 <div>
-                    <a href="{% url "transparencia" %}" class="btn btn-entenda-doacao"></a>
+                    <a href="{% url "transparencia" %}" class="btn btn-entenda-doacao">{% trans "Receita de Doações" %}</a>
                 </div>
             </div>
         </div>

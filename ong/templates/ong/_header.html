@@ -1,6 +1,20 @@
+{% load i18n %}
+{% load staticfiles %}
+
 <header id="header">
     <div class="nav-topper">
-        <a href="#" title="English"><span>ENGLISH</span></a>
+        <form class="form-language" action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for language in languages %}
+                {% if language.code != LANGUAGE_CODE %}
+                    <button class="btn-language" type="submit" name="language" value="{{ language.code }}">{{ language.name_local }}</button>
+                {% endif %}
+            {% endfor %}
+        </form>
+
         <a href="{{ informacoes_ong.facebook }}" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
         <a href="{{ informacoes_ong.twitter }}" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
         <a href="{{ informacoes_ong.youtube }}" target="_blank" title="YouTube"><i class="fa fa-youtube-play"></i></a>
@@ -16,7 +30,7 @@
             <i class="fa fa-bars"></i>
         </button>
         <a class="navbar-brand" href="{% url "home" %}">
-            <img class="nav-img" src="https://lh3.googleusercontent.com/CbcROJd_EI1CfVFslO7DdE5gUEmgqhE5z7O1kOwiy3QikF0TNA1aAgy48l8DAII258KCVQbgtBrIafhG32KpaupP-xdRmsjkeyDUO8fXBp7RGv1m8Zu1Izv0TEsAc-6yItP_i0EnWjzNjBRv4TZ9R1UsufQ_VHn1D5RTboS4RN4S49ZKaut-cqd9w3ufWyuQCtKgoxgX8Q8vHEdvIev3oMKyW8fG14xNc43_pN3EVjUoGPAHsoLqyt37NgxL1uUM4F6_qwaIFrsEvGHMXQB-Zro3RRRwQfkWLgtQGwu49Aa-SdgbgIG19hXeqJzDcv-QKbBXFvSX5-EX8Vf7_89sN6rGVuI_1vZf_CgPgHweRW-67Ozt1M3dcGNbFKwvXk_CLc_2JbL4diDD3gGmrXxhbCqWj0SHVxK7GyI2M0Pe90TCgm8eBaIaKOoeX3FJPRFGvd0UrADquDsYModg6lPQHF0buvRCFx3bNxt1Kw7jYvDofQREFSjqD2yrPYNY6ngkgYL8mLqucKWU7jJnw1jZW4Y0n0-uzSnxxh9Qi-EojKjzrznzP5f_cvx2bao=w916-h928">
+            <img class="nav-img" src="{% static "images/logo_250.png" %}">
         </a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -24,20 +38,20 @@
                 <li class="nav-item">
                     <div class="dropdown">
                         <button class="btn-ddown dropdown-toggle" data-toggle="dropdown">
-                            Quem Somos
+                            {% trans "Quem Somos" %}
                         </button>
                         <div class="dropdown-menu">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <a href="{% url "historia" %}">NOSSA HISTÓRIA</a>
-                                    <a href="{% url "missao" %}">MISSÃO</a>
-                                    <a href="{% url "missao" %}">VISÃO</a>
-                                    <a href="{% url "missao" %}">VALORES</a>
-                                    <a href="{% url "missao" %}">PRINCÍPIOS</a>
+                                    <a href="{% url "historia" %}">{% trans "NOSSA HISTÓRIA" %}</a>
+                                    <a href="{% url "missao" %}">{% trans "MISSÃO" %}</a>
+                                    <a href="{% url "missao" %}">{% trans "VISÃO" %}</a>
+                                    <a href="{% url "missao" %}">{% trans "VALORES" %}</a>
+                                    <a href="{% url "missao" %}">{% trans "PRINCÍPIOS" %}</a>
                                 </div>
                                 <div class="col-sm-6">
-                                    <a href="{% url "equipe" %}">EQUIPE</a>
-                                    <a href="{% url "equipe" %}">INTERCAMBISTAS</a>
+                                    <a href="{% url "equipe" %}">{% trans "EQUIPE" %}</a>
+                                    <a href="{% url "equipe" %}">{% trans "INTERCAMBISTAS" %}</a>
                                 </div>
                             </div>
                         </div>
@@ -46,26 +60,26 @@
                 <li class="nav-item">
                     <div class="dropdown">
                         <button class="btn-ddown dropdown-toggle" data-toggle="dropdown">
-                            Parcerias
+                            {% trans "Parcerias" %}
                         </button>
                         <div class="dropdown-menu">
-                            <a href="{% url "parceiros" %}">COMUNIDADE</a>
-                            <a href="{% url "parceiros" %}">UNIVERSIDADES</a>
-                            <a href="{% url "parceiros" %}">EMPRESAS</a>
+                            <a href="{% url "parceiros" %}">{% trans "COMUNIDADE" %}</a>
+                            <a href="{% url "parceiros" %}">{% trans "UNIVERSIDADES" %}</a>
+                            <a href="{% url "parceiros" %}">{% trans "EMPRESAS" %}</a>
                         </div>
                     </div>
                 </li>
                 <li class="nav-item">
                     <a href="{% url "home" %}#fale-conosco" class="no-padding">
                         <button class="btn-ddown">
-                            Fale Conosco
+                            {% trans "Fale Conosco" %}
                         </button>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{% url "doacoes" %}" class="no-padding">
                         <button class="btn-donation">
-                            DOAÇÕES
+                            {% trans "DOAÇÕES" %}
                         </button>
                     </a>
                 </li>
