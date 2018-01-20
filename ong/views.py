@@ -91,36 +91,43 @@ def transparencia(request):
         if datetime.strptime(periodStart, '%d/%m/%Y').date() <= receita.data <= datetime.strptime(periodEnd, '%d/%m/%Y').date():
             if receita.utilizacao == 'P1':
                 receita.utilizacaoT = 'Manutenção administrativa da ONG'
+                receita.utilizacaoEn = 'Administration and maintenance tasks'
                 p_valor[0] += receita.valor
                 p_quantidade[0] += 1
 
             if receita.utilizacao == 'P2':
                 receita.utilizacaoT = 'Aplicação em projetos existentes'
+                receita.utilizacaoEn = 'Investments in existing projects'
                 p_valor[1] += receita.valor
                 p_quantidade[1] += 1
 
             if receita.utilizacao == 'P3':
                 receita.utilizacaoT = 'Criação de novos projetos'
+                receita.utilizacaoEn = 'Creation of new projects'
                 p_valor[2] += receita.valor
                 p_quantidade[2] += 1
 
             if receita.utilizacao == 'P4':
                 receita.utilizacaoT = 'Aquisição de recursos e materiais'
+                receita.utilizacaoEn = 'Resources and materials acquisition'
                 p_valor[3] += receita.valor
                 p_quantidade[3] += 1
 
             if receita.utilizacao == 'P5':
                 receita.utilizacaoT = 'Treinamentos para membros da equipe'
+                receita.utilizacaoEn = 'Training of team members'
                 p_valor[4] += receita.valor
                 p_quantidade[4] += 1
 
             if receita.utilizacao == 'P6':
                 receita.utilizacaoT = 'Eventos e comemorações'
+                receita.utilizacaoEn = 'Events and celebrations'
                 p_valor[5] += receita.valor
                 p_quantidade[5] += 1
 
             if receita.utilizacao == 'P7':
                 receita.utilizacaoT = 'Outras finalidades'
+                receita.utilizacaoEn = 'Other demands'
                 p_valor[6] += receita.valor
                 p_quantidade[6] += 1
 

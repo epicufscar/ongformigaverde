@@ -2,6 +2,7 @@
 {% load staticfiles %}
 {% load i18n %}
 {% load l10n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block title %}{% trans "Transparência" %}{% endblock title %}
 
@@ -19,7 +20,7 @@
                     <input id="period-start" name="period-start" type="text" class="input-lg form-control" value="{{ periodStart }}"/>
                     <span class="input-group-addon"> &nbsp; > &nbsp; </span>
                     <input id="period-end" name="period-end" type="text" class="input-lg form-control" value="{{ periodEnd }}"/>
-                    <button type="submit" class="btn btn-filter-period">FILTRAR</button>
+                    <button type="submit" class="btn btn-filter-period">{% trans "FILTRAR" %}</button>
                 </div>
             </form>
         </section>
@@ -28,14 +29,14 @@
             <section class="chart-container"><div id="chart"></div></section>
 
             <section class="container container-receitas">
-                <h4 class="receitas-heading text-center">Doações no mesmo período</h4>
+                <h4 class="receitas-heading text-center">{% trans "Doações no mesmo período" %}</h4>
                 <table id="receitas" class="table" cellspacing="0" width="100%">
                     <thead>
                         <tr>
-                            <th class="receita-data">Data</th>
-                            <th class="receita-valor">Valor</th>
-                            <th class="receita-utilizacao">Utilização</th>
-                            <th class="receita-doador">Doador</th>
+                            <th class="receita-data">{% trans "Data" %}</th>
+                            <th class="receita-valor">{% trans "Valor" %}</th>
+                            <th class="receita-utilizacao">{% trans "Utilização" %}</th>
+                            <th class="receita-doador">{% trans "Doador" %}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,9 +44,15 @@
                             <tr class="receita">
                                 <td class="receita-data">{{ receita.data }}</td>
                                 <td class="receita-valor">R$ {{ receita.valor }}</td>
-                                <td class="receita-utilizacao">{{ receita.utilizacaoT }}</td>
+                                <td class="receita-utilizacao">
+                                    {% if LANGUAGE_CODE == "en" and receita.utilizacaoEn %}{{ receita.utilizacaoEn }}{% else %}{{ receita.utilizacaoT }}{% endif %}
+                                </td>
                                 <td class="receita-doador">
-                                    {% if receita.anonimo %}Anônimo
+                                    {% if receita.anonimo %} {% if LANGUAGE_CODE == "en" %}
+                                        <span style="opacity: .5"><i>Anonymous</i></span>
+                                    {% else %}
+                                        <span style="opacity: .5"><i>Anônimo</i></span>
+                                    {% endif %}
                                     {% else %} {{ receita.nome }}
                                     {% endif %}
                                 </td>
@@ -57,21 +64,21 @@
         {% else %}
             <section class="chart-container text-center">
                 <h1><i class="fa fa-frown-o"></i></h1>
-                <h3>Não houveram doações no período selecionado.</h3>
-                <a href="{% url 'doacoes' %}" class="btn btn-donation">DOAR AGORA</a>
+                <h3>{% trans "Não houveram doações no período selecionado." %}</h3>
+                <a href="{% url 'doacoes' %}" class="btn btn-donation">{% trans "DOAR AGORA" %}</a>
             </section>
         {% endif %}
 
         <div class="receita-campanhas">
             {% if campanhas %}
                 <section class="container container-campanhas">
-                    <h4 class="campanhas-heading text-center">Resumo das campanhas de doação</h4>
+                    <h4 class="campanhas-heading text-center">{% trans "Resumo das campanhas de doação" %}</h4>
                     <table id="campanhas" class="table" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th class="campanha-titulo">Título</th>
-                                <th class="campanha-finalizadoEm">Finalizada em</th>
-                                <th class="campanha-arrecadado">Valor arrecadado <span style="opacity: .5;">/ Valor esperado</span></th>
+                                <th class="campanha-titulo">{% trans "Título" %}</th>
+                                <th class="campanha-finalizadoEm">{% trans "Finalizada em" %}</th>
+                                <th class="campanha-arrecadado">{% trans "Valor arrecadado" %} <span style="opacity: .5;">/ {% trans "Valor esperado" %}</span></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -82,7 +89,7 @@
                                         <td class="campanha-finalizadoEm">{{ campanha.dataFim }}</td>
                                         <td class="campanha-arrecadado">R$ {{ campanha.valorArrecadado }} <span style="opacity: .5;">/ R$ {{ campanha.valorEsperado }}</span></td>
                                     {% else %}
-                                        <td class="campanha-arrecadado"><i style="opacity: .5">Campanha em andamento...</i></td>
+                                        <td class="campanha-arrecadado"><i style="opacity: .5">{% trans "Campanha em andamento..." %}</i></td>
                                         <td class="campanha-finalizadoEm"></td>
                                     {% endif %}
                                 </tr>
@@ -140,71 +147,70 @@
                 type: 'pie'
             },
             title: {
-                text: 'Como utilizamos o dinheiro das doações'
+                text: '{% trans "Como utilizamos o dinheiro das doações" %}'
             },
             tooltip: {
                 headerFormat: '',
                 pointFormat:
                     '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
-                    'Quantidade: <b>{point.y}</b> doações<br/>' +
-                    'Valor: R$ <b>{point.z}</b><br/>'
+                    '{% trans "Quantidade" %}: <b>{point.y}</b> {% trans "doações" %}<br/>' +
+                    '{% trans "Valor" %}: R$ <b>{point.z}</b><br/>'
             },
             series: [{
                 minPointSize: 1,
                 innerSize: '30%',
                 zMin: 0,
-                name: 'Aplicação das Doações',
+                name: '{% trans "Aplicação das Doações" %}',
                 data: [
                     {% if chart.p_quantidade.0 > 0 %}
                         {
-                            name: 'Manutenção administrativa da ONG',
+                            name: '{% trans "Manutenção administrativa da ONG" %}',
                             y: {{ chart.p_quantidade.0|unlocalize }},
                             z: {{ chart.p_valor.0|unlocalize }}
                         },
                     {% endif %}
                     {% if chart.p_quantidade.1 > 0 %}
                         {
-                            name: 'Aplicação em projetos existentes',
+                            name: '{% trans "Aplicação em projetos existentes" %}',
                             y: {{ chart.p_quantidade.1|unlocalize }},
                             z: {{ chart.p_valor.1|unlocalize }}
                         },
                     {% endif %}
                     {% if chart.p_quantidade.2 > 0 %}
                         {
-                            name: 'Criação de novos projetos',
+                            name: '{% trans "Criação de novos projetos" %}',
                             y: {{ chart.p_quantidade.2|unlocalize }},
                             z: {{ chart.p_valor.2|unlocalize }}
                         },
                     {% endif %}
                     {% if chart.p_quantidade.3 > 0 %}
                         {
-                            name: 'Aquisição de recursos e materiais',
+                            name: '{% trans "Aquisição de recursos e materiais" %}',
                             y: {{ chart.p_quantidade.3|unlocalize }},
                             z: {{ chart.p_valor.3|unlocalize }}
                         },
                     {% endif %}
                     {% if chart.p_quantidade.4 > 0 %}
                         {
-                            name: 'Treinamentos para membros da equipe',
+                            name: '{% trans "Treinamentos para membros da equipe" %}',
                             y: {{ chart.p_quantidade.4|unlocalize }},
                             z: {{ chart.p_valor.4|unlocalize }}
                         },
                     {% endif %}
                     {% if chart.p_quantidade.5 > 0 %}
                         {
-                            name: 'Eventos e comemorações',
+                            name: '{% trans "Eventos e comemorações" %}',
                             y: {{ chart.p_quantidade.5|unlocalize }},
                             z: {{ chart.p_valor.5|unlocalize }}
                         },
                     {% endif %}
                     {% if chart.p_quantidade.6 > 0 %}
                         {
-                            name: 'Outras finalidades',
+                            name: '{% trans "Outras finalidades" %}',
                             y: {{ chart.p_quantidade.6|unlocalize }},
                             z: {{ chart.p_valor.6|unlocalize }}
                         },
                     {% endif %}
-
                 ]
             }]
         });
