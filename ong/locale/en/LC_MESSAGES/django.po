@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-14 01:41-0200\n"
+"POT-Creation-Date: 2018-01-20 16:36-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,7 +57,7 @@ msgstr "Projects"
 msgid "Doações"
 msgstr "Donations"
 
-#: ong/templates/ong/_footer.html:22 ong/templates/ong/home/_doacoes.html:40
+#: ong/templates/ong/_footer.html:22 ong/templates/ong/home/_doacoes.html:44
 msgid "Receita de Doações"
 msgstr "Donation Transparency"
 
@@ -150,7 +150,8 @@ msgid ""
 "doar materiais para executar melhor os propósitos de nossa organização."
 msgstr ""
 "Formiga Verde develops cultural and sport activities and you can donate "
-"materials to allow our organization to improve its efficiency when pursuing its goals."
+"materials to allow our organization to improve its efficiency when pursuing "
+"its goals."
 
 #: ong/templates/ong/home/_doacoes.html:29
 msgid "Doação Financeira"
@@ -169,8 +170,8 @@ msgstr ""
 "Our projects depend on the funding. With your donation, you will not only "
 "turn into a partner of the NGO Formiga Verde, but also you will help us to "
 "open up a range of responsibilities for individuals to develop their talents "
-"and have access to our proposals in the area of formal education and social protection. "
-"Our community empowerment seeks a more just and caring society."
+"and have access to our proposals in the area of formal education and social "
+"protection. Our community empowerment seeks a more just and caring society."
 
 #: ong/templates/ong/home/_em_numeros.html:7
 msgid "PROJETOS"
@@ -192,6 +193,51 @@ msgstr "who help us"
 msgid "já passaram por aqui"
 msgstr "have been here"
 
+#: ong/templates/ong/home/_fale_conosco.html:4
+msgid "FALE CONOSCO"
+msgstr "CONTACT"
+
+#: ong/templates/ong/home/_fale_conosco.html:23
+msgid "Parcerias, doações, sugestões ou dúvidas"
+msgstr "Partnership, donations, suggestions or any questions"
+
+#: ong/templates/ong/home/_fale_conosco.html:24
+msgid "Nome"
+msgstr "Name"
+
+#: ong/templates/ong/home/_fale_conosco.html:25
+msgid "Email"
+msgstr "Email"
+
+#: ong/templates/ong/home/_fale_conosco.html:26
+msgid "Assunto"
+msgstr "Subject"
+
+#: ong/templates/ong/home/_fale_conosco.html:27
+msgid "Mensagem"
+msgstr "Message"
+
+#: ong/templates/ong/home/_fale_conosco.html:29
+msgid "Enviar"
+msgstr "Submit"
+
+#: ong/templates/ong/home/_fale_conosco.html:34
+msgid "MENSAGEM ENVIADA COM SUCESSO. AGUARDE NOSSO RETORNO!"
+msgstr ""
+"Message successfully received. We will get in touch as soon as possible!"
+
+#: ong/templates/ong/home/_fale_conosco.html:36
+msgid "SUA MENSAGEM FALHOU! POR FAVOR, TENTE NOVAMENTE."
+msgstr "Something went terribly wrong! Please try sending your message again."
+
+#: ong/templates/ong/home/_noticias.html:3
+msgid "NOTÍCIAS"
+msgstr "NEWS"
+
+#: ong/templates/ong/home/_noticias.html:32
+msgid "MAIS NOTÍCIAS..."
+msgstr "MORE NEWS..."
+
 #: ong/templates/ong/home/_projetos.html:7
 msgid "NOSSOS PROJETOS"
 msgstr "OUR PROJECTS"
@@ -211,6 +257,49 @@ msgstr "LIST ALL PROJECTS"
 #: ong/templates/ong/home/home.html:5
 msgid "Página Inicial"
 msgstr "Home"
+
+#: ong/templates/ong/home/home.html:53
+msgid "Precisamos saber com quem conversamos. Qual o seu nome?"
+msgstr "We need to know who is writing to us. What is your name?"
+
+#: ong/templates/ong/home/home.html:54
+msgid ""
+"Este me parece ser um nome curto de mais. Que tal adicionar o sobrenome "
+"também?"
+msgstr ""
+"This is very short name, huh? What about telling us your surname as well?"
+
+#: ong/templates/ong/home/home.html:57
+msgid "Por favor, informe um e-mail para que possamos te responder..."
+msgstr "Please, inform an email address so we can get back to you..."
+
+#: ong/templates/ong/home/home.html:58
+msgid "Você deve inserir um e-mail válido, por favor."
+msgstr "You must enter a valid email address, please."
+
+#: ong/templates/ong/home/home.html:61
+msgid "Que tal nos dizer o assunto da sua mensagem?"
+msgstr "What about telling us what this message is about?"
+
+#: ong/templates/ong/home/home.html:62
+msgid "Este assunto parece ser curto demais, tente aumentá-lo."
+msgstr "This is a very short subject. Try anything longer than that."
+
+#: ong/templates/ong/home/home.html:65
+msgid ""
+"É aqui que você deve inserir sua mensagem. Nós prometemos ler e responder "
+"tudo."
+msgstr ""
+"You must write your message here. We promise we will read everything and get "
+"back to you."
+
+#: ong/templates/ong/home/home.html:66
+msgid ""
+"É só isso mesmo? Quanto mais clara for sua mensagem, mais clara poderá ser "
+"nossa resposta!"
+msgstr ""
+"Is this all? The clearer your message is, the faster and clearer will be our "
+"response!"
 
 #: ongfv/settings.py:99
 msgid "Português"

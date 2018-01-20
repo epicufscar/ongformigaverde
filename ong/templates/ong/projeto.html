@@ -106,4 +106,19 @@
     </main>
 {% endblock body %}
 
+{% block scripts %}
+    <script type="text/javascript">
+        $('#owl-depoimentos').owlCarousel({
+            loop: true,
+            margin: 15,
+            nav: false,
+            responsiveClass: true,
+            items: 1,
+            autoplay: true,
+            autoplayTimeout: 10000,
+            autoplayHoverPause: true
+        });
+    </script>
+{% endblock scripts %}
+
 
