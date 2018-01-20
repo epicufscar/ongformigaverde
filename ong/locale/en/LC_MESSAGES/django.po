@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-20 16:36-0200\n"
+"POT-Creation-Date: 2018-01-20 17:05-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ong/templates/ong/_footer.html:8
+#: ong/templates/ong/_footer.html:8 ong/templates/ong/historia.html:5
 msgid "História"
 msgstr "Our History"
 
-#: ong/templates/ong/_footer.html:9
+#: ong/templates/ong/_footer.html:9 ong/templates/ong/missao.html:5
 msgid "Missão"
 msgstr "Mission"
 
@@ -37,7 +37,7 @@ msgstr "Values"
 msgid "Princípios"
 msgstr "Principles"
 
-#: ong/templates/ong/_footer.html:15
+#: ong/templates/ong/_footer.html:15 ong/templates/ong/equipe.html:5
 msgid "Equipe"
 msgstr "Team"
 
@@ -45,15 +45,15 @@ msgstr "Team"
 msgid "Intercambistas"
 msgstr "Intl. Volunteers"
 
-#: ong/templates/ong/_footer.html:17
+#: ong/templates/ong/_footer.html:17 ong/templates/ong/parceiros.html:5
 msgid "Parceiros"
 msgstr "Partners"
 
-#: ong/templates/ong/_footer.html:20
+#: ong/templates/ong/_footer.html:20 ong/templates/ong/projetos.html:5
 msgid "Projetos"
 msgstr "Projects"
 
-#: ong/templates/ong/_footer.html:21
+#: ong/templates/ong/_footer.html:21 ong/templates/ong/doacoes.html:5
 msgid "Doações"
 msgstr "Donations"
 
@@ -61,64 +61,64 @@ msgstr "Donations"
 msgid "Receita de Doações"
 msgstr "Donation Transparency"
 
-#: ong/templates/ong/_footer.html:23
+#: ong/templates/ong/_footer.html:23 ong/templates/ong/noticias.html:5
 msgid "Notícias"
 msgstr "News"
 
-#: ong/templates/ong/_header.html:40
+#: ong/templates/ong/_header.html:41
 msgid "Quem Somos"
 msgstr "About Us"
 
-#: ong/templates/ong/_header.html:45
+#: ong/templates/ong/_header.html:46
 msgid "NOSSA HISTÓRIA"
 msgstr "OUR HISTORY"
 
-#: ong/templates/ong/_header.html:46
+#: ong/templates/ong/_header.html:47
 msgid "MISSÃO"
 msgstr "MISSION"
 
-#: ong/templates/ong/_header.html:47
+#: ong/templates/ong/_header.html:48
 msgid "VISÃO"
 msgstr "VISION"
 
-#: ong/templates/ong/_header.html:48
+#: ong/templates/ong/_header.html:49
 msgid "VALORES"
 msgstr "VALUES"
 
-#: ong/templates/ong/_header.html:49
+#: ong/templates/ong/_header.html:50
 msgid "PRINCÍPIOS"
 msgstr "PRINCIPLES"
 
-#: ong/templates/ong/_header.html:52
+#: ong/templates/ong/_header.html:53
 msgid "EQUIPE"
 msgstr "TEAM"
 
-#: ong/templates/ong/_header.html:53 ong/templates/ong/home/_em_numeros.html:17
+#: ong/templates/ong/_header.html:54 ong/templates/ong/home/_em_numeros.html:17
 msgid "INTERCAMBISTAS"
 msgstr "INTL. VOLUNTEERS"
 
-#: ong/templates/ong/_header.html:62
+#: ong/templates/ong/_header.html:63
 msgid "Parcerias"
 msgstr "Our Partners"
 
-#: ong/templates/ong/_header.html:65
+#: ong/templates/ong/_header.html:66
 msgid "COMUNIDADE"
 msgstr "COMUNITY"
 
-#: ong/templates/ong/_header.html:66
+#: ong/templates/ong/_header.html:67
 msgid "UNIVERSIDADES"
 msgstr "UNIVERSITY"
 
-#: ong/templates/ong/_header.html:67
+#: ong/templates/ong/_header.html:68
 msgid "EMPRESAS"
 msgstr "COMPANIES"
 
-#: ong/templates/ong/_header.html:74 ong/templates/ong/home/_doacoes.html:15
+#: ong/templates/ong/_header.html:75 ong/templates/ong/home/_doacoes.html:15
 #: ong/templates/ong/home/_doacoes.html:24
 msgid "Fale Conosco"
 msgstr "Contact"
 
-#: ong/templates/ong/_header.html:81
+#: ong/templates/ong/_header.html:82
 msgid "DOAÇÕES"
 msgstr "DONATIONS"
 
@@ -230,15 +230,15 @@ msgstr ""
 msgid "SUA MENSAGEM FALHOU! POR FAVOR, TENTE NOVAMENTE."
 msgstr "Something went terribly wrong! Please try sending your message again."
 
-#: ong/templates/ong/home/_noticias.html:3
+#: ong/templates/ong/home/_noticias.html:5
 msgid "NOTÍCIAS"
 msgstr "NEWS"
 
-#: ong/templates/ong/home/_noticias.html:32
+#: ong/templates/ong/home/_noticias.html:34
 msgid "MAIS NOTÍCIAS..."
 msgstr "MORE NEWS..."
 
-#: ong/templates/ong/home/_projetos.html:7
+#: ong/templates/ong/home/_projetos.html:7 ong/templates/ong/projetos.html:9
 msgid "NOSSOS PROJETOS"
 msgstr "OUR PROJECTS"
 
@@ -300,6 +300,63 @@ msgid ""
 msgstr ""
 "Is this all? The clearer your message is, the faster and clearer will be our "
 "response!"
+
+#: ong/templates/ong/noticia.html:22 ong/templates/ong/projeto.html:55
+msgid "Galeria de Fotos"
+msgstr "Photo Gallery"
+
+#: ong/templates/ong/noticia.html:32 ong/templates/ong/noticia.html:60
+#: ong/templates/ong/projeto.html:48 ong/templates/ong/projeto.html:66
+msgid "Postado por"
+msgstr "Posted by"
+
+#: ong/templates/ong/noticia.html:67
+msgid "LINKS E ANEXOS"
+msgstr "LINKS AND ATTACHMENTS"
+
+#: ong/templates/ong/noticia.html:98 ong/templates/ong/projeto.html:100
+msgid "ANTERIOR"
+msgstr "PREVIOUS"
+
+#: ong/templates/ong/noticia.html:103
+msgid "PRÓXIMA"
+msgstr "NEXT"
+
+#: ong/templates/ong/noticias.html:9
+msgid "TODAS AS NOTÍCIAS"
+msgstr "NEWS"
+
+#: ong/templates/ong/noticias.html:26
+msgid "Continue lendo"
+msgstr "Read more"
+
+#: ong/templates/ong/projeto.html:76
+msgid "DEPOIMENTOS"
+msgstr "Statements"
+
+#: ong/templates/ong/projeto.html:86
+msgid "anos"
+msgstr "yrs old"
+
+#: ong/templates/ong/projeto.html:105
+msgid "PRÓXIMO"
+msgstr "NEXT"
+
+#: ong/templates/ong/projetos.html:12
+msgid "Para crianças"
+msgstr "For children"
+
+#: ong/templates/ong/projetos.html:23
+msgid "Para adultos"
+msgstr "For Adults"
+
+#: ong/templates/ong/projetos.html:34
+msgid "Todas as idades"
+msgstr "All ages"
+
+#: ong/templates/ong/transparencia.html:5
+msgid "Transparência"
+msgstr "Donation Transparency"
 
 #: ongfv/settings.py:99
 msgid "Português"
