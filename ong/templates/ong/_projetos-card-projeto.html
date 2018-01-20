@@ -1,4 +1,7 @@
 {% load staticfiles %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
 <div class="col-md-6 no-padding">
     <article class="card">
     	<div class="row no-padding">
@@ -11,17 +14,25 @@
             </a>
             <div class="caption text-center col-md-7 no-padding">
                 <a href="{% url "projeto" id=projeto.id %}">
-                    <h5 class="card-title">{{ projeto.nome }}</h5>
+                    <h5 class="card-title">{% if LANGUAGE_CODE == "en" and projeto.name %}{{ projeto.name }}{% else %}{{ projeto.nome }}{% endif %}</h5>
                 </a>
-                {% if projeto.descricao|length >= 150 %}
-                    <p class="flex-text text-muted card-text">{{ projeto.descricao|slice:":150" }}...</p>
+                {% if LANGUAGE_CODE == "en" and projeto.description %}
+                    {% if projeto.description|length >= 100 %}
+                        <p class="flex-text text-muted card-text">{{ projeto.description|slice:":100" }}...</p>
+                    {% else %}
+                        <p class="flex-text text-muted card-text">{{ projeto.description }}</p>
+                    {% endif %}
                 {% else %}
-                    <p class="flex-text text-muted card-text">{{ projeto.descricao }}</p>
+                    {% if projeto.descricao|length >= 100 %}
+                        <p class="flex-text text-muted card-text">{{ projeto.descricao|slice:":100" }}...</p>
+                    {% else %}
+                        <p class="flex-text text-muted card-text">{{ projeto.descricao }}</p>
+                    {% endif %}
                 {% endif %}
-                <a href="{% url "projeto" id=projeto.id %}" class="btn">CONHECER</a>
+                <a href="{% url "projeto" id=projeto.id %}" class="btn">{% trans "CONHECER" %}</a>
                 {% for campanha in campanha_doacao %}
                     {% if campanha.projeto.nome == projeto.nome %}
-                        <a href="{{ campanha.link }}" target="_blank" class="btn btn-donation">DOAR</a>
+                        <a href="{{ campanha.link }}" target="_blank" class="btn btn-donation">{% trans "DOAR" %}</a>
                     {% endif %}
                 {% endfor %}
             </div>
