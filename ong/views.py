@@ -1,3 +1,5 @@
+from datetime import datetime
+import dateutil.relativedelta
 from django.shortcuts import render
 from django.core.mail import send_mail
 from .models import *
@@ -70,7 +72,71 @@ def doacoes(request):
 
 
 def transparencia(request):
-    data = {}
+    periodStart = None
+    periodEnd = None
+
+    if request.method == 'POST':
+        periodStart = request.POST['period-start']
+        periodEnd = request.POST['period-end']
+    else:
+        periodStart = (datetime.now() + dateutil.relativedelta.relativedelta(years=-1)).strftime('%d/%m/%Y')
+        periodEnd = datetime.now().strftime('%d/%m/%Y')
+
+    p_valor = [0, 0, 0, 0, 0, 0, 0]
+    p_quantidade = [0, 0, 0, 0, 0, 0, 0]
+    receitas = []
+    campanhas = CampanhaParaDoacoes.objects.order_by('-dataFim')
+
+    for receita in ReceitaDeDoacoes.objects.order_by('-data'):
+        if datetime.strptime(periodStart, '%d/%m/%Y').date() <= receita.data <= datetime.strptime(periodEnd, '%d/%m/%Y').date():
+            if receita.utilizacao == 'P1':
+                receita.utilizacaoT = 'Manutenção administrativa da ONG'
+                p_valor[0] += receita.valor
+                p_quantidade[0] += 1
+
+            if receita.utilizacao == 'P2':
+                receita.utilizacaoT = 'Aplicação em projetos existentes'
+                p_valor[1] += receita.valor
+                p_quantidade[1] += 1
+
+            if receita.utilizacao == 'P3':
+                receita.utilizacaoT = 'Criação de novos projetos'
+                p_valor[2] += receita.valor
+                p_quantidade[2] += 1
+
+            if receita.utilizacao == 'P4':
+                receita.utilizacaoT = 'Aquisição de recursos e materiais'
+                p_valor[3] += receita.valor
+                p_quantidade[3] += 1
+
+            if receita.utilizacao == 'P5':
+                receita.utilizacaoT = 'Treinamentos para membros da equipe'
+                p_valor[4] += receita.valor
+                p_quantidade[4] += 1
+
+            if receita.utilizacao == 'P6':
+                receita.utilizacaoT = 'Eventos e comemorações'
+                p_valor[5] += receita.valor
+                p_quantidade[5] += 1
+
+            if receita.utilizacao == 'P7':
+                receita.utilizacaoT = 'Outras finalidades'
+                p_valor[6] += receita.valor
+                p_quantidade[6] += 1
+
+            receita.data = receita.data.strftime('%d/%b/%Y')
+            receitas.append(receita)
+
+    data = {
+        'campanhas': campanhas,
+        'receitas': receitas,
+        'periodStart': periodStart,
+        'periodEnd': periodEnd,
+        'chart': {
+            'p_valor': p_valor,
+            'p_quantidade': p_quantidade
+        }
+    }
     return render(request, 'ong/transparencia.html', data)
 
 
@@ -78,7 +144,6 @@ def noticias(request):
     data = {
         'noticias': Noticia.objects.all().order_by('-data')
     }
-
     return render(request, 'ong/noticias.html', data)
 
 
