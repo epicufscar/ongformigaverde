@@ -243,7 +243,7 @@ class ReceitaDeDoacoes(models.Model):
 
     USAGE = (
         ('E1', 'Administration and maintenance tasks'),
-        ('E2', 'Investments on existing projects'),
+        ('E2', 'Investments in existing projects'),
         ('E3', 'Creation of new projects'),
         ('E4', 'Resources and materials acquisition'),
         ('E5', 'Training of team members'),

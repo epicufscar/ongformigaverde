@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-20 17:05-0200\n"
+"POT-Creation-Date: 2018-01-20 21:16-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,6 +121,16 @@ msgstr "Contact"
 #: ong/templates/ong/_header.html:82
 msgid "DOAÇÕES"
 msgstr "DONATIONS"
+
+#: ong/templates/ong/_projetos-card-projeto.html:32
+#: ong/templates/ong/home/_projetos.html:39
+msgid "CONHECER"
+msgstr "MORE INFO"
+
+#: ong/templates/ong/_projetos-card-projeto.html:35
+#: ong/templates/ong/home/_projetos.html:42
+msgid "DOAR"
+msgstr "DONATE"
 
 #: ong/templates/ong/home/_doacoes.html:6
 msgid "SUA AJUDA É BEM-VINDA"
@@ -242,14 +252,6 @@ msgstr "MORE NEWS..."
 msgid "NOSSOS PROJETOS"
 msgstr "OUR PROJECTS"
 
-#: ong/templates/ong/home/_projetos.html:39
-msgid "CONHECER"
-msgstr "MORE INFO"
-
-#: ong/templates/ong/home/_projetos.html:42
-msgid "DOAR"
-msgstr "DONATE"
-
 #: ong/templates/ong/home/_projetos.html:52
 msgid "CONHEÇA TODOS OS PROJETOS"
 msgstr "LIST ALL PROJECTS"
@@ -354,9 +356,110 @@ msgstr "For Adults"
 msgid "Todas as idades"
 msgstr "All ages"
 
-#: ong/templates/ong/transparencia.html:5
+#: ong/templates/ong/transparencia.html:6
 msgid "Transparência"
 msgstr "Donation Transparency"
+
+#: ong/templates/ong/transparencia.html:22
+msgid "FILTRAR"
+msgstr "FILTER"
+
+#: ong/templates/ong/transparencia.html:31
+msgid "Doações no mesmo período"
+msgstr "Donations in the same period"
+
+#: ong/templates/ong/transparencia.html:35
+msgid "Data"
+msgstr "Date"
+
+#: ong/templates/ong/transparencia.html:36
+#: ong/templates/ong/transparencia.html:150
+msgid "Valor"
+msgstr "Amount"
+
+#: ong/templates/ong/transparencia.html:37
+msgid "Utilização"
+msgstr "Usage"
+
+#: ong/templates/ong/transparencia.html:38
+msgid "Doador"
+msgstr "Donor"
+
+#: ong/templates/ong/transparencia.html:60
+msgid "Não houveram doações no período selecionado."
+msgstr "There were no donations in the selected period."
+
+#: ong/templates/ong/transparencia.html:61
+msgid "DOAR AGORA"
+msgstr "DONATE NOW"
+
+#: ong/templates/ong/transparencia.html:68
+msgid "Resumo das campanhas de doação"
+msgstr "Summary of campaigns"
+
+#: ong/templates/ong/transparencia.html:72
+msgid "Título"
+msgstr "Title"
+
+#: ong/templates/ong/transparencia.html:73
+msgid "Finalizada em"
+msgstr "End date"
+
+#: ong/templates/ong/transparencia.html:74
+msgid "Valor arrecadado"
+msgstr "Amount raised"
+
+#: ong/templates/ong/transparencia.html:74
+msgid "Valor esperado"
+msgstr "Amount expected"
+
+#: ong/templates/ong/transparencia.html:85
+msgid "Campanha em andamento..."
+msgstr "Campaign in progress..."
+
+#: ong/templates/ong/transparencia.html:143
+msgid "Como utilizamos o dinheiro das doações"
+msgstr "How we use the donations"
+
+#: ong/templates/ong/transparencia.html:149
+msgid "Quantidade"
+msgstr "Quantity"
+
+#: ong/templates/ong/transparencia.html:149
+msgid "doações"
+msgstr "donations"
+
+#: ong/templates/ong/transparencia.html:156
+msgid "Aplicação das Doações"
+msgstr "Donation Transparency"
+
+#: ong/templates/ong/transparencia.html:160
+msgid "Manutenção administrativa da ONG"
+msgstr "Administration and maintenance tasks"
+
+#: ong/templates/ong/transparencia.html:167
+msgid "Aplicação em projetos existentes"
+msgstr "Investments in existing projects"
+
+#: ong/templates/ong/transparencia.html:174
+msgid "Criação de novos projetos"
+msgstr "Creation of new project"
+
+#: ong/templates/ong/transparencia.html:181
+msgid "Aquisição de recursos e materiais"
+msgstr "Resources and materials acquisition"
+
+#: ong/templates/ong/transparencia.html:188
+msgid "Treinamentos para membros da equipe"
+msgstr "Training of team member"
+
+#: ong/templates/ong/transparencia.html:195
+msgid "Eventos e comemorações"
+msgstr "Events and celebration"
+
+#: ong/templates/ong/transparencia.html:202
+msgid "Outras finalidades"
+msgstr "Other demands"
 
 #: ongfv/settings.py:99
 msgid "Português"
