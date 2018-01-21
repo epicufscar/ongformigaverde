@@ -1,7 +1,11 @@
 {% extends 'ong/base.html' %}
 {% load staticfiles %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
-{% block title %} {{ projeto.nome }} {% endblock title %}
+{% block title %}
+    {% if LANGUAGE_CODE == "en" and projeto.name %}{{ projeto.name }}{% else %}{{ projeto.nome }}{% endif %}
+{% endblock title %}
 
 {% block body %}
     <main id="p-projeto" class="page-top">
@@ -17,8 +21,8 @@
                     {% endif %}
 
                     <div class="project-description">
-                        <h3 class="caption text-center">{{ projeto.nome }}</h3>
-                        <div>{{ projeto.descricao|safe }}</div>
+                        <h3 class="caption text-center">{% if LANGUAGE_CODE == "en" and projeto.name %}{{ projeto.name }}{% else %}{{ projeto.nome }}{% endif %}</h3>
+                        <div>{% if LANGUAGE_CODE == "en" and projeto.description %}{{ projeto.description|safe }}{% else %}{{ projeto.descricao|safe }}{% endif %}</div>
                     </div>
 
                     <div id="projeto-midias">
@@ -40,15 +44,15 @@
                                 <blockquote cite="{{ projeto.facebookEmbed }}"
                                             class="fb-xfbml-parse-ignore">
                                     <a href="{{ projeto.facebookEmbed }}">{{ projeto.nome }}</a>
-                                    <p>{{ projeto.nome }}</p>
-                                    Postado por: <a href="{{ informacoes_ong.facebook }}">{{ informacoes_ong.nome }}</a>
+                                    <p>{% if LANGUAGE_CODE == "en" and projeto.name %}{{ projeto.name }}{% else %}{{ projeto.nome }}{% endif %}</p>
+                                    {% trans "Postado por" %}: <a href="{{ informacoes_ong.facebook }}">{{ informacoes_ong.nome }}</a>
                                 </blockquote>
                             </div>
                         {% endif %}
 
                         {% if projeto.linkFotos %}
                             <div id="photos" class="fb-photos text-center">
-                                <a class="btn btn-galery" href="{{ projeto.linkFotos }}" target="_blank">Galeria de Fotos</a>
+                                <a class="btn btn-galery" href="{{ projeto.linkFotos }}" target="_blank">{% trans "Galeria de Fotos" %}</a>
                                 <div class="fb-post"
                                      data-href="{{ projeto.facebookAlbum }}"
                                      data-show-text="true"
@@ -58,8 +62,8 @@
                                     <blockquote cite="{{ projeto.facebookAlbum }}"
                                                 class="fb-xfbml-parse-ignore">
                                         <a href="{{ projeto.facebookAlbum }}">{{ projeto.nome }}</a>
-                                        <p>{{ projeto.nome }}</p>
-                                        Postado por: <a href="{{ informacoes_ong.facebook }}">{{ informacoes_ong.nome }}</a>
+                                        <p>{% if LANGUAGE_CODE == "en" and projeto.name %}{{ projeto.name }}{% else %}{{ projeto.nome }}{% endif %}</p>
+                                        {% trans "Postado por" %}: <a href="{{ informacoes_ong.facebook }}">{{ informacoes_ong.nome }}</a>
                                     </blockquote>
                                 </div>
                             </div>
@@ -69,7 +73,7 @@
                 <div class="col-xl-3 col-md-4 col-sm-12">
                     {% if depoimentos %}
                         <hr>
-                        <h4 class="caption text-center">DEPOIMENTOS</h4>
+                        <h4 class="caption text-center">{% trans "DEPOIMENTOS" %}</h4>
                         <div id="owl-depoimentos" class="owl-carousel owl-theme">
                             {% for depo in depoimentos %}
                                 <article class="card">
@@ -79,8 +83,8 @@
                                         <img class="card-img-top" src="{% static "images/formiga.jpg" %}">
                                     {% endif %}
                                     <div class="caption">
-                                        <h5 class="card-title">{{ depo.nome }}, {{ depo.idade }} anos</h5>
-                                        <p class="flex-text text-muted card-text">"{{ depo.depoimento }}"</p>
+                                        <h5 class="card-title">{{ depo.nome }}, {{ depo.idade }} {% trans "anos" %}</h5>
+                                        <p class="flex-text text-muted card-text">"{% if LANGUAGE_CODE == "en" and depo.statement %}{{ depo.statement }}{% else %}{{ depo.depoimento }}{% endif %}"</p>
                                     </div>
                                 </article>
                             {% endfor %}
@@ -93,17 +97,32 @@
         <div class="nav-bottom">
             <div class="float-left">
                 {% if anterior.id %}
-                    <a href="{% url "projeto" id=anterior.id %}" title="{{ anterior.titulo }}"><i class="fa fa-chevron-left"></i> ANTERIOR</a>
+                    <a href="{% url "projeto" id=anterior.id %}" title="{{ anterior.titulo }}"><i class="fa fa-chevron-left"></i> {% trans "ANTERIOR" %}</a>
                 {% endif %}
             </div>
             <div class="float-right">
                 {% if proximo.id %}
-                    <a href="{% url "projeto" id=proximo.id %}" title="{{ proximo.titulo }}">PRÓXIMO <i class="fa fa-chevron-right"></i></a>
+                    <a href="{% url "projeto" id=proximo.id %}" title="{{ proximo.titulo }}">{% trans "PRÓXIMO" %} <i class="fa fa-chevron-right"></i></a>
                 {% endif %}
             </div>
         </div>
 
     </main>
 {% endblock body %}
+
+{% block scripts %}
+    <script type="text/javascript">
+        $('#owl-depoimentos').owlCarousel({
+            loop: true,
+            margin: 15,
+            nav: false,
+            responsiveClass: true,
+            items: 1,
+            autoplay: true,
+            autoplayTimeout: 10000,
+            autoplayHoverPause: true
+        });
+    </script>
+{% endblock scripts %}
 
 

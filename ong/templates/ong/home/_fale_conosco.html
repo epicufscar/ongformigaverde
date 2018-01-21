@@ -1,5 +1,7 @@
+{% load i18n %}
+
 <section id="fale-conosco" class="container">
-	<div class="text-center"><h2>FALE CONOSCO</h2></div>
+	<div class="text-center"><h2>{% trans "FALE CONOSCO" %}</h2></div>
 	<div class="row">
 		<div class="fc-left col-md-6 text-center">
 			<iframe id="gmap_canvas" src="https://maps.google.com/maps?q=ong formiga verde&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
@@ -18,20 +20,20 @@
 			<form id="contact-form" method="POST">
 				{% csrf_token %}
 				<fieldset>
-					<legend>Parcerias, doações, sugestões ou dúvidas</legend>
-					<input type="text" class="form-control" name="name" placeholder="Nome" />
-					<input type="text" class="form-control" name="email" placeholder="Email" />
-					<input type="text" class="form-control" name="subject" placeholder="Assunto" />
-					<textarea class="form-control" name="message" placeholder="Mensagem"></textarea>
+					<legend>{% trans "Parcerias, doações, sugestões ou dúvidas" %}</legend>
+					<input type="text" class="form-control" name="name" placeholder="{% trans "Nome" %}" />
+					<input type="text" class="form-control" name="email" placeholder="{% trans "Email" %}" />
+					<input type="text" class="form-control" name="subject" placeholder="{% trans "Assunto" %}" />
+					<textarea class="form-control" name="message" placeholder="{% trans "Mensagem" %}"></textarea>
 				</fieldset>
-				<button type="submit" class="btn btn-success">Enviar</button>
+				<button type="submit" class="btn btn-success">{% trans "Enviar" %}</button>
 			</form>
 
             <!-- FEEDBACK MESSAGE -->
             {% if email_success == True %}
-            	<script type="text/javascript">alert("MENSAGEM ENVIADA COM SUCESSO. AGUARDE NOSSO RETORNO!")</script>
+            	<script type="text/javascript">alert({% trans "MENSAGEM ENVIADA COM SUCESSO. AGUARDE NOSSO RETORNO!" %})</script>
             {% elif email_success == False %}
-            	<script type="text/javascript">alert("SUA MENSAGEM FALHOU! POR FAVOR, TENTE NOVAMENTE.")</script>
+            	<script type="text/javascript">alert({% trans "SUA MENSAGEM FALHOU! POR FAVOR, TENTE NOVAMENTE." %})</script>
             {% endif %}
 		</div>
 	</div>

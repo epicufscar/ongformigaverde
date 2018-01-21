@@ -1,0 +1,470 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-20 21:16-0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ong/templates/ong/_footer.html:8 ong/templates/ong/historia.html:5
+msgid "História"
+msgstr "Our History"
+
+#: ong/templates/ong/_footer.html:9 ong/templates/ong/missao.html:5
+msgid "Missão"
+msgstr "Mission"
+
+#: ong/templates/ong/_footer.html:10
+msgid "Visão"
+msgstr "Vision"
+
+#: ong/templates/ong/_footer.html:11
+msgid "Valores"
+msgstr "Values"
+
+#: ong/templates/ong/_footer.html:12
+msgid "Princípios"
+msgstr "Principles"
+
+#: ong/templates/ong/_footer.html:15 ong/templates/ong/equipe.html:5
+msgid "Equipe"
+msgstr "Team"
+
+#: ong/templates/ong/_footer.html:16
+msgid "Intercambistas"
+msgstr "Intl. Volunteers"
+
+#: ong/templates/ong/_footer.html:17 ong/templates/ong/parceiros.html:5
+msgid "Parceiros"
+msgstr "Partners"
+
+#: ong/templates/ong/_footer.html:20 ong/templates/ong/projetos.html:5
+msgid "Projetos"
+msgstr "Projects"
+
+#: ong/templates/ong/_footer.html:21 ong/templates/ong/doacoes.html:5
+msgid "Doações"
+msgstr "Donations"
+
+#: ong/templates/ong/_footer.html:22 ong/templates/ong/home/_doacoes.html:44
+msgid "Receita de Doações"
+msgstr "Donation Transparency"
+
+#: ong/templates/ong/_footer.html:23 ong/templates/ong/noticias.html:5
+msgid "Notícias"
+msgstr "News"
+
+#: ong/templates/ong/_header.html:41
+msgid "Quem Somos"
+msgstr "About Us"
+
+#: ong/templates/ong/_header.html:46
+msgid "NOSSA HISTÓRIA"
+msgstr "OUR HISTORY"
+
+#: ong/templates/ong/_header.html:47
+msgid "MISSÃO"
+msgstr "MISSION"
+
+#: ong/templates/ong/_header.html:48
+msgid "VISÃO"
+msgstr "VISION"
+
+#: ong/templates/ong/_header.html:49
+msgid "VALORES"
+msgstr "VALUES"
+
+#: ong/templates/ong/_header.html:50
+msgid "PRINCÍPIOS"
+msgstr "PRINCIPLES"
+
+#: ong/templates/ong/_header.html:53
+msgid "EQUIPE"
+msgstr "TEAM"
+
+#: ong/templates/ong/_header.html:54 ong/templates/ong/home/_em_numeros.html:17
+msgid "INTERCAMBISTAS"
+msgstr "INTL. VOLUNTEERS"
+
+#: ong/templates/ong/_header.html:63
+msgid "Parcerias"
+msgstr "Our Partners"
+
+#: ong/templates/ong/_header.html:66
+msgid "COMUNIDADE"
+msgstr "COMUNITY"
+
+#: ong/templates/ong/_header.html:67
+msgid "UNIVERSIDADES"
+msgstr "UNIVERSITY"
+
+#: ong/templates/ong/_header.html:68
+msgid "EMPRESAS"
+msgstr "COMPANIES"
+
+#: ong/templates/ong/_header.html:75 ong/templates/ong/home/_doacoes.html:15
+#: ong/templates/ong/home/_doacoes.html:24
+msgid "Fale Conosco"
+msgstr "Contact"
+
+#: ong/templates/ong/_header.html:82
+msgid "DOAÇÕES"
+msgstr "DONATIONS"
+
+#: ong/templates/ong/_projetos-card-projeto.html:32
+#: ong/templates/ong/home/_projetos.html:39
+msgid "CONHECER"
+msgstr "MORE INFO"
+
+#: ong/templates/ong/_projetos-card-projeto.html:35
+#: ong/templates/ong/home/_projetos.html:42
+msgid "DOAR"
+msgstr "DONATE"
+
+#: ong/templates/ong/home/_doacoes.html:6
+msgid "SUA AJUDA É BEM-VINDA"
+msgstr "YOUR HELP IS GREATLY APPRECIATED"
+
+#: ong/templates/ong/home/_doacoes.html:11
+msgid "Talento"
+msgstr "Talent"
+
+#: ong/templates/ong/home/_doacoes.html:13
+msgid ""
+"Você pode doar seu tempo, seja ensinando o que você sabe, mobilizando "
+"pessoas, facilitando contatos ou mesmo ajudando na mão de obra, seja um "
+"VOLUNTÁRIO e/ou Educador Social"
+msgstr ""
+"You can donate your time by teaching what you know, mobilizing people, "
+"facilitating contacts or even providing manpower. Be a volunteer and/or "
+"social educator."
+
+#: ong/templates/ong/home/_doacoes.html:20
+msgid "Materiais"
+msgstr "Materials"
+
+#: ong/templates/ong/home/_doacoes.html:22
+msgid ""
+"A ONG Formiga Verde desenvolve atividades culturais e esportivas e você pode "
+"doar materiais para executar melhor os propósitos de nossa organização."
+msgstr ""
+"Formiga Verde develops cultural and sport activities and you can donate "
+"materials to allow our organization to improve its efficiency when pursuing "
+"its goals."
+
+#: ong/templates/ong/home/_doacoes.html:29
+msgid "Doação Financeira"
+msgstr "Financial Donation"
+
+#: ong/templates/ong/home/_doacoes.html:31
+msgid ""
+"Dependemos de doações financeiras para a execução de nossos projetos. Com "
+"esta doação, você não\n"
+"                    apenas vira parceiro da ONG Formiga Verde como também "
+"nos ajuda a abrir um leque de\n"
+"                    possibilidades para que indivíduos desenvolvam seus "
+"talentos e possam ter acesso às nossas\n"
+"                    propostas na áreas da educação formal e proteção social."
+msgstr ""
+"Our projects depend on the funding. With your donation, you will not only "
+"turn into a partner of the NGO Formiga Verde, but also you will help us to "
+"open up a range of responsibilities for individuals to develop their talents "
+"and have access to our proposals in the area of formal education and social "
+"protection. Our community empowerment seeks a more just and caring society."
+
+#: ong/templates/ong/home/_em_numeros.html:7
+msgid "PROJETOS"
+msgstr "PROJECTS"
+
+#: ong/templates/ong/home/_em_numeros.html:8
+msgid "em andamento"
+msgstr "in progress"
+
+#: ong/templates/ong/home/_em_numeros.html:12
+msgid "PARCEIROS"
+msgstr "PARTNERS"
+
+#: ong/templates/ong/home/_em_numeros.html:13
+msgid "que nos ajudam"
+msgstr "who help us"
+
+#: ong/templates/ong/home/_em_numeros.html:18
+msgid "já passaram por aqui"
+msgstr "have been here"
+
+#: ong/templates/ong/home/_fale_conosco.html:4
+msgid "FALE CONOSCO"
+msgstr "CONTACT"
+
+#: ong/templates/ong/home/_fale_conosco.html:23
+msgid "Parcerias, doações, sugestões ou dúvidas"
+msgstr "Partnership, donations, suggestions or any questions"
+
+#: ong/templates/ong/home/_fale_conosco.html:24
+msgid "Nome"
+msgstr "Name"
+
+#: ong/templates/ong/home/_fale_conosco.html:25
+msgid "Email"
+msgstr "Email"
+
+#: ong/templates/ong/home/_fale_conosco.html:26
+msgid "Assunto"
+msgstr "Subject"
+
+#: ong/templates/ong/home/_fale_conosco.html:27
+msgid "Mensagem"
+msgstr "Message"
+
+#: ong/templates/ong/home/_fale_conosco.html:29
+msgid "Enviar"
+msgstr "Submit"
+
+#: ong/templates/ong/home/_fale_conosco.html:34
+msgid "MENSAGEM ENVIADA COM SUCESSO. AGUARDE NOSSO RETORNO!"
+msgstr ""
+"Message successfully received. We will get in touch as soon as possible!"
+
+#: ong/templates/ong/home/_fale_conosco.html:36
+msgid "SUA MENSAGEM FALHOU! POR FAVOR, TENTE NOVAMENTE."
+msgstr "Something went terribly wrong! Please try sending your message again."
+
+#: ong/templates/ong/home/_noticias.html:5
+msgid "NOTÍCIAS"
+msgstr "NEWS"
+
+#: ong/templates/ong/home/_noticias.html:34
+msgid "MAIS NOTÍCIAS..."
+msgstr "MORE NEWS..."
+
+#: ong/templates/ong/home/_projetos.html:7 ong/templates/ong/projetos.html:9
+msgid "NOSSOS PROJETOS"
+msgstr "OUR PROJECTS"
+
+#: ong/templates/ong/home/_projetos.html:52
+msgid "CONHEÇA TODOS OS PROJETOS"
+msgstr "LIST ALL PROJECTS"
+
+#: ong/templates/ong/home/home.html:5
+msgid "Página Inicial"
+msgstr "Home"
+
+#: ong/templates/ong/home/home.html:53
+msgid "Precisamos saber com quem conversamos. Qual o seu nome?"
+msgstr "We need to know who is writing to us. What is your name?"
+
+#: ong/templates/ong/home/home.html:54
+msgid ""
+"Este me parece ser um nome curto de mais. Que tal adicionar o sobrenome "
+"também?"
+msgstr ""
+"This is very short name, huh? What about telling us your surname as well?"
+
+#: ong/templates/ong/home/home.html:57
+msgid "Por favor, informe um e-mail para que possamos te responder..."
+msgstr "Please, inform an email address so we can get back to you..."
+
+#: ong/templates/ong/home/home.html:58
+msgid "Você deve inserir um e-mail válido, por favor."
+msgstr "You must enter a valid email address, please."
+
+#: ong/templates/ong/home/home.html:61
+msgid "Que tal nos dizer o assunto da sua mensagem?"
+msgstr "What about telling us what this message is about?"
+
+#: ong/templates/ong/home/home.html:62
+msgid "Este assunto parece ser curto demais, tente aumentá-lo."
+msgstr "This is a very short subject. Try anything longer than that."
+
+#: ong/templates/ong/home/home.html:65
+msgid ""
+"É aqui que você deve inserir sua mensagem. Nós prometemos ler e responder "
+"tudo."
+msgstr ""
+"You must write your message here. We promise we will read everything and get "
+"back to you."
+
+#: ong/templates/ong/home/home.html:66
+msgid ""
+"É só isso mesmo? Quanto mais clara for sua mensagem, mais clara poderá ser "
+"nossa resposta!"
+msgstr ""
+"Is this all? The clearer your message is, the faster and clearer will be our "
+"response!"
+
+#: ong/templates/ong/noticia.html:22 ong/templates/ong/projeto.html:55
+msgid "Galeria de Fotos"
+msgstr "Photo Gallery"
+
+#: ong/templates/ong/noticia.html:32 ong/templates/ong/noticia.html:60
+#: ong/templates/ong/projeto.html:48 ong/templates/ong/projeto.html:66
+msgid "Postado por"
+msgstr "Posted by"
+
+#: ong/templates/ong/noticia.html:67
+msgid "LINKS E ANEXOS"
+msgstr "LINKS AND ATTACHMENTS"
+
+#: ong/templates/ong/noticia.html:98 ong/templates/ong/projeto.html:100
+msgid "ANTERIOR"
+msgstr "PREVIOUS"
+
+#: ong/templates/ong/noticia.html:103
+msgid "PRÓXIMA"
+msgstr "NEXT"
+
+#: ong/templates/ong/noticias.html:9
+msgid "TODAS AS NOTÍCIAS"
+msgstr "NEWS"
+
+#: ong/templates/ong/noticias.html:26
+msgid "Continue lendo"
+msgstr "Read more"
+
+#: ong/templates/ong/projeto.html:76
+msgid "DEPOIMENTOS"
+msgstr "Statements"
+
+#: ong/templates/ong/projeto.html:86
+msgid "anos"
+msgstr "yrs old"
+
+#: ong/templates/ong/projeto.html:105
+msgid "PRÓXIMO"
+msgstr "NEXT"
+
+#: ong/templates/ong/projetos.html:12
+msgid "Para crianças"
+msgstr "For children"
+
+#: ong/templates/ong/projetos.html:23
+msgid "Para adultos"
+msgstr "For Adults"
+
+#: ong/templates/ong/projetos.html:34
+msgid "Todas as idades"
+msgstr "All ages"
+
+#: ong/templates/ong/transparencia.html:6
+msgid "Transparência"
+msgstr "Donation Transparency"
+
+#: ong/templates/ong/transparencia.html:22
+msgid "FILTRAR"
+msgstr "FILTER"
+
+#: ong/templates/ong/transparencia.html:31
+msgid "Doações no mesmo período"
+msgstr "Donations in the same period"
+
+#: ong/templates/ong/transparencia.html:35
+msgid "Data"
+msgstr "Date"
+
+#: ong/templates/ong/transparencia.html:36
+#: ong/templates/ong/transparencia.html:150
+msgid "Valor"
+msgstr "Amount"
+
+#: ong/templates/ong/transparencia.html:37
+msgid "Utilização"
+msgstr "Usage"
+
+#: ong/templates/ong/transparencia.html:38
+msgid "Doador"
+msgstr "Donor"
+
+#: ong/templates/ong/transparencia.html:60
+msgid "Não houveram doações no período selecionado."
+msgstr "There were no donations in the selected period."
+
+#: ong/templates/ong/transparencia.html:61
+msgid "DOAR AGORA"
+msgstr "DONATE NOW"
+
+#: ong/templates/ong/transparencia.html:68
+msgid "Resumo das campanhas de doação"
+msgstr "Summary of campaigns"
+
+#: ong/templates/ong/transparencia.html:72
+msgid "Título"
+msgstr "Title"
+
+#: ong/templates/ong/transparencia.html:73
+msgid "Finalizada em"
+msgstr "End date"
+
+#: ong/templates/ong/transparencia.html:74
+msgid "Valor arrecadado"
+msgstr "Amount raised"
+
+#: ong/templates/ong/transparencia.html:74
+msgid "Valor esperado"
+msgstr "Amount expected"
+
+#: ong/templates/ong/transparencia.html:85
+msgid "Campanha em andamento..."
+msgstr "Campaign in progress..."
+
+#: ong/templates/ong/transparencia.html:143
+msgid "Como utilizamos o dinheiro das doações"
+msgstr "How we use the donations"
+
+#: ong/templates/ong/transparencia.html:149
+msgid "Quantidade"
+msgstr "Quantity"
+
+#: ong/templates/ong/transparencia.html:149
+msgid "doações"
+msgstr "donations"
+
+#: ong/templates/ong/transparencia.html:156
+msgid "Aplicação das Doações"
+msgstr "Donation Transparency"
+
+#: ong/templates/ong/transparencia.html:160
+msgid "Manutenção administrativa da ONG"
+msgstr "Administration and maintenance tasks"
+
+#: ong/templates/ong/transparencia.html:167
+msgid "Aplicação em projetos existentes"
+msgstr "Investments in existing projects"
+
+#: ong/templates/ong/transparencia.html:174
+msgid "Criação de novos projetos"
+msgstr "Creation of new project"
+
+#: ong/templates/ong/transparencia.html:181
+msgid "Aquisição de recursos e materiais"
+msgstr "Resources and materials acquisition"
+
+#: ong/templates/ong/transparencia.html:188
+msgid "Treinamentos para membros da equipe"
+msgstr "Training of team member"
+
+#: ong/templates/ong/transparencia.html:195
+msgid "Eventos e comemorações"
+msgstr "Events and celebration"
+
+#: ong/templates/ong/transparencia.html:202
+msgid "Outras finalidades"
+msgstr "Other demands"
+
+#: ongfv/settings.py:99
+msgid "Português"
+msgstr "Portuguese"
+
+#: ongfv/settings.py:100
+msgid "Inglês"
+msgstr "English"
