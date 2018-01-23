@@ -4,11 +4,11 @@
 {% block title %}Parceiros{% endblock title %}
 
 {% block body %}
-    <main id="p-parceiros" class="page-top">
-    <h1> PARCEIROS </h1>
+    <main id="p-parceiros" class="container page-top">
+    <h3>NOSSOS PARCEIROS</h3>
     {% if comunidades %}
         <hr>
-        <h4> Comunidade </h4>
+        <h4> Comunidades </h4>
         <section id="parceiros" class="py-2">
             <div class="row no-padding">
                 {% for parceiro in comunidades %}
@@ -20,7 +20,7 @@
 
     {%  if universidades %}
         <hr>
-        <h4> Grupos universitários </h4>
+        <h4> Grupos Universitários </h4>
         <section id="parceiros" class="py-2">
             <div class="row no-padding">
                 {% for parceiro in universidades %}

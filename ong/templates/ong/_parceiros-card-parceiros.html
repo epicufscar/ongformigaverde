@@ -4,7 +4,7 @@
     	<div class="row no-padding">
             <a href="{{ parceiro.link }}" title="" class="col-md-5 no-padding">
                 {% if parceiro.possuiPhoto %}
-                    <img class="card-img-top" src="data:image/png;base64,{{ projeto.photo64 }}"/>
+                    <img class="card-img-top" src="data:image/png;base64,{{ parceiro.photo64 }}"/>
                 {% else %}
                     <img class="card-img-top" src="{% static "images/formiga.jpg" %}">
                 {% endif %}
