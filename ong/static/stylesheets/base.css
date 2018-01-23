@@ -41,6 +41,10 @@ body {
    margin: 0 !important;
 }
 
+.btn {
+    font-family: 'Roboto Condensed', sans-serif !important;
+}
+
 .page-top {
     margin-top: 110px;
 }
