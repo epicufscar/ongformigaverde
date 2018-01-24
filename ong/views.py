@@ -46,7 +46,17 @@ def equipe(request):
 
 
 def parceiros(request):
-    data = {}
+    data = {
+        'parceiros': Parceria.objects.all(),
+        'comunidades': None,
+        'universiades': None,
+        'empresas': None
+    }
+
+    data['comunidades'] = [p for p in data['parceiros'] if p.tipo == "P1"]
+    data['universidades'] = [p for p in data['parceiros'] if p.tipo == "P2"]
+    data['empresas'] = [p for p in data['parceiros'] if p.tipo == "P3"]
+
     return render(request, 'ong/parceiros.html', data)
 
 
