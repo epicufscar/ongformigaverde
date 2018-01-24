@@ -28,7 +28,7 @@
 
 @media (min-width: 48em) {
     #p-parceiros #parceiros .card {
-        height: 235px;
+        height: 100px;
     }
 }
 
@@ -38,8 +38,8 @@
 
 #p-parceiros #parceiros .card-img-top {
     padding: 15px 0 0;
-    height: 232px;
-    width: 100%;
+    height: 98px;
+    width: 60%;
 }
 
 @media (min-width: 48em) {
@@ -71,7 +71,7 @@
     margin-top: 7px;
     color: #fff;
     position: absolute;
-    bottom: 10px;
+    bottom: 35px;
     left: calc(50% - 62.5px);
 }
 
@@ -82,6 +82,6 @@
 }
 
 #p-parceiros .card-title {
-    padding-top: 15px;
+    padding-top: 5px;
     color: #4f4f4f;
 }
