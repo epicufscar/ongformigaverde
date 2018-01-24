@@ -6,10 +6,10 @@
 
 {% block body %}
     <main id="p-parceiros" class="container page-top">
-    <h3>NOSSOS PARCEIROS</h3>
+    <h3>{% trans "NOSSOS PARCEIROS" %}</h3>
     {% if comunidades %}
         <hr>
-        <h4> Comunidades </h4>
+        <h4>{% trans "Comunidades" %}</h4>
         <section id="parceiros" class="py-2">
             <div class="row no-padding">
                 {% for parceiro in comunidades %}
@@ -21,7 +21,7 @@
 
     {%  if universidades %}
         <hr>
-        <h4> Grupos Universitários </h4>
+        <h4>{% trans "Grupos Universitários" %}</h4>
         <section id="parceiros" class="py-2">
             <div class="row no-padding">
                 {% for parceiro in universidades %}
@@ -33,7 +33,7 @@
 
     {%  if empresas %}
         <hr>
-        <h4> Empresas </h4>
+        <h4>{% trans "Empresas" %}</h4>
         <section id="parceiros" class="py-2">
             <div class="row no-padding">
                 {% for parceiro in empresas %}
