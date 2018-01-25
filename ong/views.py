@@ -46,7 +46,9 @@ def historia(request):
 
 
 def missao(request):
-    data = {}
+    data = {
+        'informacoes_ong': InformacoesGeraisONG.objects.first(),
+    }
     return render(request, 'ong/missao.html', data)
 
 
