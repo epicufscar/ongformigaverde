@@ -1,0 +1,85 @@
+#p-parceiros {
+    padding-top: 45px;
+    padding-bottom: 30px;
+}
+
+#p-parceiros .container {
+    padding-top: 45px;
+    margin: auto;
+    padding-left: 15px;
+}
+
+#p-parceiros #parceiros {
+    padding: unset;
+    width: unset;
+    height: unset;
+}
+
+#p-parceiros .card {
+    margin: 10px;
+    background-color: #f2faf0;
+}
+
+#p-parceiros .card:hover {
+    background-color: #fff;
+    border: .5px solid #33764c;
+}
+
+#p-parceiros #parceiros .card > .row {
+    height: 100%;
+}
+
+#p-parceiros #parceiros .card-img-top {
+    padding: 15px 0 0;
+    height: 108px;
+    width: calc(100% - 1px);
+    object-fit: cover;
+    object-position: 50% 40%;
+}
+
+#p-parceiros #parceiros .caption {
+    padding: 10px 10px 75px !important;
+}
+
+#p-parceiros #parceiros .card-text {
+    max-height: 100px;
+    overflow: hidden;
+}
+
+#p-parceiros h4 {
+    margin-bottom: -5px;
+    margin-left: 3px;
+}
+
+#p-parceiros .btn {
+    width: 125px;
+    font-size: 0.9em;
+    padding: 7px;
+    background-color: #3c8e5d;
+    border-color: #2a9134;
+    color: #fff;
+    position: absolute;
+    bottom: 1em;
+    left: calc(50% - 62.5px);
+}
+
+#p-parceiros .btn:hover {
+    background-color: #306943;
+    border-color: #587129;
+    color: #ffffff;
+}
+
+#p-parceiros .card-title {
+    padding-top: 5px;
+    color: #4f4f4f;
+}
+
+@media (min-width: 48em) {
+    #p-parceiros #parceiros .card-img-top {
+        padding: 0 0 0 15px;
+    }
+
+    #p-parceiros #parceiros .card {
+        height: 110px;
+    }
+}

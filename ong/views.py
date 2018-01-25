@@ -6,12 +6,22 @@ from .models import *
 
 
 def home(request):
+    projetos = Projeto.objects.all()
+    campanhas = CampanhaParaDoacoes.objects.all()
+    campanhasPrimeiro = []
+
+    for projeto in projetos:
+        if campanhas.filter(projeto=projeto):
+                campanhasPrimeiro.insert(0, projeto)
+        else:
+            campanhasPrimeiro.append(projeto)
+
     data = {
         'informacoes_ong': InformacoesGeraisONG.objects.first(),
         'projetos_andamento': Projeto.objects.filter(dataFim=None).count(),
         'parceiros': Parceria.objects.count(),
         'intercambistas': Membro.objects.exclude(pais='BRASIL').count(),
-        'projetos': Projeto.objects.all(),
+        'projetos': campanhasPrimeiro,
         'noticias': Noticia.objects.order_by('-data')[:10],
         'campanha_doacao': CampanhaParaDoacoes.objects.all(),
         'email_success': None
@@ -43,18 +53,40 @@ def missao(request):
 
 
 def equipe(request):
-    data = {}
+    data = {
+        'membros': Membro.objects.all()
+    }
     return render(request, 'ong/equipe.html', data)
 
 
 def parceiros(request):
-    data = {}
+    data = {
+        'parceiros': Parceria.objects.all(),
+        'comunidades': None,
+        'universiades': None,
+        'empresas': None
+    }
+
+    data['comunidades'] = [p for p in data['parceiros'] if p.tipo == "P1"]
+    data['universidades'] = [p for p in data['parceiros'] if p.tipo == "P2"]
+    data['empresas'] = [p for p in data['parceiros'] if p.tipo == "P3"]
+
     return render(request, 'ong/parceiros.html', data)
 
 
 def projetos(request):
+    projetos = Projeto.objects.all()
+    campanhas = CampanhaParaDoacoes.objects.all()
+    campanhasPrimeiro = []
+
+    for projeto in projetos:
+        if campanhas.filter(projeto=projeto):
+            campanhasPrimeiro.insert(0, projeto)
+        else:
+            campanhasPrimeiro.append(projeto)
+
     data = {
-        'projetos': Projeto.objects.all(),
+        'projetos': campanhasPrimeiro,
         'campanha_doacao': CampanhaParaDoacoes.objects.all(),
         'criancas': None,
         'adultos': None,

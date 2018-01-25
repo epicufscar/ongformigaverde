@@ -38,7 +38,7 @@ msgstr "Values"
 msgid "Princípios"
 msgstr "Principles"
 
-#: ong/templates/ong/_footer.html:15 ong/templates/ong/equipe.html:5
+#: ong/templates/ong/_footer.html:15 ong/templates/ong/equipe.html:6
 msgid "Equipe"
 msgstr "Team"
 
@@ -132,6 +132,26 @@ msgstr "MORE INFO"
 #: ong/templates/ong/home/_projetos.html:42
 msgid "DOAR"
 msgstr "DONATE"
+
+#: ong/templates/ong/equipe.html:11
+msgid "NOSSO TIME"
+msgstr "OUR TEAM"
+
+#: ong/templates/ong/equipe.html:40 ong/templates/ong/equipe.html:85
+msgid "DEPOIMENTO"
+msgstr "TESTIMONIAL"
+
+#: ong/templates/ong/equipe.html:71
+msgid "JÁ PASSARAM POR AQUI"
+msgstr "THEY HAVE BEEN HERE"
+
+#: ong/templates/ong/equipe.html:112
+msgid "de"
+msgstr "from"
+
+#: ong/templates/ong/equipe.html:113
+msgid "até"
+msgstr "to"
 
 #: ong/templates/ong/home/_doacoes.html:6
 msgid "SUA AJUDA É BEM-VINDA"
@@ -335,7 +355,7 @@ msgstr "Read more"
 
 #: ong/templates/ong/projeto.html:76
 msgid "DEPOIMENTOS"
-msgstr "Statements"
+msgstr "TESTIMONIALS"
 
 #: ong/templates/ong/projeto.html:86
 msgid "anos"

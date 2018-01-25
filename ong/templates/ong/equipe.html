@@ -1,11 +1,130 @@
 {% extends 'ong/base.html' %}
 {% load staticfiles %}
 {% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block title %}{% trans "Equipe" %}{% endblock title %}
 
 {% block body %}
     <main id="p-equipe" class="page-top">
+        <div class="container">
+            <h4>{% trans "NOSSO TIME" %}</h4>
+            <section class="membros">
+                {% for membro in membros %}
+                    {% if not membro.dataFim %}
+                        <div class="membro text-center">
+                            <div>
+                                {% if membro.possuiPhoto %}
+                                    <img class="membro-photo" src="data:image/png;base64,{{ membro.photo64 }}"/>
+                                {% else %}
+                                    <img class="membro-photo" src="{% static "images/formiga.jpg" %}">
+                                {% endif %}
+                            </div>
+                            <div class="membro-details">
+                                <span class="membro-nome">{{ membro.nome }}</span><br>
+                                <span class="membro-atividade">{% if LANGUAGE_CODE == "en" and membro.activity %}{{ membro.activity }}{% else %}{{ membro.atividade }}{% endif %}</span><br>
+                                <span class="membro-pais">{% if LANGUAGE_CODE == "en" and membro.country %}{{ membro.country }}{% else %}{{ membro.pais }}{% endif %}</span>
+                                <div class="membro-socials">
+                                    {% if membro.email %}
+                                        <a href="mailto:{{ membro.email }}" target="_blank"><i class="fa fa-envelope"></i></a>
+                                    {% endif %}
+                                    {% if membro.facebook %}
+                                        <a href="http://fb.com/{{ membro.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    {% endif %}
+                                </div>
+                                <div class="membro-depoimento">
+                                    {% if membro.depoimento %}
+                                        <hr>
+                                        <a class="membro-depoimento-link" href="#" data-toggle="modal"
+                                           data-target="#modal-{{ membro.id }}">
+                                            <i class="fa fa-comment"></i> {% trans "DEPOIMENTO" %}
+                                        </a>
+
+                                        <div class="modal fade" id="modal-{{ membro.id }}">
+                                          <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h5 class="modal-title">{{ membro.nome }}</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                              </div>
+                                              <div class="modal-body">
+                                                <div class="quote">&quot;</div>
+                                                <span>{% if LANGUAGE_CODE == "en" and membro.statement %}{{ membro.statement|safe }}{% else %}{{ membro.depoimento }}{% endif %}</span>
+                                                <div class="quote" style="float: right;">&quot;</div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </section>
+        </div>
+
+        <section class="membros-antigos">
+            <div class="container">
+                <h4 class="text-center">{% trans "JÁ PASSARAM POR AQUI" %}</h4>
+                {% for membro in membros %}
+                    {% if membro.dataFim %}
+                        <div class="membro-antigo">
+                            <div>
+                                {% if membro.possuiPhoto %}
+                                    <img class="membro-antigo-photo" src="data:image/png;base64,{{ membro.photo64 }}"/>
+                                {% else %}
+                                    <img class="membro-antigo-photo" src="{% static "images/formiga.jpg" %}">
+                                {% endif %}
+                            </div>
+                            <div class="membro-antigo-nome">
+                                {{ membro.nome }}
+                                {% if membro.depoimento %}
+                                    <a href="#" title="{% trans "DEPOIMENTO" %}" class="membro-antigo-depoimento-link"
+                                       data-toggle="modal" data-target="#modal-{{ membro.id }}">
+                                        <i class="fa fa-comment"></i>
+                                    </a>
+
+                                    <div class="modal fade" id="modal-{{ membro.id }}">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h5 class="modal-title">{{ membro.nome }}</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                          </div>
+                                          <div class="modal-body">
+                                            <div class="quote">&quot;</div>
+                                            <span>{% if LANGUAGE_CODE == "en" and membro.statement %}{{ membro.statement|safe }}{% else %}{{ membro.depoimento }}{% endif %}</span>
+                                            <div class="quote" style="float: right;">&quot;</div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="membro-antigo-pais">{% if LANGUAGE_CODE == "en" and membro.country %}{{ membro.country }}{% else %}{{ membro.pais }}{% endif %}</div>
+                            <div class="membro-antigo-atividade">{% if LANGUAGE_CODE == "en" and membro.activity %}{{ membro.activity }}{% else %}{{ membro.atividade }}{% endif %}</div>
+                            <div class="membro-antigo-periodo">
+                                {% trans "de" %} {{ membro.dataInicio.day }}/{{ membro.dataInicio.month }}/{{ membro.dataInicio.year }}
+                                {% trans "até" %} {{ membro.dataFim.day }}/{{ membro.dataFim.month }}/{{ membro.dataFim.year }}
+                            </div>
+                            <div class="membro-antigo-socials">
+                                {% if membro.email %}
+                                    <a href="mailto:{{ membro.email }}" target="_blank"><i class="fa fa-envelope"></i></a>
+                                {% endif %}
+                                {% if membro.facebook %}
+                                    <a href="http://fb.com/{{ membro.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
 
     </main>
 {% endblock body %}

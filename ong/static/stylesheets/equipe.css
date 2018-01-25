@@ -1,0 +1,174 @@
+#p-equipe {
+    padding-top: 50px;
+}
+
+#p-equipe .membros {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1em;
+}
+
+#p-equipe .membro {
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1em 1em 4em;
+}
+
+#p-equipe .membro-photo {
+    position: relative;
+    top: -1em; left: -1em;
+    height: 200px;
+    width: calc(100% + 2em);
+    object-fit: cover;
+    object-position: 50% 20%;
+    border-radius: 5px 5px 0 0;
+}
+
+#p-equipe .membro-pais {
+    display: block;
+    position: absolute;
+    top: calc(200px - 2.5em);
+    right: 0.5em;
+    background-color: #fff;
+    color: #33764c;
+    padding: 0.25em 0.5em;
+    font-size: 0.75em;
+    border-radius: 3px;
+}
+
+#p-equipe .membro-nome {
+    color: #2a9134;
+    font-size: 1.2em;
+}
+
+#p-equipe .membro-antigo-periodo,
+#p-equipe .membro-antigo-pais,
+#p-equipe .membro-antigo-atividade,
+#p-equipe .membro-atividade {
+    font-size: 0.9em;
+    opacity: .8;
+}
+
+#p-equipe .membro-depoimento-link,
+#p-equipe .membro-socials i {
+    color: #e0938b;
+}
+
+#p-equipe .membro-antigo-depoimento-link,
+#p-equipe .membro-antigo-socials i  {
+    color: #33764c;
+    margin-left: 0.5em;
+}
+
+#p-equipe .modal-body {
+    padding: 2em !important;
+    text-align: justify;
+}
+
+#p-equipe .quote {
+    color: #e0938b;
+    font-family: 'Bad Script', cursive;
+    font-size: 5em;
+    display: inline-block !important;
+    margin-bottom: -60px;
+}
+
+#p-equipe .membro-depoimento {
+    position: absolute;
+    bottom: 1em;
+    width: calc(100% - 2em);
+}
+
+#p-equipe .membros-antigos {
+    background-color: #d9ead3;
+    padding: 2em;
+    margin-top: 50px;
+}
+
+#p-equipe .membros-antigos h4 {
+    background-color: #33764c;
+    padding: 0.5em;
+    color: #fff;
+}
+
+#p-equipe .membro-antigo {
+    display: grid;
+    grid-template-columns: 50px 1.5fr 0.7fr 1fr 1.5fr 0.7fr;
+    grid-template-rows: auto;
+    padding: 1em;
+    border-top: 1px solid #ccc;
+}
+
+#p-equipe .membro:hover,
+#p-equipe .membro-antigo:hover {
+    background-color: #e2f3e4;
+}
+
+#p-equipe .membro-antigo-photo {
+    height: 2em;
+    border-radius: 50%;
+}
+
+@media (max-width: 36em) {
+    #p-equipe .membro-pais {
+        top: calc(300px - 2.5em);
+    }
+
+    #p-equipe .membro-photo {
+        height: 300px;
+    }
+
+    #p-equipe .membro-antigo {
+        text-align: center;
+        grid-template-columns: 1fr;
+    }
+
+    #p-equipe .membros {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 36em) and (max-width: 48em) {
+    #p-equipe .membro-antigo {
+        grid-template-columns: 0.3fr 1.5fr 0.7fr;
+    }
+
+    #p-equipe .membro-antigo-atividade {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    #p-equipe .membro-antigo-periodo {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    #p-equipe .membro-antigo-socials {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    #p-equipe .membros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 48em) and (max-width: 60em) {
+    #p-equipe .membros {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 60em) and (max-width: 92em) {
+    #p-equipe .membros {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 92em) {
+    #p-equipe .membros {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
