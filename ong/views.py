@@ -51,7 +51,9 @@ def missao(request):
 
 
 def equipe(request):
-    data = {}
+    data = {
+        'membros': Membro.objects.all()
+    }
     return render(request, 'ong/equipe.html', data)
 
 
