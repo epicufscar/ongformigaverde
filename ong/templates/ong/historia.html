@@ -1,11 +1,58 @@
 {% extends 'ong/base.html' %}
 {% load staticfiles %}
 {% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block title %}{% trans "História" %}{% endblock title %}
 
 {% block body %}
-    <main id="p-historia" class="page-top">
-
-    </main>
+    <div class="timeline">
+        <div class="container left">
+            <div class="content">
+                <h2>2005</h2>
+                {% if LANGUAGE_CODE == "en" %}
+                    <p>The idea comes from Santa Felícia's teachers, when they notice that the childrens above 12 years old needed
+                        help.</p>
+                {% else %}
+                    <p>A ideia nasce de professores do Santa Felícia quando estes perceberam que precisavam ajudar as crianças
+                        acima de 12 anos. Quando as crianças terminavam o projeto Recreação tinham poucas ou nenhuma opção saudável
+                        para ocupar seu tempo livre e ficavam mais perto de problemas sociais.</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <h2>2006</h2>
+                {% if LANGUAGE_CODE == "en" %}
+                    <p>--</p>
+                {% else %}
+                    <p>Os professores realizavam atividades físico-desportivas como um poderoso instrumento de arregimentação
+                        desses jovens. Percebe-se que a necessidade de criar uma "marca" que representasse os interesses
+                        em comum das crianças e da comunidade.</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <h2>2006</h2>
+                {% if LANGUAGE_CODE == "en" %}
+                    <p>--</p>
+                {% else %}
+                    <p>Escolheram um mascote para representar a entidade e suas atividades. Somos as ONG Formiga Verde,
+                        uma organização não-governamental fundada no dia 20 de março de 2006. E com atividades físico-desportivas
+                        a ONG inicia suas atividades.</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <h2>Hoje</h2>
+                {% if LANGUAGE_CODE == "en" %}
+                    <p>--</p>
+                {% else %}
+                    <p>Atualmente a ONG Formiga Verde é composta por pessoas da comunidade, diversos voluntários e pelas
+                    comunidades atendidas. A ONG possui projetos próprios e pretente ampliar cada vez mais sua oferta de atividades.</p>
+                {% endif %}
+            </div>
+        </div>
 {% endblock body %}
