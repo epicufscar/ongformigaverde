@@ -7,7 +7,6 @@
     font-family: Helvetica, sans-serif;
 }
 
-/* The actual timeline (the vertical ruler) */
 #p-historia .timeline {
     padding-top: 10em;
     position: relative;
@@ -23,7 +22,10 @@
     margin-bottom: 1em;
 }
 
-/* The actual timeline (the vertical ruler) */
+#p-historia p {
+    padding-top: 1em;
+}
+
 #p-historia .timeline::after {
     content: '';
     position: absolute;
@@ -35,7 +37,6 @@
     margin-left: -3px;
 }
 
-/* Container around content */
 #p-historia .container {
     padding: 10px 40px;
     position: relative;
@@ -43,7 +44,6 @@
     width: 50%;
 }
 
-/* The circles on the timeline */
 #p-historia .container::after {
     content: '';
     position: absolute;
@@ -57,17 +57,14 @@
     z-index: 1;
 }
 
-/* Place the container to the left */
 #p-historia .left {
     left: -25%;
 }
 
-/* Place the container to the right */
 #p-historia .right {
     left: 25%;
 }
 
-/* Add arrows to the left container (pointing right) */
 #p-historia .left::before {
     content: " ";
     height: 0;
@@ -95,12 +92,10 @@
     border-color: transparent #d9ead3 transparent transparent;
 }
 
-/* Fix the circle for containers on the right side */
 #p-historia .right::after {
     left: -16px;
 }
 
-/* The actual content */
 #p-historia .content {
     padding: 20px 30px;
     background-color: #d9ead3;
@@ -108,21 +103,17 @@
     border-radius: 6px;
 }
 
-/* Media queries - Responsive timeline on screens less than 600px wide */
 @media all and (max-width: 600px) {
-    /* Place the timelime to the left */
     #p-historia .timeline::after {
         left: 31px;
     }
 
-    /* Full-width containers */
     #p-historia .container {
         width: 100%;
         padding-left: 70px;
         padding-right: 25px;
     }
 
-    /* Make sure that all arrows are pointing leftwards */
     #p-historia .container::before {
         left: 60px;
         border: medium solid white;
@@ -130,12 +121,9 @@
         border-color: transparent #d9ead3 transparent transparent;
     }
 
-    /* Make sure all circles are at the same spot */
     #p-historia .left::after, #p-historia .right::after {
         left: 15px;
     }
-
-    /* Make all right containers behave like the left ones */
     #p-historia .right, #p-historia .left {
         left: 0%;
     }
