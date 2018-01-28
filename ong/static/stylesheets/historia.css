@@ -1,0 +1,132 @@
+#p-historia * {
+    box-sizing: border-box;
+}
+
+#p-historia body {
+    background-color: #474e5d;
+    font-family: Helvetica, sans-serif;
+}
+
+#p-historia .timeline {
+    padding-top: 10em;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#p-historia .caption {
+    margin-left: 2em;
+}
+
+#p-historia .img-responsive {
+    margin-bottom: 1em;
+}
+
+#p-historia p {
+    padding-top: 1em;
+}
+
+#p-historia .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #003366;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+#p-historia .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+#p-historia .container::after {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #003366;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#p-historia .left {
+    left: -25%;
+}
+
+#p-historia .right {
+    left: 25%;
+}
+
+#p-historia .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #d9ead3;
+}
+
+/* Add arrows to the right container (pointing left) */
+#p-historia .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #d9ead3 transparent transparent;
+}
+
+#p-historia .right::after {
+    left: -16px;
+}
+
+#p-historia .content {
+    padding: 20px 30px;
+    background-color: #d9ead3;
+    position: relative;
+    border-radius: 6px;
+}
+
+@media all and (max-width: 600px) {
+    #p-historia .timeline::after {
+        left: 31px;
+    }
+
+    #p-historia .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    #p-historia .container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #d9ead3 transparent transparent;
+    }
+
+    #p-historia .left::after, #p-historia .right::after {
+        left: 15px;
+    }
+    #p-historia .right, #p-historia .left {
+        left: 0%;
+    }
+
+}
+
