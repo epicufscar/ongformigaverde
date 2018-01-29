@@ -1,0 +1,32 @@
+#p-missao {
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+
+#p-missao .items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-gap: 1.5em;
+}
+
+#p-missao .item {
+    border-radius: 5px;
+    border: 2px solid #33764c;
+    padding: 1.5em;
+    -webkit-box-shadow: 0 9px 19px -4px rgba(155,204,178,0.75);
+    -moz-box-shadow: 0 9px 19px -4px rgba(155,204,178,0.75);
+    box-shadow: 0 9px 19px -4px rgba(155,204,178,0.75);
+
+}
+
+#p-missao .item h2 {
+    font-family: 'Bad Script', cursive;
+    font-weight: 600;
+}
+
+@media (max-width: 48em) {
+    #p-missao .items {
+        grid-template-columns: 1fr;
+    }
+}

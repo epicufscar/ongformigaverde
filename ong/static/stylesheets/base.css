@@ -11,7 +11,11 @@
 @import url('./noticias.css');
 @import url('./projeto.css');
 @import url('./projetos.css');
+@import url('./parcerias.css');
 @import url('./transparencia.css');
+@import url('./missao.css');
+@import url('./equipe.css');
+@import url('./historia.css');
 
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,600');
 @import url('https://fonts.googleapis.com/css?family=Bad+Script');
@@ -38,6 +42,10 @@ body {
 .no-padding {
    padding: 0 !important;
    margin: 0 !important;
+}
+
+.btn {
+    font-family: 'Roboto Condensed', sans-serif !important;
 }
 
 .page-top {

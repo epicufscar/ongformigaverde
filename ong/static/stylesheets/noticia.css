@@ -19,6 +19,10 @@
     color: #e06666ff;
 }
 
+#p-noticia h6 {
+    font-size: 0.9em;
+}
+
 #p-noticia #noticia-body {
     text-align: justify;
     hyphens: auto;

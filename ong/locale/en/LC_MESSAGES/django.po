@@ -8,7 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-20 21:16-0200\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2018-01-22 23:49-0200\n"
+=======
+"POT-Creation-Date: 2018-01-24 21:19-0200\n"
+>>>>>>> parceiros_trans
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,23 +25,24 @@ msgstr ""
 msgid "História"
 msgstr "Our History"
 
-#: ong/templates/ong/_footer.html:9 ong/templates/ong/missao.html:5
+#: ong/templates/ong/_footer.html:9 ong/templates/ong/missao.html:6
+#: ong/templates/ong/missao.html:12
 msgid "Missão"
 msgstr "Mission"
 
-#: ong/templates/ong/_footer.html:10
+#: ong/templates/ong/_footer.html:10 ong/templates/ong/missao.html:16
 msgid "Visão"
 msgstr "Vision"
 
-#: ong/templates/ong/_footer.html:11
+#: ong/templates/ong/_footer.html:11 ong/templates/ong/missao.html:20
 msgid "Valores"
 msgstr "Values"
 
-#: ong/templates/ong/_footer.html:12
+#: ong/templates/ong/_footer.html:12 ong/templates/ong/missao.html:24
 msgid "Princípios"
 msgstr "Principles"
 
-#: ong/templates/ong/_footer.html:15 ong/templates/ong/equipe.html:5
+#: ong/templates/ong/_footer.html:15 ong/templates/ong/equipe.html:6
 msgid "Equipe"
 msgstr "Team"
 
@@ -122,6 +127,7 @@ msgstr "Contact"
 msgid "DOAÇÕES"
 msgstr "DONATIONS"
 
+#: ong/templates/ong/_parceiros-card-parceiros.html:16
 #: ong/templates/ong/_projetos-card-projeto.html:32
 #: ong/templates/ong/home/_projetos.html:39
 msgid "CONHECER"
@@ -131,6 +137,26 @@ msgstr "MORE INFO"
 #: ong/templates/ong/home/_projetos.html:42
 msgid "DOAR"
 msgstr "DONATE"
+
+#: ong/templates/ong/equipe.html:11
+msgid "NOSSO TIME"
+msgstr "OUR TEAM"
+
+#: ong/templates/ong/equipe.html:40 ong/templates/ong/equipe.html:85
+msgid "DEPOIMENTO"
+msgstr "TESTIMONIAL"
+
+#: ong/templates/ong/equipe.html:71
+msgid "JÁ PASSARAM POR AQUI"
+msgstr "THEY HAVE BEEN HERE"
+
+#: ong/templates/ong/equipe.html:112
+msgid "de"
+msgstr "from"
+
+#: ong/templates/ong/equipe.html:113
+msgid "até"
+msgstr "to"
 
 #: ong/templates/ong/home/_doacoes.html:6
 msgid "SUA AJUDA É BEM-VINDA"
@@ -332,9 +358,25 @@ msgstr "NEWS"
 msgid "Continue lendo"
 msgstr "Read more"
 
+#: ong/templates/ong/parceiros.html:9
+msgid "NOSSOS PARCEIROS"
+msgstr "OUR PARTNERS"
+
+#: ong/templates/ong/parceiros.html:12
+msgid "Comunidades"
+msgstr "Community Groups"
+
+#: ong/templates/ong/parceiros.html:24
+msgid "Grupos Universitários"
+msgstr "University Groups"
+
+#: ong/templates/ong/parceiros.html:36
+msgid "Empresas"
+msgstr "Companies"
+
 #: ong/templates/ong/projeto.html:76
 msgid "DEPOIMENTOS"
-msgstr "Statements"
+msgstr "TESTIMONIALS"
 
 #: ong/templates/ong/projeto.html:86
 msgid "anos"
@@ -356,108 +398,108 @@ msgstr "For Adults"
 msgid "Todas as idades"
 msgstr "All ages"
 
-#: ong/templates/ong/transparencia.html:6
+#: ong/templates/ong/transparencia.html:7
 msgid "Transparência"
 msgstr "Donation Transparency"
 
-#: ong/templates/ong/transparencia.html:22
+#: ong/templates/ong/transparencia.html:23
 msgid "FILTRAR"
 msgstr "FILTER"
 
-#: ong/templates/ong/transparencia.html:31
+#: ong/templates/ong/transparencia.html:32
 msgid "Doações no mesmo período"
 msgstr "Donations in the same period"
 
-#: ong/templates/ong/transparencia.html:35
+#: ong/templates/ong/transparencia.html:36
 msgid "Data"
 msgstr "Date"
 
-#: ong/templates/ong/transparencia.html:36
-#: ong/templates/ong/transparencia.html:150
+#: ong/templates/ong/transparencia.html:37
+#: ong/templates/ong/transparencia.html:157
 msgid "Valor"
 msgstr "Amount"
 
-#: ong/templates/ong/transparencia.html:37
+#: ong/templates/ong/transparencia.html:38
 msgid "Utilização"
 msgstr "Usage"
 
-#: ong/templates/ong/transparencia.html:38
+#: ong/templates/ong/transparencia.html:39
 msgid "Doador"
 msgstr "Donor"
 
-#: ong/templates/ong/transparencia.html:60
+#: ong/templates/ong/transparencia.html:67
 msgid "Não houveram doações no período selecionado."
 msgstr "There were no donations in the selected period."
 
-#: ong/templates/ong/transparencia.html:61
+#: ong/templates/ong/transparencia.html:68
 msgid "DOAR AGORA"
 msgstr "DONATE NOW"
 
-#: ong/templates/ong/transparencia.html:68
+#: ong/templates/ong/transparencia.html:75
 msgid "Resumo das campanhas de doação"
 msgstr "Summary of campaigns"
 
-#: ong/templates/ong/transparencia.html:72
+#: ong/templates/ong/transparencia.html:79
 msgid "Título"
 msgstr "Title"
 
-#: ong/templates/ong/transparencia.html:73
+#: ong/templates/ong/transparencia.html:80
 msgid "Finalizada em"
 msgstr "End date"
 
-#: ong/templates/ong/transparencia.html:74
+#: ong/templates/ong/transparencia.html:81
 msgid "Valor arrecadado"
 msgstr "Amount raised"
 
-#: ong/templates/ong/transparencia.html:74
+#: ong/templates/ong/transparencia.html:81
 msgid "Valor esperado"
 msgstr "Amount expected"
 
-#: ong/templates/ong/transparencia.html:85
+#: ong/templates/ong/transparencia.html:92
 msgid "Campanha em andamento..."
 msgstr "Campaign in progress..."
 
-#: ong/templates/ong/transparencia.html:143
+#: ong/templates/ong/transparencia.html:150
 msgid "Como utilizamos o dinheiro das doações"
 msgstr "How we use the donations"
 
-#: ong/templates/ong/transparencia.html:149
+#: ong/templates/ong/transparencia.html:156
 msgid "Quantidade"
 msgstr "Quantity"
 
-#: ong/templates/ong/transparencia.html:149
+#: ong/templates/ong/transparencia.html:156
 msgid "doações"
 msgstr "donations"
 
-#: ong/templates/ong/transparencia.html:156
+#: ong/templates/ong/transparencia.html:163
 msgid "Aplicação das Doações"
 msgstr "Donation Transparency"
 
-#: ong/templates/ong/transparencia.html:160
+#: ong/templates/ong/transparencia.html:167
 msgid "Manutenção administrativa da ONG"
 msgstr "Administration and maintenance tasks"
 
-#: ong/templates/ong/transparencia.html:167
+#: ong/templates/ong/transparencia.html:174
 msgid "Aplicação em projetos existentes"
 msgstr "Investments in existing projects"
 
-#: ong/templates/ong/transparencia.html:174
+#: ong/templates/ong/transparencia.html:181
 msgid "Criação de novos projetos"
 msgstr "Creation of new project"
 
-#: ong/templates/ong/transparencia.html:181
+#: ong/templates/ong/transparencia.html:188
 msgid "Aquisição de recursos e materiais"
 msgstr "Resources and materials acquisition"
 
-#: ong/templates/ong/transparencia.html:188
+#: ong/templates/ong/transparencia.html:195
 msgid "Treinamentos para membros da equipe"
 msgstr "Training of team member"
 
-#: ong/templates/ong/transparencia.html:195
+#: ong/templates/ong/transparencia.html:202
 msgid "Eventos e comemorações"
 msgstr "Events and celebration"
 
-#: ong/templates/ong/transparencia.html:202
+#: ong/templates/ong/transparencia.html:209
 msgid "Outras finalidades"
 msgstr "Other demands"
 

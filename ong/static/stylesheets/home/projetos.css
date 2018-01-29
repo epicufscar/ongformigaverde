@@ -13,13 +13,12 @@
 
 #projetos .card {
     height: 430px;
-    background-color: #d9ead3;
+    background-color: #f2faf0;
 }
 
 #projetos .card:hover {
-    -webkit-box-shadow: 0 0 10px -4px rgba(0,0,0,1);
-    -moz-box-shadow: 0 0 10px -4px rgba(0,0,0,1);
-    box-shadow: 0 0 10px -4px rgba(0,0,0,1);
+    background-color: #fff;
+    border: .5px solid #33764c;
 }
 
 #projetos .card-img-top {
@@ -37,7 +36,7 @@
     width: 125px;
     font-size: 0.9em;
     padding: 7px;
-    background-color: #82a82a;
+    background-color: #3c8e5d;
     border-color: #2a9134;
     margin-top: 7px;
     color: #fff;
@@ -47,7 +46,7 @@
 }
 
 #projetos .btn:hover {
-    background-color: #6b8a23;
+    background-color: #306943;
     border-color: #587129;
     color: #ffffff;
 }

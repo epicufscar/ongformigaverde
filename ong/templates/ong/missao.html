@@ -1,11 +1,29 @@
 {% extends 'ong/base.html' %}
 {% load staticfiles %}
 {% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block title %}{% trans "Missão" %}{% endblock title %}
 
 {% block body %}
-    <main id="p-missao" class="page-top">
-
+    <main id="p-missao" class="container page-top">
+        <div class="items">
+            <div class="item">
+                <h2>{% trans "Missão" %}</h2>
+                <p>{% if LANGUAGE_CODE == "en" and informacoes_ong.mission %}{{ informacoes_ong.mission|safe }}{% else %}{{ informacoes_ong.missao|safe }}{% endif %}</p>
+            </div>
+            <div class="item">
+                <h2>{% trans "Visão" %}</h2>
+                <p>{% if LANGUAGE_CODE == "en" and informacoes_ong.vision %}{{ informacoes_ong.vision|safe }}{% else %}{{ informacoes_ong.visao }}{% endif %}</p>
+            </div>
+            <div class="item">
+                <h2>{% trans "Valores" %}</h2>
+                <p>{% if LANGUAGE_CODE == "en" and informacoes_ong.values %}{{ informacoes_ong.values|safe }}{% else %}{{ informacoes_ong.valores }}{% endif %}</p>
+            </div>
+            <div class="item">
+                <h2>{% trans "Princípios" %}</h2>
+                <p>{% if LANGUAGE_CODE == "en" and informacoes_ong.principles %}{{ informacoes_ong.principles|safe }}{% else %}{{ informacoes_ong.principios }}{% endif %}</p>
+            </div>
+        </div>
     </main>
 {% endblock body %}
