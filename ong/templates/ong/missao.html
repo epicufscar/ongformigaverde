@@ -14,15 +14,15 @@
             </div>
             <div class="item">
                 <h2>{% trans "Visão" %}</h2>
-                <p>{% if LANGUAGE_CODE == "en" and informacoes_ong.vision %}{{ informacoes_ong.vision|safe }}{% else %}{{ informacoes_ong.visao }}{% endif %}</p>
+                <p>{% if LANGUAGE_CODE == "en" and informacoes_ong.vision %}{{ informacoes_ong.vision|safe }}{% else %}{{ informacoes_ong.visao|safe }}{% endif %}</p>
             </div>
             <div class="item">
                 <h2>{% trans "Valores" %}</h2>
-                <p>{% if LANGUAGE_CODE == "en" and informacoes_ong.values %}{{ informacoes_ong.values|safe }}{% else %}{{ informacoes_ong.valores }}{% endif %}</p>
+                <p>{% if LANGUAGE_CODE == "en" and informacoes_ong.values %}{{ informacoes_ong.values|safe }}{% else %}{{ informacoes_ong.valores|safe }}{% endif %}</p>
             </div>
             <div class="item">
                 <h2>{% trans "Princípios" %}</h2>
-                <p>{% if LANGUAGE_CODE == "en" and informacoes_ong.principles %}{{ informacoes_ong.principles|safe }}{% else %}{{ informacoes_ong.principios }}{% endif %}</p>
+                <p>{% if LANGUAGE_CODE == "en" and informacoes_ong.principles %}{{ informacoes_ong.principles|safe }}{% else %}{{ informacoes_ong.principios|safe }}{% endif %}</p>
             </div>
         </div>
     </main>
