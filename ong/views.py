@@ -41,7 +41,9 @@ def home(request):
 
 
 def historia(request):
-    data = {}
+    data = {
+        'informacoes_ong': InformacoesGeraisONG.objects.first()
+    }
     return render(request, 'ong/historia.html', data)
 
 
@@ -54,6 +56,7 @@ def missao(request):
 
 def equipe(request):
     data = {
+        'informacoes_ong': InformacoesGeraisONG.objects.first(),
         'membros': Membro.objects.all()
     }
     return render(request, 'ong/equipe.html', data)
@@ -61,6 +64,7 @@ def equipe(request):
 
 def parceiros(request):
     data = {
+        'informacoes_ong': InformacoesGeraisONG.objects.first(),
         'parceiros': Parceria.objects.all(),
         'comunidades': None,
         'universiades': None,
@@ -86,6 +90,7 @@ def projetos(request):
             campanhasPrimeiro.append(projeto)
 
     data = {
+        'informacoes_ong': InformacoesGeraisONG.objects.first(),
         'projetos': campanhasPrimeiro,
         'campanha_doacao': CampanhaParaDoacoes.objects.all(),
         'criancas': None,
@@ -101,7 +106,9 @@ def projetos(request):
 
 
 def doacoes(request):
-    data = {}
+    data = {
+        'informacoes_ong': InformacoesGeraisONG.objects.first()
+    }
     return render(request, 'ong/doacoes.html', data)
 
 
@@ -169,6 +176,7 @@ def transparencia(request):
             receitas.append(receita)
 
     data = {
+        'informacoes_ong': InformacoesGeraisONG.objects.first(),
         'campanhas': campanhas,
         'receitas': receitas,
         'periodStart': periodStart,
@@ -183,6 +191,7 @@ def transparencia(request):
 
 def noticias(request):
     data = {
+        'informacoes_ong': InformacoesGeraisONG.objects.first(),
         'noticias': Noticia.objects.all().order_by('-data')
     }
     return render(request, 'ong/noticias.html', data)
