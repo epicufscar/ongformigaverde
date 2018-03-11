@@ -108,7 +108,9 @@
 
 #p-equipe .membro-antigo-photo {
     height: 2em;
+    width: 2em;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 @media (max-width: 36em) {
