@@ -8,3 +8,4 @@ whitenoise==3.3.1
 sendgrid==3.6.5
 sendgrid-django==4.0.4
 python-dateutil==2.6.1
+Pillow==4.2.1
